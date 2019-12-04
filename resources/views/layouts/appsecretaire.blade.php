@@ -24,15 +24,68 @@
     
 
     <!-- ***** Header Area Start ***** -->
-    <header>
-        @yield('sidebar')
+<header>
+    <div class="header-area1">
+        <!-- Top Header Area -->
+        <div class="top-header-area">
+            <div class=" h-100">
+                <div class="row h-100 justify-content-between">
+                    <div class="col-12 h-100">
+                        <div class="main-menu h-100">
+                            <nav class="navbar h-100 navbar-expand-lg">
+                                <!-- Logo Area  -->
+                                <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
+
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+                                <div class="collapse navbar-collapse" id="medilifeMenu">
+                                    <!-- Menu Area -->
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active">
+                                            <a class="nav-link" href="index.html">Acceuil <span class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item dropdown active">
+                                            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion Patient<span class="sr-only">(current)</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{route('create_patient')}}">New</a>
+                                                <a class="dropdown-item" href="#">Afficher</a>
+                                                <a class="dropdown-item" href="#l"></a>
+                                                
+                                            </div>
+                                        </li>
+                                        <li class="nav-item dropdown active">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Rendez-Vous</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="#">New</a>
+                                                <a class="dropdown-item" href="#">Afficher</a>
+                                                <a class="dropdown-item" href="#"></a>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="services.html">Pharmacie</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="blog.html">Gestion Caisse</a>
+                                        </li>
+                                        
+                                        <li class="nav-item">
+                                            <a href="#" class="nav-link btn medilife-appoint-btn ml-30">Deconnection</a>
+                                        </li>
+                                    </ul>
+                                    <!-- Appointment Button -->
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+            </div>
+        </div>
     </header>
     <main style=" margin-bottom:20px">
         <div class="" >
             @yield('content')
         </div>
     </main>
-    <footer>
+<footer>
     <div class="container-fluid" style="background-color:#eff5f5;">
 
     <div class="row  row-no-gutters">
@@ -125,9 +178,8 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-</script>
-            
-    </footer>
+</script>           
+</footer>
     <script src="{{asset('js/app.js')}}"></script>  
     <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->

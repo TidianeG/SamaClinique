@@ -13,7 +13,11 @@
 
 Route::get('/', 'cliniqueController@index');
 
-Route::get('/medecin', 'cliniqueController@show');
+Route::get('/medecin', 'cliniqueController@medecin');
+
+Route::get('/secretaire', 'cliniqueController@secretaire');
+
+Route::get('/secretaire/createPatient','PatientController@patient')->name('create_patient');
 
 Auth::routes();
 

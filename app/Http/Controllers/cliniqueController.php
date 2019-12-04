@@ -9,7 +9,11 @@ class cliniqueController extends Controller
     public function index(){
         return view('acceuil');
     }
-    public function show(){
+    public function medecin(){
         return view('medecin/page_medecin');
+    }
+
+    public function secretaire(){
+        return view('secretaire/page_secretaire');
     }
 }
