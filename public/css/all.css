@@ -5885,7 +5885,7 @@ img {
 
 /* :: 4.0 Header Area CSS */
 .header-area {
-  position: absolute;
+ 
   z-index: 10000;
   width: 100%;
   height: auto;

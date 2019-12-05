@@ -15,8 +15,10 @@
     <link rel="icon" href="img/core-img/favicon.ico">
 
     <!-- Style CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
+
 </head>
 
 <body>
@@ -25,9 +27,42 @@
 
     <!-- ***** Header Area Start ***** -->
     <header>
-        @yield('sidebar')
+    <div class="header-area">
+        <!-- Top Header Area -->
+        <div class="top-header-area">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="h-100 d-md-flex justify-content-between ">
+                            <p>Bienvenu à <span>Medifile</span></p>
+                            <p>jours ouvrable : du Lundi au Samedi - 8h à 23h Contact : <span>+221 33 899 99 99</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Header Area -->
+        <div class="main-header-area" id="stickyHeader" style="height:auto;">
+            <div class="container h-100">
+                <div class="row h-100 justify-content-between">
+                    <div class="col-12 h-100">
+                        <div class="main-menu h-100">
+                            <nav class="navbar h-100 navbar-expand-lg row justify-content-between align-items-center">
+                                <!-- Logo Area  -->
+                                <a class="navbar-brand" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                                <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button-->
+                                <div id="medilifeMenu">
+                                    <a href="{{route('home')}}" type="button" class="btn medilife-btn mt-50"   id="buton">Se Connecter<span>-></span></a>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
     </header>
-    <main style=" margin-bottom:20px">
+    <main style="margin-top:20px;margin-bottom:20px;">
         <div class="" >
             @yield('content')
         </div>
@@ -35,21 +70,18 @@
     <footer>
     <div class="container-fluid" style="background-color:#eff5f5;">
 
+    <button onclick="topFunction()" id="to-top" title="Go to top">Top</button>
+
     <div class="row  row-no-gutters">
       <div class="col-xs-12 col-sm-6 col-md-3" >
         <ul>
           <li class="col-heading">Subheading</li>
+          
           <li>
-            <i class="fa fa-phone" aria-hidden="true"></i><a href="tel:99-999-999-9999">99-999-999-9999</a>
-          </li>
-          <li>
-            <i class="fa fa-mobile" aria-hidden="true"></i><a href="sms:99-999-999-9999">SMS Message</a>
-          </li>
-          <li>
-             <i class="fa fa-map-marker" aria-hidden="true"></i><a href="#">Address</a>
+             <i class="fas fa-map-marker" aria-hidden="true"></i><a href="#">Address</a>
           </li> 
           <li>
-             <i class="fa fa-envelope-square" aria-hidden="true"></i><a href="mailto:someone@yoursite.com?subject=Email Subject line">Email Us</a>  
+             <i class="fas fa-envelope-square" aria-hidden="true"></i><a href="mailto:someone@yoursite.com?subject=Email Subject line">Email Us</a>  
           </li> 
         </ul>
       </div>     
@@ -58,9 +90,7 @@
         <ul>
           <li class="col-heading">Subheading</li>
           <li><a href="#">Link to page</a></li>
-          <li><a href="#">Link to page</a></li>
-          <li><a href="#">Link to page</a></li>
-          <li><a href="#">Link to page</a></li>
+          
         </ul>
       </div>      
 
@@ -68,9 +98,7 @@
         <ul>
           <li class="col-heading">Subheading</li>
           <li><a href="#">Link to page</a></li>
-          <li><a href="#">Link to page</a></li>
-          <li><a href="#">Link to page</a></li>
-          <li><a href="#">Link to page</a></li>
+         
         </ul>
       </div>
       
@@ -78,9 +106,7 @@
         <ul>
           <li class="col-heading">Subheading</li>
           <li><a href="#">Link to page</a></li>
-          <li><a href="#">Link to page</a></li>
-          <li><a href="#">Link to page</a></li>
-          <li><a href="#">Link to page</a></li>
+         
         </ul>
       </div>
     </div> <!--  end row  -->

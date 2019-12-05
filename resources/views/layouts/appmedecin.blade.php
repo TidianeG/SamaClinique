@@ -19,15 +19,15 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
             $( function() {
                 $( "#tabs" ).tabs();
-                $( "#datepicker" ).datepicker();
             } );
     </script>
-   
+
 </head>
 
 <body>
@@ -66,17 +66,22 @@
                                         <li class="nav-item active">
                                             <a class="nav-link" href="index.html">Acceuil <span class="sr-only">(current)</span></a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link dropdown-toggle" href="{{route('liste_patient')}}">Gestion Patient</a>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patient</a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{route('dossier_patient')}}">New</a>
+                                                <a class="dropdown-item" href="about-us.html">Afficher</a>
+                                    
+                                            </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="about-us.html">Gestio Rendez-Vous</a>
+                                            <a class="nav-link" href="about-us.html">Rendez-Vous</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="services.html">Phatmacie</a>
+                                            <a class="nav-link" href="services.html">Calendrier</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="blog.html">Gestion Caisse</a>
+                                            <a class="nav-link" href="blog.html">Mon Service</a>
                                         </li>
                                        
                                         <li class="nav-item">
@@ -93,7 +98,7 @@
         </div>
     </div>
     </header>
-    <main style="margin-top:10px;margin-bottom:20px">
+    <main style="margin-bottom:20px">
         <div class="" >
             @yield('content')
         </div>
@@ -107,16 +112,13 @@
             <div class="col-xs-12 col-sm-6 col-md-3" >
                 <ul>
                 <li class="col-heading">Subheading</li>
+               
                 <li>
-                    <i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:99-999-999-9999">221 78 445 51 97</a>
-                </li>
-                <li>
-                    <i class="fas fa-envelope-square" aria-hidden="true"></i><a href="sms:99-999-999-9999">gaye95cheikh@gmail.com</a>
-                </li>
-                <li>
-                    <i class="fas fa-map-marker" aria-hidden="true"></i><a href="#">Dakar Ngor-Almadies</a>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i><a href="#">Address</a>
                 </li> 
-             
+                <li>
+                    <i class="fa fa-envelope-square" aria-hidden="true"></i><a href="mailto:someone@yoursite.com?subject=Email Subject line">Email Us</a>  
+                </li> 
                 </ul>
             </div>     
 
@@ -124,9 +126,7 @@
             <ul>
             <li class="col-heading">Subheading</li>
             <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
+           
             </ul>
         </div>      
 
@@ -134,9 +134,7 @@
             <ul>
             <li class="col-heading">Subheading</li>
             <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
+            
             </ul>
         </div>
         
@@ -144,9 +142,7 @@
             <ul>
             <li class="col-heading">Subheading</li>
             <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
+            
             </ul>
         </div>
         </div> <!--  end row  -->
@@ -191,9 +187,11 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         }
+            
         </script>
             
-</footer>
+    </footer>
+    
     <script src="{{asset('js/app.js')}}"></script>  
     <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->

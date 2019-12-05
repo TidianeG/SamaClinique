@@ -17,7 +17,14 @@ Route::get('/medecin', 'cliniqueController@medecin');
 
 Route::get('/secretaire', 'cliniqueController@secretaire');
 
-Route::get('/secretaire/createPatient','PatientController@patient')->name('create_patient');
+Route::get('/secretaire/create', 'PatientController@create_patient')->name('create_patient');
+
+Route::post('secretaire/create', 'PatientController@store')->name('ajouter_patient');
+
+
+Route::get('/secretaire/liste', 'PatientController@liste_patient')->name('liste_patient');
+
+Route::get('/medecin/dossier', 'PatientController@dossier_patient')->name('dossier_patient');
 
 Auth::routes();
 

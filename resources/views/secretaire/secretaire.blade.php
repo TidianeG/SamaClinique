@@ -1,4 +1,4 @@
-@extends('layouts.appmedecin')
+@extends('layouts.appsecretaire')
 @section('content')
 <section class="hero-area">
                 <div class="hero-slides owl-carousel">
@@ -45,5 +45,3 @@
                 </div>
             </section>
 @endsection
-
-    
