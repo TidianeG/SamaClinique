@@ -26,6 +26,9 @@ Route::get('/secretaire/liste', 'PatientController@liste_patient')->name('liste_
 
 Route::get('/medecin/dossier', 'PatientController@dossier_patient')->name('dossier_patient');
 
+Route::get('/secretaire/{id}/liste','PatientController@edit_patient')->name("editer_patient");
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

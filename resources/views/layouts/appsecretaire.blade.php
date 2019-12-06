@@ -18,16 +18,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-            $( function() {
-                $( "#tabs" ).tabs();
-                $( "#datepicker" ).datepicker();
-            } );
-    </script>
-   
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
@@ -78,10 +70,54 @@
                                         <li class="nav-item">
                                             <a class="nav-link" href="blog.html">Gestion Caisse</a>
                                         </li>
-                                       
-                                        <li class="nav-item">
-                                            <a href="#" class="nav-link btn medilife-appoint-btn ml-30">Deconnection</a>
-                                        </li>
+                                            <li class="nav-item dropdown no-arrow d-sm-none">
+                                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-search fa-fw"></i>
+                                            </a>
+                                            <!-- Dropdown - Messages -->
+                                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                                                <form class="form-inline mr-auto w-100 navbar-search">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                                    <div class="input-group-append">
+                                                    <button class="btn btn-primary" type="button">
+                                                        <i class="fas fa-search fa-sm"></i>
+                                                    </button>
+                                                    </div>
+                                                </div>
+                                                </form>
+                                            </div>
+                                            </li>
+
+                                            <div class="topbar-divider d-none d-sm-block"></div>
+
+                                            <!-- Nav Item - User Information -->
+                                            <li class="nav-item dropdown no-arrow">
+                                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="mr-2 d-none d-lg-inline text-blue-600 small">Cheikh Tidiane Gaye</span>
+                                                <img class="img-profile rounded-circle" src="">
+                                            </a>
+                                            <!-- Dropdown - User Information -->
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                                <a class="dropdown-item" href="#">
+                                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                Profil
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                Parametre
+                                                </a>
+                                                <a class="dropdown-item" href="#">
+                                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                Activité
+                                                </a>
+                                                <div class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                Deconnexion
+                                                </a>
+                                            </div>
+                                            </li>
                                     </ul>
                                     <!-- Appointment Button -->
                                 </div>
@@ -92,67 +128,56 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Vous etes sùr?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Selectionner Deconnecter si tues pret à quitter la session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="acceuilLogin.html">Deconnecter</a>
+        </div>
+      </div>
+    </div>
+  </div>
     </header>
-    <main style="margin-top:10px;margin-bottom:20px">
-        <div class="" >
+    <main style="margin-bottom:20px;height:auto; background-image:url(../img/bg-img/breadcumb3.jpg)">
+        <div class="" style="height:auto;" >
             @yield('content')
         </div>
     </main>
     <footer>
             <div class="container-fluid" style="background-color:#eff5f5;">
-
-            <button onclick="topFunction()" id="to-top" title="Go to top">Top</button>
-
-            <div class="row  row-no-gutters">
-            <div class="col-xs-12 col-sm-6 col-md-3" >
-                <ul>
-                <li class="col-heading">Subheading</li>
-                <li>
-                    <i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:99-999-999-9999">221 78 445 51 97</a>
-                </li>
-                <li>
-                    <i class="fas fa-envelope-square" aria-hidden="true"></i><a href="sms:99-999-999-9999">gaye95cheikh@gmail.com</a>
-                </li>
-                <li>
-                    <i class="fas fa-map-marker" aria-hidden="true"></i><a href="#">Dakar Ngor-Almadies</a>
-                </li> 
-             
-                </ul>
-            </div>     
-
-        <div class="col-xs-12 col-sm-6 col-md-3" >
-            <ul>
-            <li class="col-heading">Subheading</li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            </ul>
-        </div>      
-
-        <div class="col-xs-12 col-sm-6 col-md-3" >
-            <ul>
-            <li class="col-heading">Subheading</li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            </ul>
-        </div>
-        
-        <div class="col-xs-12 col-sm-6 col-md-3" >
-            <ul>
-            <li class="col-heading">Subheading</li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            <li><a href="#">Link to page</a></li>
-            </ul>
-        </div>
-        </div> <!--  end row  -->
-        
+            <div class="row  row-no-gutters justify-content-center">
+                <div class="col-xs-12 col-sm-6 col-md-5" >
+                    <ul>
+                    <li class="col-heading">Contacts</li>
+                    <li>
+                        <i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:99-999-999-9999">221 78 445 51 97</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope-square" aria-hidden="true"></i><a href="sms:99-999-999-9999">gaye95cheikh@gmail.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker" aria-hidden="true"></i><a href="#">Dakar Ngor-Almadies</a>
+                    </li> 
+                
+                    </ul>
+                </div>     
+                <div class="col-xs-12 col-sm-6 col-md-5" >
+                    <ul>
+                    <li class="col-heading">Horaires d'ouvertures</li>
+                    <li><a href="#">Du Lundi au Samedi</a></li>
+                    <li><a href="#">24h/24</a></li>
+                    </ul>
+                </div>      
+            </div> <!--  end row  --> 
         <div class="row row-no-gutters" id="bottom-footer" >
-        
         <div class="col-xs-12 col-md-5 text-center" >
             <ul class="vertical-links small">
                 <li><a href="#">Privacy</a></li>
@@ -177,7 +202,6 @@
         // Script from W3 Schools  
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function() {scrollFunction()};
-
         function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             document.getElementById("to-top").style.display = "block";
@@ -185,7 +209,6 @@
             document.getElementById("to-top").style.display = "none";
         }
         }
-
         // When the user clicks on the button, scroll to the top of the document
         function topFunction() {
         document.body.scrollTop = 0;
@@ -194,6 +217,14 @@
         </script>
             
 </footer>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous">
+</script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
     <script src="{{asset('js/app.js')}}"></script>  
     <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->

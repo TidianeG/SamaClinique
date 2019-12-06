@@ -23,7 +23,7 @@ class PatientController extends Controller
        $patient = new Patient();
        $patient->nom_patient = $request->input('nom');
        $patient->prenom_patient = $request->input('prenom');
-       $patient->sexe_patient = $request->input('sexe');
+       $patient->sexe_patient = $request->input('genre');
        $patient->datenaisse_patient = $request->input('date');
        $patient->profession_patient = $request->input('profession');
        $patient->telephone_patient = $request->input('phone');
@@ -32,6 +32,9 @@ class PatientController extends Controller
        return redirect('/secretaire/create');
     }
 
-    
+    public function edit_patient($id){
+        $patient = Patient::find($id);//on recupere le produit
+        return view('secretaire.liste', compact('patient'));
+    }
     
 }
