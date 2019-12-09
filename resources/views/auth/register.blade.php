@@ -27,8 +27,13 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div class="card" style="width:auto;border-radius:5px; background-color:#081f3e; height:auto;">
+                <div class="card-header">
+                    <div class="row">
+                        <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                    </div>
+                    <label>Creation compte</label>
+                </div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">

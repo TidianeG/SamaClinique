@@ -1,35 +1,12 @@
 @extends('layouts.app')
-
-@section('sidebar')
-<div class="header-area1">
-        <!-- Top Header Area -->
-        <div class="top-header-area">
-            <div class=" h-100">
-                <div class="row h-100 justify-content-between">
-                    <div class="col-12 h-100">
-                        <div class="main-menu h-100">
-                            <nav class="navbar h-100 navbar-expand-lg">
-                                <!-- Logo Area  -->
-                                <a class="navbar-brand" href="index.html"><img src="img/core-img/logo.png" alt="Logo"></a>
-
-                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
-                                <div class="collapse navbar-collapse" id="medilifeMenu">
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-            </div>
-</div>
-@endsection
-
 @section('content')
-<div class="container" >
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
+            <div class="card" style="width:auto;border-radius:5px; background-color:#081f3e; height:auto;">
+                <div class="row">
+                    <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -68,7 +45,7 @@
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
+                                        Se Souvenir de moi
                                     </label>
                                 </div>
                             </div>
@@ -77,12 +54,12 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    Connecter
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        Mot de passe oublié?
                                     </a>
                                 @endif
                             </div>

@@ -59,16 +59,26 @@
                                             <a class="nav-link" href="index.html">Acceuil <span class="sr-only">(current)</span></a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link dropdown-toggle" href="{{route('liste_patient')}}">Gestion Patient</a>
+                                            <a class="nav-link dropdown-toggle" href="#">Structure</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="about-us.html">Gestio Rendez-Vous</a>
+                                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion Utilisateurs</a>
+                                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                                    <a class="dropdown-item" href="{{route('create_user')}}">
+                                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                    New
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                    Afficher
+                                                    </a>
+                                                </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="services.html">Phatmacie</a>
+                                            <a class="nav-link" href="#">Patients</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="blog.html">Gestion Caisse</a>
+                                            <a class="nav-link" href="#"></a>
                                         </li>
                                             <li class="nav-item dropdown no-arrow d-sm-none">
                                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -94,7 +104,7 @@
                                             <!-- Nav Item - User Information -->
                                             <li class="nav-item dropdown no-arrow">
                                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="mr-2 d-none d-lg-inline text-blue-600 small">Cheikh Tidiane Gaye</span>
+                                                <span class="mr-2 d-none d-lg-inline text-blue-600 small">Admin</span>
                                                 <img class="img-profile rounded-circle" src="">
                                             </a>
                                             <!-- Dropdown - User Information -->
@@ -150,56 +160,29 @@
         <div class="" style="height:auto;" >
             @yield('content')
         </div>
-        <div class="" style="height:auto;" >
-            @yield('content2')
-        </div>
     </main>
     <footer>
-            <div class="container-fluid" style="background-color:#eff5f5;">
-            <div class="row  row-no-gutters justify-content-center">
-                <div class="col-xs-12 col-sm-6 col-md-5" >
-                    <ul>
-                    <li class="col-heading">Contacts</li>
-                    <li>
-                        <i class="fas fa-phone-alt" aria-hidden="true"></i><a href="tel:99-999-999-9999">221 78 445 51 97</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-envelope-square" aria-hidden="true"></i><a href="sms:99-999-999-9999">gaye95cheikh@gmail.com</a>
-                    </li>
-                    <li>
-                        <i class="fas fa-map-marker" aria-hidden="true"></i><a href="#">Dakar Ngor-Almadies</a>
-                    </li> 
-                
-                    </ul>
-                </div>     
-                <div class="col-xs-12 col-sm-6 col-md-5" >
-                    <ul>
-                    <li class="col-heading">Horaires d'ouvertures</li>
-                    <li><a href="#">Du Lundi au Samedi</a></li>
-                    <li><a href="#">24h/24</a></li>
-                    </ul>
-                </div>      
-            </div> <!--  end row  --> 
-        <div class="row row-no-gutters" id="bottom-footer" >
-        <div class="col-xs-12 col-md-5 text-center" >
-            <ul class="vertical-links small">
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Site Map</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="col-xs-12 col-md-2 text-center" >
-            <p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
-        </div>
-        <div class="col-xs-12 col-md-5 text-center" >
-            <ul>
-            <li class="small">© Copyright 2019 Website by <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
-            </ul>
-        </div>
-        </div> <!--  end row  -->
-
-        </div> <!--  end container-fluid  -->
+            <div class="container-fluid" style="background-color:#081f3e;">
+                 <!--  end row  --> 
+                <div class="row row-no-gutters" id="bottom-footer" style="background-color:#081f3e;">
+                    <div class="col-xs-12 col-md-5 text-center" >
+                        <ul class="vertical-links small">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Site Map</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-2 text-center" >
+                        <p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
+                    </div>
+                    <div class="col-xs-12 col-md-5 text-center" >
+                        <ul>
+                        <li class="small">© Copyright 2019 Website by <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
+                        </ul>
+                    </div>
+                </div> <!--  end row  -->
+            </div> <!--  end container-fluid  -->
 
         <script>
         // Script from W3 Schools  

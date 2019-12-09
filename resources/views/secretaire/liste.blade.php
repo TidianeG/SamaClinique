@@ -1,7 +1,9 @@
 @extends('layouts.appsecretaire')
 @section('content')
             <div class="row" style="height:100px;">
-            
+            @if(session('success'))
+                <div class="alert alert-success">{{session('success')}}</div>
+            @endif
             </div>
             <div class="container" style="padding-top:25px;border:2px solid #081f3e;background-color:rgba(0, 108, 255, 0.5) ;border-radius:10px;">
                 <div class="row justify-content-center bg-d" >
@@ -44,18 +46,19 @@
                             <td>{{$patient->datenaisse_patient}}</td>
                             <td>{{$patient->sexe_patient}}</td>
                             <td>
-                                <p><button type="button" class="btn btn-primary" id="{{$patient->id}}" data-toggle="modal" data-target="#myModal">Editer</button></p>
+                                <p><a href="{{route('editer_patient',['id'=>$patient->id])}}" class="btn btn-primary">Editer</a></p>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                <a href="{{route('create_patient')}}" class="btn btn-success" style="margin-bottom:5px;">Nouveau Patient</a>
+                <a class="btn btn-success" style="margin-bottom:5px;" data-toggle="modal" data-target="#myModal">Nouveau Patient</a>
             </div>
             <div class="row" style="height:100px;">
             
             </div>
-
+        @endsection
+        @section('content2')
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -65,62 +68,72 @@
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                         </div>                        
                         <!-- Modal body -->
-                        <div class="modal-body">
-                            <form action="" method="post">
+                        <div class="modal-body container">
+                            <form action="{{route('ajouter_patient')}}" method="post">
                                 @csrf
-                                <div class="form-group row">
-                                    <label for="inputEmail" class="col-sm-2 col-form-label">Prenom</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="prenom" name="prenom" value="{{$patient->prenom_patient}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-2 col-form-label">Nom</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="nom" name="nom" value="{{$patient->nom_patient}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-2 col-form-label">Naissance</label>
-                                    <div class="col-sm-10">
-                                        <input type="date" class="form-control" id="date" name="date" value="{{$patient->datenaisse_patient}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-2 col-form-label">Adresse</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="adresse" name="adresse" value="{{$patient->adresse_patient}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-2 col-form-label">Profession</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="profession" name="profession" value="{{$patient->profession_patient}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="inputPassword" class="col-sm-2 col-form-label">Telephone</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="phone" name="phone" value="{{$patient->telephone_patient}}">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col col-sm-10 offset-sm-2">
-                                        <label class="form-check-label" ><input type="radio" name="genre"> Masculin</label>
-                                    </div>
-                                    <div class="col col-sm-10 offset-sm-2">
-                                        <label class="form-check-label"><input type="radio" name="genre"> Feminin</label>
-                                    </div>
-                                </div>
                                 
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label for="inputEmail" class="col-sm-2 ">Prenom<span style="background-colol:red;">*</span></span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrer Prenom">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Nom</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer Nom">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Naissance</label>
+                                        <div class="col-sm-10">
+                                            <input type="date" class="form-control" id="date" name="date" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Adresse</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Entrer Adresse">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Profession</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="profession" name="profession" placeholder="Entrer Profession">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Telephone</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Entrer Telephone"">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <div class="col col-sm-10 offset-sm-2">
+                                            <label class="form-check-label" ><input type="radio" name="genre"> Masculin</label>
+                                        </div>
+                                        <div class="col col-sm-10 offset-sm-2">
+                                            <label class="form-check-label"><input type="radio" name="genre"> Feminin</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">         
+                                    <button type="submit" class="btn btn-success">Enregistrer</button>
+                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+
                             </form>
                         </div>
                         
                         <!-- Modal footer -->
-                        <div class="modal-footer">         
-                            <button type="submit" class="btn btn-success">Modifier</button>
-                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        </div>                       
+                                              
                     </div>
                 </div>
             </div>

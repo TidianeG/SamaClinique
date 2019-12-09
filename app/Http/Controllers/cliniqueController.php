@@ -14,6 +14,10 @@ class cliniqueController extends Controller
     }
 
     public function secretaire(){
-        return view('secretaire/page_secretaire');
+        return view('secretaire/secretaire');
+    }
+
+    public function admin(){
+        return view('admin/admin');
     }
 }

@@ -2420,8 +2420,9 @@ img {
     .main-header-area {
       height: 70px; } }
       .modal{
-        position: absolute;
-        height: 100%;
+        position:absolute;
+        
+        height: 900px;
        z-index: 100000 !important;
        
       }
