@@ -19,7 +19,6 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 </head>
 
 <body>
@@ -62,17 +61,8 @@
                                             <a class="nav-link dropdown-toggle" href="#">Structure</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gestion Utilisateurs</a>
-                                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                                    <a class="dropdown-item" href="{{route('create_user')}}">
-                                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    New
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Afficher
-                                                    </a>
-                                                </div>
+                                            <a class="nav-link" href="{{route('liste_staff')}}">Gestion Utilisateurs</a>
+                                                
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">Patients</a>
@@ -156,7 +146,7 @@
     </div>
   </div>
     </header>
-    <main style="margin-bottom:20px;height:auto; background-image:url(../img/bg-img/breadcumb3.jpg)">
+    <main style="height:auto; background-image:url(../img/bg-img/breadcumb3.jpg)">
         <div class="" style="height:auto;" >
             @yield('content')
         </div>
@@ -222,7 +212,13 @@
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
 </body>
 
 </html>

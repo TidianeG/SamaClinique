@@ -10,7 +10,7 @@ class cliniqueController extends Controller
         return view('acceuil');
     }
     public function medecin(){
-        return view('medecin/page_medecin');
+        return view('medecin/medecin');
     }
 
     public function secretaire(){

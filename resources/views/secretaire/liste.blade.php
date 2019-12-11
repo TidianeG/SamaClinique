@@ -5,24 +5,14 @@
                 <div class="alert alert-success">{{session('success')}}</div>
             @endif
             </div>
-            <div class="container" style="padding-top:25px;border:2px solid #081f3e;background-color:rgba(0, 108, 255, 0.5) ;border-radius:10px;">
-                <div class="row justify-content-center bg-d" >
-                    <h2>Liste des Patients de la clinique</h2>
-                </div>
-                <div class="row justify-content-center">
+            <div class="container" style="padding-top:25px;border:2px solid #081f3e;background-color:#081f3e ;border-radius:4px;">
+               
+                <div class=" row justify-content-between">
                     <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
-                    <form class="d-none d-sm-inline-block form-inline ml-auto mr-md-3 mb-md-1 my-2 my-md-0 mw-100 navbar-search ">
-                        <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..." aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search fa-sm"></i>
-                            </button>
-                        </div>
-                        </div>
-                    </form>
+                    <a class="btn btn-success" style="height:50px; margin-right:10px;" data-toggle="modal" data-target="#myModal">Nouveau Patient</a>
+                    
                 </div>
-                <table id="myTable" class="table table-hover table-striped table-dark" style="overflow:hedden">
+                <table id="myTable" class="table" style="overflow:hedden">
                     <thead>
                         <tr>
                             <th>Nom</th>
@@ -33,6 +23,7 @@
                             <th>Naissance</th>
                             <th>Sexe</th>
                             <th>Editer</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,17 +39,17 @@
                             <td>
                                 <p><a href="{{route('editer_patient',['id'=>$patient->id])}}" class="btn btn-primary">Editer</a></p>
                             </td>
+                            <td>
+                                <p><a href="#" class="btn btn-danger">Delete</a></p>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                <a class="btn btn-success" style="margin-bottom:5px;" data-toggle="modal" data-target="#myModal">Nouveau Patient</a>
             </div>
             <div class="row" style="height:100px;">
-            
+
             </div>
-        @endsection
-        @section('content2')
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -101,7 +92,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="form-group col">
+                                       <div class="form-group col">
                                         <label for="inputPassword" class="col-sm-2 ">Profession</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="profession" name="profession" placeholder="Entrer Profession">
@@ -116,11 +107,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col">
-                                        <div class="col col-sm-10 offset-sm-2">
-                                            <label class="form-check-label" ><input type="radio" name="genre"> Masculin</label>
-                                        </div>
-                                        <div class="col col-sm-10 offset-sm-2">
-                                            <label class="form-check-label"><input type="radio" name="genre"> Feminin</label>
+                                        <label for="sexe" class="col-sm-4 ">Sexe</label>
+                                        <div class="col-sm-10">
+                                            <select name="genre" id="genre" class="form-control">
+                                                <option value="masculin">Masculin</option>
+                                                <option value="feminin">Feminin</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

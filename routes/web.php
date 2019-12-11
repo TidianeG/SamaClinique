@@ -36,9 +36,11 @@ Route::get('/secretaire/liste/{id}/edit','PatientController@edit_patient')->name
 
 // Route sur les utilisateurs
 
-Route::get('/admin/users', 'UserController@create_user')->name('create_user');
+Route::get('/admin/staff/{id}/edit_staff', 'UserController@edit_staff')->name('editer_staff');
 
-Route::post('/admin/users', 'UserController@store')->name('ajouter_user');
+Route::post('/admin/staff', 'UserController@store')->name('ajouter_user');
+
+Route::get('/admin/staff', 'UserController@liste_staff')->name('liste_staff');
 
 // Route vers l'authentification
 

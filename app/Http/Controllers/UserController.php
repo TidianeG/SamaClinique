@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 use App\Staff;
 class UserController extends Controller
 {
-    public function create_user(){
-        return view('admin.personnel');
+    public function edit_staff($id){
+        $staff = Staff::find($id);//on recupere le produit
+        return view('admin.edit_staff', compact('staff'));
     }
 
     public function store(Request $request)
@@ -16,7 +17,6 @@ class UserController extends Controller
            $staff->nom_staff = $request->input('nom');
            $staff->prenom_staff = $request->input('prenom');
            $staff->sexe_staff = $request->input('genre');
-           $staff->profil_staff = $request->input('profil');
            $staff->specialite_staff = $request->input('specialite');
            $staff->telephone_staff = $request->input('phone');
            $staff->adresse_staff = $request->input('adresse');
@@ -24,7 +24,11 @@ class UserController extends Controller
            $staff->poste_staff = $request->input('poste');
            $staff->emailprof_staff = $request->input('email');
            $staff->save();
-           return redirect('/admin/personnel')->with(['success' => "Patient Enregistré"]);
+           return redirect('/admin/staff')->with(['success' => "Utilisateur Enregistré"]);
 
+        }
+        public function liste_staff(){
+            $staffs = Staff::all();
+            return view('admin.liste_staff', compact('staffs'));
         }
 }

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
+
 </head>
 
 <body>
@@ -59,7 +60,7 @@
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patient</a>
                                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{route('create_patient')}}">New</a>
+                                                <a class="dropdown-item" href="{{route('dossier_patient')}}">New</a>
                                                 <a class="dropdown-item" href="about-us.html">Afficher</a>
                                     
                                             </div>
@@ -88,82 +89,38 @@
         </div>
     </div>
     </header>
-    <main style="margin-bottom:20px">
-        <div class="" >
+    <main style="height:auto; background-image:url(../img/bg-img/breadcumb3.jpg)">
+        <div class="" style="height:auto;" >
             @yield('content')
         </div>
     </main>
     <footer>
-            <div class="container-fluid" style="background-color:#eff5f5;">
-
-            <button onclick="topFunction()" id="to-top" title="Go to top">Top</button>
-
-            <div class="row  row-no-gutters">
-            <div class="col-xs-12 col-sm-6 col-md-3" >
-                <ul>
-                <li class="col-heading">Subheading</li>
-               
-                <li>
-                    <i class="fa fa-map-marker" aria-hidden="true"></i><a href="#">Address</a>
-                </li> 
-                <li>
-                    <i class="fa fa-envelope-square" aria-hidden="true"></i><a href="mailto:someone@yoursite.com?subject=Email Subject line">Email Us</a>  
-                </li> 
-                </ul>
-            </div>     
-
-        <div class="col-xs-12 col-sm-6 col-md-3" >
-            <ul>
-            <li class="col-heading">Subheading</li>
-            <li><a href="#">Link to page</a></li>
-           
-            </ul>
-        </div>      
-
-        <div class="col-xs-12 col-sm-6 col-md-3" >
-            <ul>
-            <li class="col-heading">Subheading</li>
-            <li><a href="#">Link to page</a></li>
-            
-            </ul>
-        </div>
-        
-        <div class="col-xs-12 col-sm-6 col-md-3" >
-            <ul>
-            <li class="col-heading">Subheading</li>
-            <li><a href="#">Link to page</a></li>
-            
-            </ul>
-        </div>
-        </div> <!--  end row  -->
-        
-        <div class="row row-no-gutters" id="bottom-footer" >
-        
-        <div class="col-xs-12 col-md-5 text-center" >
-            <ul class="vertical-links small">
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Site Map</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="col-xs-12 col-md-2 text-center" >
-            <p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
-        </div>
-        <div class="col-xs-12 col-md-5 text-center" >
-            <ul>
-            <li class="small">© Copyright 2019 Website by <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
-            </ul>
-        </div>
-        </div> <!--  end row  -->
-
-        </div> <!--  end container-fluid  -->
+            <div class="container-fluid" style="background-color:#081f3e;">
+                 <!--  end row  --> 
+                <div class="row row-no-gutters" id="bottom-footer" style="background-color:#081f3e;">
+                    <div class="col-xs-12 col-md-5 text-center" >
+                        <ul class="vertical-links small">
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Site Map</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-2 text-center" >
+                        <p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
+                    </div>
+                    <div class="col-xs-12 col-md-5 text-center" >
+                        <ul>
+                        <li class="small">© Copyright 2019 Website by <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
+                        </ul>
+                    </div>
+                </div> <!--  end row  -->
+            </div> <!--  end container-fluid  -->
 
         <script>
         // Script from W3 Schools  
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function() {scrollFunction()};
-
         function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             document.getElementById("to-top").style.display = "block";
@@ -171,7 +128,6 @@
             document.getElementById("to-top").style.display = "none";
         }
         }
-
         // When the user clicks on the button, scroll to the top of the document
         function topFunction() {
         document.body.scrollTop = 0;
@@ -179,7 +135,7 @@
         }
         </script>
             
-    </footer>
+    
     <script src="{{asset('js/app.js')}}"></script>  
     <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->
