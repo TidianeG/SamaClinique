@@ -5944,10 +5944,9 @@ img {
   @media only screen and (max-width: 767px) {
     .main-header-area {
       height: 70px; } }
-      .modal{
-        position: absolute;
-        
-        height: 100%;
+      .modal{  
+        position: fixed;      
+        height: auto;
        z-index: 100000 !important;
        
       }
@@ -7128,12 +7127,12 @@ line-height: 1.8;
 ul>li>a:hover,
 a:hover{
 color: #ff6600;
-font-weight: 500;
+font-weight: 300;
 }
 
 .col-heading {
 display: block;
-font-size: 2rem;
+font-size: 1rem;
 text-transform: uppercase;
 color:#304f50;
 font-weight: 500;

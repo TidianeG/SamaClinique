@@ -58,12 +58,8 @@
                                             <a class="nav-link" href="index.html">Acceuil <span class="sr-only">(current)</span></a>
                                         </li>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Patient</a>
-                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{route('dossier_patient')}}">New</a>
-                                                <a class="dropdown-item" href="about-us.html">Afficher</a>
-                                    
-                                            </div>
+                                            <a class="nav-link " href="{{route('patients')}}" >Patient</a>
+                                            
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" href="about-us.html">Rendez-Vous</a>
@@ -89,8 +85,8 @@
         </div>
     </div>
     </header>
-    <main style="height:auto; background-image:url(../img/bg-img/breadcumb3.jpg)">
-        <div class="" style="height:auto;" >
+    <main style="height:auto; background-image:url(../img/bg-img/breadcumb3.jpg);">
+        <div class="" style="height:auto;background-image:url(../img/bg-img/breadcumb3.jpg);" >
             @yield('content')
         </div>
     </main>
@@ -148,6 +144,19 @@
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
 
+    <script>
+        $(document).ready(function(){
+        $(".nav-tabs a").click(function(){
+            $(this).tab('show');
+        });
+        $('.nav-tabs a').on('shown.bs.tab', function(event){
+            var x = $(event.target).text();         // active tab
+            var y = $(event.relatedTarget).text();  // previous tab
+            $(".act span").text(x);
+            $(".prev span").text(y);
+        });
+        });
+    </script>
 </body>
 
 </html>

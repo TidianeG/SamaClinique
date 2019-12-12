@@ -40,9 +40,38 @@
                                 <p><a href="{{route('editer_patient',['id'=>$patient->id])}}" class="btn btn-primary">Editer</a></p>
                             </td>
                             <td>
-                                <p><a href="#" class="btn btn-danger">Delete</a></p>
+                                <p><a class="btn btn-danger" href="#" data-toggle="modal" data-target="#deleteModal">Delete</a></p>
                             </td>
                         </tr>
+                        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="labelModalDelete" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div><a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a></div>
+                                        
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+
+                                    <div class="modal-body" >
+                                        <h5 style="color:white;">Voulez vous supprimer le patient?</h5>
+                                        <p style="color:white;">Si vous Selectionner <span class="bg-danger">Oui</span>  vous ne pourrez plus revenir en arriere.</p>
+                                        <p style="color:white;">Selectionner <span class="bg-secondary">Cancel</span> pour annuler.</p>
+                                    </div>
+                                                                       
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                        <form action="/secretaire/liste/{{$patient->id}}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <input type="submit" class="btn btn-danger" name="delete" value="Oui">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         @endforeach
                     </tbody>
                 </table>
@@ -129,5 +158,7 @@
                     </div>
                 </div>
             </div>
+
+           
             
     @endsection

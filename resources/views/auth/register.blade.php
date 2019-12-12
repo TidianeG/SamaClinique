@@ -38,7 +38,18 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
+                        <div class="form-group row">
+                            <label for="profil" class="col-md-4 col-form-label text-md-right">{{ __('Profil') }}</label>
 
+                            <div class="col-md-6">
+                                <select name="user" id="" class="form-control">
+                                    <option value=""></option>
+                                    @foreach($staf as $key => $value)
+                                        <option value="{{$key}}">{{$value}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
@@ -86,6 +97,19 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="profil" class="col-md-4 col-form-label text-md-right">{{ __('Profil') }}</label>
+
+                            <div class="col-md-6">
+                                <select name="profil" id="" class="form-control">
+                                    <option value=""></option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="Super Utilisateur">Super Utilisateur</option>
+                                    <option value="Utilisateur">Utilisateur</option>
+                                </select>
                             </div>
                         </div>
 

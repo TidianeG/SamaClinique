@@ -7,11 +7,9 @@
             <div class="row">
                 <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
             </div>
-            <div class="row justify-content-center">
-                <h2>Nouveau Patient</h2>
-            </div><hr style="background-color:white;">
+            <hr style="background-color:white;">
 
-                <form action="" method="post" style="margin-bottom:7px;">
+                <form action="{{route('update_patient',['id'=>$patients->id])}}" method="post" style="margin-bottom:7px;">
                             @csrf
                             @method('patch')
                                 <div class="row">

@@ -2419,10 +2419,9 @@ img {
   @media only screen and (max-width: 767px) {
     .main-header-area {
       height: 70px; } }
-      .modal{
-        position:absolute;
-        
-        height: 900px;
+      .modal{  
+        position: fixed;      
+        height: auto;
        z-index: 100000 !important;
        
       }
