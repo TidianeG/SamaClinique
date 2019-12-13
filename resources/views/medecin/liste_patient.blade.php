@@ -9,7 +9,14 @@
                
                 <div class=" row justify-content-between">
                     <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
-                    
+                    <form action="#" method="post">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Recherche par numero dossier">
+                            <div class="input-group-append">
+                                <button class="btn btn-success" type="submit">Go</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <table id="myTable" class="table" style="overflow:hedden">
                     <thead>
@@ -22,7 +29,7 @@
                             <th>Profession</th>
                             <th>Naissance</th>
                             <th>Sexe</th>
-                            <th>Editer</th>
+                            <th>Dossier</th>
                         </tr>
                     </thead>
                     <tbody>

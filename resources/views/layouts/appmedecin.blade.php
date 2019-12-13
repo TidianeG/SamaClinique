@@ -18,14 +18,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
 </head>
 
-<body>
-    <!-- Preloader -->
-    
-
-    <!-- ***** Header Area Start ***** -->
+<body >
     <header>
     <div class="header-area">
         <!-- Top Header Area -->
@@ -85,12 +82,12 @@
         </div>
     </div>
     </header>
-    <main style="height:auto; background-image:url(../img/bg-img/breadcumb3.jpg);">
-        <div class="" style="height:auto;background-image:url(../img/bg-img/breadcumb3.jpg);" >
+    <main>
+        <div class="" style="max-height:auto;min-height:1200px;background-image:url({{asset('img/bg-img/breadcumb3.jpg')}}); background-repeat:no-repeat;" >
             @yield('content')
         </div>
     </main>
-    <footer>
+    <footer style="">
             <div class="container-fluid" style="background-color:#081f3e;">
                  <!--  end row  --> 
                 <div class="row row-no-gutters" id="bottom-footer" style="background-color:#081f3e;">
@@ -112,8 +109,9 @@
                     </div>
                 </div> <!--  end row  -->
             </div> <!--  end container-fluid  -->
-
-        <script>
+    </footer>
+       
+            <script>
         // Script from W3 Schools  
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function() {scrollFunction()};
@@ -130,7 +128,6 @@
         document.documentElement.scrollTop = 0;
         }
         </script>
-            
     
     <script src="{{asset('js/app.js')}}"></script>  
     <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
@@ -143,7 +140,12 @@
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
-
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+        } );
+    </script>
     <script>
         $(document).ready(function(){
         $(".nav-tabs a").click(function(){

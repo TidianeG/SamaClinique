@@ -13,4 +13,4 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .styles(['resources/css/util.css','resources/css/sb-admin-2.min.css','resources/css/main.css','resources/css/style.css','resources/css/footer.css'], 'public/css/all.css');
+    .styles(['resources/css/util.css','resources/css/main.css','resources/css/style.css','resources/css/datatable.min.css','resources/css/footer.css'], 'public/css/all.css');
