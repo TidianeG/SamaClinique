@@ -79,6 +79,7 @@
             <div class="row" style="height:100px;">
 
             </div>
+            <!--Debut Modal-->
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
