@@ -20,10 +20,9 @@ class CreateStaffTable extends Migration
             $table->string('prenom_staff');
             $table->string('adresse_staff');
             $table->string('telephone_staff');
-            $table->string('emailprof_staff');
+            $table->string('email_staff');
             $table->string('poste_staff');
             $table->string('specialite_staff');
-            $table->string('profil_staff');
             $table->string('cnipass_staff');
             $table->timestamps();
         });

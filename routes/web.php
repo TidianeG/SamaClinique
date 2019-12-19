@@ -14,13 +14,16 @@
 
 Route::get('/', 'cliniqueController@index');
 
-Route::get('/medecin', 'cliniqueController@medecin');
+Route::post('/connect', 'HomeController@connect')->name('connect');
+Route::get('/medecin', 'cliniqueController@medecin')->middleware('auth');
 
-Route::get('/secretaire', 'cliniqueController@secretaire');
+Route::get('/secretaire', 'cliniqueController@secretaire')->middleware('auth');
 
-Route::get('/admin', 'cliniqueController@admin');
+Route::get('/admin', 'cliniqueController@admin')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 
 //Route::get('/secretaire/edit', 'PatientController@editer_patient')->name('edit_patient');
 

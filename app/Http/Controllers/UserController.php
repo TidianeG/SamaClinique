@@ -7,6 +7,11 @@ use App\Staff;
 use App\User;
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function edit_staff($id){
         $staff = Staff::find($id);//on recupere le produit
         return view('admin.edit_staff', compact('staff'));

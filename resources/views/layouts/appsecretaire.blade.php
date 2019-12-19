@@ -143,7 +143,7 @@
         </div>
     </div>
     </header>
-    <main style="height:auto; background-image:url(../img/bg-img/breadcumb3.jpg)">
+    <main style="height:auto; background-image:url({{asset('img/bg-img/breadcumb3.jpg')}});">
         <div class="" style="height:auto;" >
             @yield('content')
         </div>
@@ -170,7 +170,7 @@
                     </div>
                 </div> <!--  end row  -->
             </div> <!--  end container-fluid  -->
-
+        </footer>
         <script>
         // Script from W3 Schools  
         // When the user scrolls down 20px from the top of the document, show the button
@@ -188,7 +188,7 @@
         document.documentElement.scrollTop = 0;
         }
         </script>
-     </footer>
+     
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
   crossorigin="anonymous">
