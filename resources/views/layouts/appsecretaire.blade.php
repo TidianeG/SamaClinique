@@ -137,7 +137,7 @@
                 <div class="modal-body">Selectionner Deconnecter si tues pret à quitter la session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="acceuilLogin.html">Deconnecter</a>
+                    <a class="btn btn-primary" href="{{route('deconnect')}}">Deconnecter</a>
                 </div>
             </div>
         </div>
@@ -165,7 +165,7 @@
                     </div>
                     <div class="col-xs-12 col-md-5 text-center" >
                         <ul>
-                        <li class="small">© Copyright 2019 Website by <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
+                        <li class="small">© Copyright 2019 Medifile  <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
                         </ul>
                     </div>
                 </div> <!--  end row  -->

@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\VerifiesEmails;
-
+use App\User;
+use App\Staff;
 class VerificationController extends Controller
 {
     /*
@@ -25,7 +26,7 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo;
 
     /**
      * Create a new controller instance.
@@ -37,5 +38,16 @@ class VerificationController extends Controller
         $this->middleware('auth');
         $this->middleware('signed')->only('verify');
         $this->middleware('throttle:6,1')->only('verify', 'resend');
+        $this->redirect();
+    }
+    public function redirect(){
+        $user=Auth::users();
+        if($user->staff->poste_staff=="medecin"){
+            $redirectTo="\medecin";
+        }
+        else if($user->staff->poste_staff=="secretaire"){
+           $redirectTo="\secretaire";
+        }
+        return $redirectTo;
     }
 }

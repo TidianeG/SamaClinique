@@ -12,16 +12,16 @@
 */
 // Route vers les pages des utilisateurs
 
-Route::get('/', 'cliniqueController@index');
-
+Route::get('/', 'acceuilController@acceuil');
+Route::get('/home', 'HomeController@deconnect')->name('deconnect');
 Route::post('/connect', 'HomeController@connect')->name('connect');
-Route::get('/medecin', 'cliniqueController@medecin')->middleware('auth');
+Route::get('/medecin', 'cliniqueController@medecin')->name('medecin');
 
-Route::get('/secretaire', 'cliniqueController@secretaire')->middleware('auth');
+Route::get('/secretaire', 'cliniqueController@secretaire')->name('secretaire');
 
-Route::get('/admin', 'cliniqueController@admin')->middleware('auth');
+Route::get('/admin', 'cliniqueController@admin')->name('admin');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/acceuil', 'HomeController@index')->name('home');
 
 
 

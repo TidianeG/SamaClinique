@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -17,19 +17,20 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
+    public function deconnect(){
+        Auth::logout();
+        return view('acceuil');
+    }
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+    public function acceuil(){
+        return view('acceuil');
+    }
     public function index()
     {
-        return view('home');
-    }
-    public function connect(Request $request){
-        $user= User::find($request->input('email'),$request->input('password'));
-        if($user){
-            return view('secretaire/secretaire');
-        }
+        return view('acceuil');
     }
 }

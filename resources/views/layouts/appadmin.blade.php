@@ -141,7 +141,7 @@
         <div class="modal-body">Selectionner Deconnecter si tues pret à quitter la session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="acceuilLogin.html">Deconnecter</a>
+          <a class="btn btn-primary" href="{{route('deconnect')}}">Deconnecter</a>
         </div>
       </div>
     </div>

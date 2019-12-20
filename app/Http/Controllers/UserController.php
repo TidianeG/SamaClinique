@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Staff;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function __construct()
@@ -29,15 +30,15 @@ class UserController extends Controller
            $staff->adresse_staff = $request->input('adresse');
            $staff->cnipass_staff = $request->input('cni');
            $staff->poste_staff = $request->input('poste');
-           $staff->emailprof_staff = $request->input('email');
+           $staff->email_staff = $request->input('email');
            $staff->save();
 
            $user= new User();
            $user->name= $staff->prenom_staff;
-           $user->email= "$staff->nom_staff.$staff->prenom_staff@medifile.sn";
-           $user->password="medifile2020";
+           $user->email= strtolower($staff->nom_staff).".".strtolower(trim($staff->prenom_staff))."@medilife.sn";
+           $user->password=Hash::make("medilife2020");
            $user->staff_id=$staff->id;
-           $user->profil="utilisateur";
+           $user->profil="moderator";
            $user->save();
 
            return redirect('/admin/staff')->with(['success' => "Personnel Enregistré"]);
