@@ -12,17 +12,15 @@
 */
 // Route vers les pages des utilisateurs
 
-Route::get('/', 'acceuilController@acceuil');
-Route::get('/home', 'HomeController@deconnect')->name('deconnect');
-Route::post('/connect', 'HomeController@connect')->name('connect');
-Route::get('/medecin', 'cliniqueController@medecin')->name('medecin');
+Route::get('/medecin', 'cliniqueController@medecin')->middleware('auth');
 
-Route::get('/secretaire', 'cliniqueController@secretaire')->name('secretaire');
+Route::get('/secretaire', 'cliniqueController@secretaire')->middleware('auth');
 
-Route::get('/admin', 'cliniqueController@admin')->name('admin');
+Route::get('/admin', 'cliniqueController@admin');
 
-Route::get('/acceuil', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@acceuil');
 
+Route::get('/login', 'HomeController@index')->name('home');
 
 
 //Route::get('/secretaire/edit', 'PatientController@editer_patient')->name('edit_patient');
@@ -39,7 +37,13 @@ Route::get('/medecin/patients/{id}/dossier','PatientController@afficher_dossier'
 
 Route::get('/medecin/patients', 'PatientController@patients')->name('patients');
 
+Route::get('/medecin/new_folder', 'PatientController@new_folder')->name('new_folder');
+
 Route::patch('/secretaire/liste/{id}/edit','PatientController@update')->name("update_patient");
+
+Route::get('secretaire/rv', 'PatientController@rendezvous')->name('rendezvous');
+
+Route::get('secretaire/new', 'PatientController@newrv')->name('newrv');
 
 Route::delete('/secretaire/liste/{id}', 'PatientController@destroy');
 
@@ -54,6 +58,8 @@ Route::get('/admin/staff', 'UserController@liste_staff')->name('liste_staff');
 Route::delete('/admin/staff/{id}', 'UserController@destroy');
 
 Route::get('/register', 'UserController@liste_register');
+
+Route::get('/', 'UserController@deconnect')->name('deconnect');
 
 // Route vers l'authentification
 

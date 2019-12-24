@@ -70,6 +70,5 @@ class RegisterController extends Controller
             'profil' => $data['profil'],
             'password' => Hash::make($data['password']),
         ]);
-        return redirect('/admin/staff')->with(['success' => "Personnel Enregistré"]);
     }
 }

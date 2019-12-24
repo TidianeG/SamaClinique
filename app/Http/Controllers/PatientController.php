@@ -8,7 +8,7 @@ class PatientController extends Controller
 {
         public function __construct()
         {
-        $this->middleware('auth');
+            $this->middleware('auth');
         }
     
         public function editer_patient(){
@@ -25,18 +25,18 @@ class PatientController extends Controller
         }
 
         public function store(Request $request)
-        {
+        {   
            $patient = new Patient();
            $patient->nom_patient = $request->input('nom');
            $patient->prenom_patient = $request->input('prenom');
            $patient->sexe_patient = $request->input('genre');
            $patient->datenaisse_patient = $request->input('date');
+           $patient->lieu_patient = $request->input('lieu');           
            $patient->profession_patient = $request->input('profession');
            $patient->telephone_patient = $request->input('phone');
            $patient->adresse_patient = $request->input('adresse');
            $patient->save();
            return redirect('/secretaire/liste')->with(['success' => "Patient Enregistré"]);
-
         }
 
         public function update(Request $request, $id)
@@ -75,6 +75,15 @@ class PatientController extends Controller
         public function afficher_dossier($id){
             $patients = Patient::find($id);//on recupere le produit
             return view('medecin.dossier', compact('patients'));
+        }
+        public function new_folder(){
+            return view('medecin.new_folder');
+        }
+        public function rendezvous(){
+            return view('secretaire.rendez-vous');
+        }
+        public function newrv(){
+            return view('secretaire.new-rv');
         }
 }
 ?>

@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    
 
 </head>
 
@@ -174,7 +175,7 @@
                     </div>
                 </div> <!--  end row  -->
             </div> <!--  end container-fluid  -->
-        </footer>
+
         <script>
         // Script from W3 Schools  
         // When the user scrolls down 20px from the top of the document, show the button
@@ -192,6 +193,8 @@
         document.documentElement.scrollTop = 0;
         }
         </script>
+            
+</footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
   crossorigin="anonymous">
@@ -211,6 +214,7 @@
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
+    <script src="{{asset('js/datatable.min.js')}}"></script>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready( function () {

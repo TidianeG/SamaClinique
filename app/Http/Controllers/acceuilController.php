@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class acceuilController extends Controller
 {
-    public function acceuil(){
+    public function index(){
         return view('acceuil');
     }
 }

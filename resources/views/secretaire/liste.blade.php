@@ -1,15 +1,22 @@
 @extends('layouts.appsecretaire')
 @section('content')
-            <div class="row" style="height:100px;">
-            @if(session('success'))
-                <div class="alert alert-success">{{session('success')}}</div>
-            @endif
+<div class="container" style="padding-top:25px;">     
+        <div class="card" style="border:2px solid #ffffff;border-radius:4px;">
+            <div class="card-header">
+                <h2>La liste de tous les patiens</h2>
             </div>
-            <div class="container" style="padding-top:25px;border:2px solid #081f3e;background-color:#081f3e ;border-radius:4px;">
-               
+            <div class="card-body" style="background-color:#081f3e ;">
+                <div class="row" style="height:auto;">
+                @if(session('success'))
+                    <div class="alert alert-success">{{session('success')}}</div>
+                @endif
+                </div>
                 <div class=" row justify-content-between">
                     <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
-                    <a class="btn btn-success" style="height:50px; margin-right:10px;" data-toggle="modal" data-target="#myModal">Nouveau Patient</a>
+                    <p><a class="btn btn-success" style="height:auto; margin-right:10px; color:white;" data-toggle="modal" data-target="#myModal">
+                    <i class="fas fa-plus" aria-hidden="true"></i>
+                        Nouveau Patient
+                    </a></p>
                     
                 </div>
                 <table id="myTable" class="table" style="overflow:hedden">
@@ -21,6 +28,7 @@
                             <th>Telephone</th>
                             <th>Profession</th>
                             <th>Naissance</th>
+                            <th>Lieu</th>
                             <th>Sexe</th>
                             <th>Editer</th>
                             <th>Delete</th>
@@ -35,6 +43,7 @@
                             <td>{{$patient->telephone_patient}}</td>
                             <td>{{$patient->profession_patient}}</td>
                             <td>{{$patient->datenaisse_patient}}</td>
+                            <td>{{$patient->lieu_patient}}</td>
                             <td>{{$patient->sexe_patient}}</td>
                             <td>
                                 <p><a href="{{route('editer_patient',['id'=>$patient->id])}}" class="btn btn-primary">Editer</a></p>
@@ -53,7 +62,6 @@
                                             <span aria-hidden="true">×</span>
                                         </button>
                                     </div>
-
                                     <div class="modal-body" >
                                         <h5 style="color:white;">Voulez vous supprimer le patient?</h5>
                                         <p style="color:white;">Si vous Selectionner <span class="bg-danger">Oui</span>  vous ne pourrez plus revenir en arriere.</p>
@@ -71,14 +79,15 @@
                                 </div>
                             </div>
                         </div>
-
                         @endforeach
                     </tbody>
                 </table>
             </div>
             <div class="row" style="height:100px;">
-
+                               
             </div>
+        </div>
+    </div>
             <!--Debut Modal-->
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-lg">
@@ -91,8 +100,8 @@
                         <!-- Modal body -->
                         <div class="modal-body container">
                             <form action="{{route('ajouter_patient')}}" method="post">
-                                @csrf
-                                
+                            @csrf
+                           
                                 <div class="row">
                                     <div class="form-group col">
                                         <label for="inputEmail" class="col-sm-2 ">Prenom<span style="background-colol:red;">*</span></span></label>
@@ -109,25 +118,26 @@
                                 </div>
                                 <div class="row ">
                                     <div class="form-group col">
-                                        <label for="inputPassword" class="col-sm-2 ">Naissance</label>
+                                        <label for="inputPassword" class="col-sm-2 ">Date Naissance</label>
                                         <div class="col-sm-10">
                                             <input type="date" class="form-control" id="date" name="date" placeholder="">
                                         </div>
                                     </div>
                                     <div class="form-group col">
-                                        <label for="inputPassword" class="col-sm-2 ">Adresse</label>
+                                        <label for="inputPassword" class="col-sm-2 ">Lieu Naissance</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Entrer Adresse">
+                                            <input type="text" class="form-control" id="lieu" name="lieu" placeholder="Entrer Lieu">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
-                                       <div class="form-group col">
-                                        <label for="inputPassword" class="col-sm-2 ">Profession</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="profession" name="profession" placeholder="Entrer Profession">
+                                        <div class="form-group col">
+                                            <label for="inputPassword" class="col-sm-2 ">Adresse</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Entrer Adresse">
+                                            </div>
                                         </div>
-                                    </div>
+                                       
                                     <div class="form-group col">
                                         <label for="inputPassword" class="col-sm-2 ">Telephone</label>
                                         <div class="col-sm-10">
@@ -136,6 +146,12 @@
                                     </div>
                                 </div>
                                 <div class="row">
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Profession</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="profession" name="profession" placeholder="Entrer Profession">
+                                        </div>
+                                    </div>
                                     <div class="form-group col">
                                         <label for="sexe" class="col-sm-4 ">Sexe</label>
                                         <div class="col-sm-10">
@@ -150,16 +166,10 @@
                                     <button type="submit" class="btn btn-success">Enregistrer</button>
                                     <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
                                 </div>
-
                             </form>
-                        </div>
-                        
-                        <!-- Modal footer -->
-                                              
+                        </div>      
+                        <!-- Modal footer -->                
                     </div>
                 </div>
             </div>
-
-           
-            
     @endsection

@@ -1,26 +1,19 @@
 <?php
-
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Staff;
 use App\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function edit_staff($id){
         $staff = Staff::find($id);//on recupere le produit
         return view('admin.edit_staff', compact('staff'));
     }
-
     public function store(Request $request)
-        {
-           
+        {           
            $staff = new Staff();
            $staff->nom_staff = $request->input('nom');
            $staff->prenom_staff = $request->input('prenom');
@@ -32,17 +25,17 @@ class UserController extends Controller
            $staff->poste_staff = $request->input('poste');
            $staff->email_staff = $request->input('email');
            $staff->save();
-
+        ///////////////////////////////////////////////////
+        /////////////////////////////////////////////////////
            $user= new User();
            $user->name= $staff->prenom_staff;
-           $user->email= strtolower($staff->nom_staff).".".strtolower(trim($staff->prenom_staff))."@medilife.sn";
+           $user->email=strtolower($staff->nom_staff).".".strtolower(str_replace(" ", "",$staff->prenom_staff))."@medilife.sn";
            $user->password=Hash::make("medilife2020");
            $user->staff_id=$staff->id;
            $user->profil="moderator";
            $user->save();
 
            return redirect('/admin/staff')->with(['success' => "Personnel Enregistré"]);
-
         }
         public function liste_staff(){
             $staffs = Staff::all();
@@ -74,5 +67,9 @@ class UserController extends Controller
                 ]);
             }
             return redirect('/secretaire/liste')->with(['success' => "Patient Modifié"]);
+        }
+        public function deconnect(){
+            Auth::logout();
+            return view('acceuil');
         }
 }

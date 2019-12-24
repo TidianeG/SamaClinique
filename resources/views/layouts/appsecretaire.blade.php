@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+  
     
 </head>
 
@@ -52,48 +53,44 @@
                                 <div class="collapse navbar-collapse" id="medilifeMenu">
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="index.html">Acceuil <span class="sr-only">(current)</span></a>
-                                        </li>
                                         <li class="nav-item">
-                                            <a class="nav-link dropdown-toggle" href="{{route('liste_patient')}}">Gestion Patient</a>
+                                            <a class="nav-link" href="/secretaire">
+                                                <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                                                Acceuil <span class="sr-only">(current)</span>
+                                            </a>
                                         </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="about-us.html">Gestio Rendez-Vous</a>
+                                            <a class="nav-link dropdown-toggle" href="{{route('liste_patient')}}">
+                                                <i class="fas fa-wheelchair fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                                                Gestion Patient
+                                            </a>
                                         </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{route('rendezvous')}}">
+                                                <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
+                                                Gestio Rendez-Vous
+                                            </a>
+                                            </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
                                             <a class="nav-link" href="services.html">Pharmacie</a>
                                         </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
                                             <a class="nav-link" href="blog.html">Gestion Caisse</a>
                                         </li>
-                                            <li class="nav-item dropdown no-arrow d-sm-none">
-                                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="fas fa-search fa-fw"></i>
-                                            </a>
-                                            <!-- Dropdown - Messages -->
-                                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                                <form class="form-inline mr-auto w-100 navbar-search">
-                                                <div class="input-group">
-                                                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                                    <div class="input-group-append">
-                                                    <button class="btn btn-primary" type="button">
-                                                        <i class="fas fa-search fa-sm"></i>
-                                                    </button>
-                                                    </div>
-                                                </div>
-                                                </form>
-                                            </div>
-                                            </li>
-
+                                    
                                             <div class="topbar-divider d-none d-sm-block"></div>
 
                                             <!-- Nav Item - User Information -->
-                                            <li class="nav-item dropdown no-arrow">
+                                            <li class="nav-item">
                                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="mr-2 d-none d-lg-inline text-blue-600 small">Cheikh Tidiane Gaye</span>
-                                                <img class="img-profile rounded-circle" src="">
+                                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                Moi
                                             </a>
+                                    
                                             <!-- Dropdown - User Information -->
                                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                                 <a class="dropdown-item" href="#">
@@ -143,7 +140,7 @@
         </div>
     </div>
     </header>
-    <main style="height:auto; background-image:url({{asset('img/bg-img/breadcumb3.jpg')}});">
+    <main style="height:auto; background-image:url(../img/bg-img/breadcumb3.jpg);">
         <div class="" style="height:auto;" >
             @yield('content')
         </div>
@@ -165,12 +162,12 @@
                     </div>
                     <div class="col-xs-12 col-md-5 text-center" >
                         <ul>
-                        <li class="small">© Copyright 2019 Medifile  <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
+                        <li class="small">© Copyright 2019 Website by <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
                         </ul>
                     </div>
                 </div> <!--  end row  -->
             </div> <!--  end container-fluid  -->
-        </footer>
+
         <script>
         // Script from W3 Schools  
         // When the user scrolls down 20px from the top of the document, show the button
@@ -188,7 +185,7 @@
         document.documentElement.scrollTop = 0;
         }
         </script>
-     
+     </footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
   crossorigin="anonymous">
@@ -208,6 +205,7 @@
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
+    <script src="{{asset('js/datatable.min.js')}}"></script>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready( function () {

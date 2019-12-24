@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container" style="margin-bottom:10px;">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="width:auto;border-radius:5px; background-color:#081f3e; height:auto;">
@@ -68,7 +68,8 @@
                             <label for="profil" class="col-md-4 col-form-label text-md-right">{{ __('Profil') }}</label>
 
                             <div class="col-md-6">
-                                <select name="profil" id=""  class="form-control">
+                                <select name="profil" id="" class="form-control">
+                                    <option value=""></option>
                                     <option value="admin">Admin</option>
                                     <option value="moderator">Moderateur</option>
                                     <option value="user">Utilisateur</option>

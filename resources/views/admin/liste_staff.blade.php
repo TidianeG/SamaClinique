@@ -1,15 +1,18 @@
 @extends('layouts.appadmin')
 @section('content')
-            <div class="row" style="height:100px;">
-                @if(session('success'))
-                    <div class="alert alert-success">{{session('success')}}</div>
-                @endif
+    <div class="container" style="padding-top:25px;">     
+        <div class="card" style="border:2px solid #ffffff;border-radius:4px;">
+            <div class="card-header d-flex justify-content-center">
+                <h2>La liste des Personnels de Medilife</h2>
             </div>
-            <div class="container" style="padding-top:25px;border:2px solid #081f3e;background-color:#081f3e ;border-radius:4px;">
-               
+            <div class="card-body" style="background-color:#081f3e ;">
+                <div class="row" style="height:auto;">
+                    @if(session('success'))
+                        <div class="alert alert-success">{{session('success')}}</div>
+                    @endif
+                </div>
                 <div class=" row justify-content-between">
-                    <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
-                    
+                    <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>     
                 </div>
                 <table id="myTable" class="table" style="overflow:hedden; margin:5px;">
                     <thead>
@@ -76,14 +79,16 @@
                     </tbody>
                 </table>
 
-                <div style="d-flex justify-content-end">
-                    <a class="btn btn-primary" style="height:auto; " data-toggle="modal" data-target="#myModal">Nouveau Utilisateur</a>
-                    <a class="btn btn-primary" style="height:auto; " href="/register">Creer Compte</a>
+                <div class="row justify-content-center">
+                    <p><a class="btn btn-success" style="height:auto; " data-toggle="modal" data-target="#myModal"><span>+</span> Nouveau Utilisateur</a></p>
+                   
                 </div>
             </div>
             <div class="row" style="height:100px;">
 
             </div>
+        </div>
+    </div>
             <div class="modal fade" id="myModal">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">

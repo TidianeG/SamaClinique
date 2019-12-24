@@ -4,9 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\User;
-use App\Staff;
-use Illuminate\Support\Facades\Auth;
+
 class LoginController extends Controller
 {
     /*
@@ -27,7 +25,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo;
+    protected $redirectTo = '/acceuil';
 
     /**
      * Create a new controller instance.
@@ -37,17 +35,16 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        $this->redirect();
     }
     public function redirect(){
         $user=Auth::user();
         if($user->staff->poste_staff=="medecin"){
-            $redirectTo="\medecin";
+            $redirectTo="/medecin";
         }
         else if($user->staff->poste_staff=="secretaire"){
-           $redirectTo="\secretaire";
+            $redirectTo="/secretaire";
         }
+        //recuperation de la variable $redirectTo pour lesredirections
         return $redirectTo;
     }
-    
 }

@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
 </head>
 
@@ -51,25 +50,47 @@
                                 <div class="collapse navbar-collapse" id="medilifeMenu">
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
-                                        <li class="nav-item active">
-                                            <a class="nav-link" href="index.html">Acceuil <span class="sr-only">(current)</span></a>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="index.html">
+                                                <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                                                Acceuil <span class="sr-only">(current)</span>
+                                            </a>
                                         </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link " href="{{route('patients')}}" >Patient</a>
+                                            <a class="nav-link " href="{{route('patients')}}">
+                                                <i class="fas fa-wheelchair fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                                                Patient
+                                            </a>
                                             
                                         </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="about-us.html">Rendez-Vous</a>
+                                            <a class="nav-link" href="about-us.html">
+                                                <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
+                                                Rendez-Vous
+                                            </a>
                                         </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="services.html">Calendrier</a>
+                                            <a class="nav-link" href="services.html">
+                                                <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400" aria-hidden="true" ></i>
+                                                Calendrier
+                                            </a>
                                         </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="blog.html">Mon Service</a>
+                                            <a class="nav-link" href="blog.html">
+                                                <i class="fas fa-hospital fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                Mon Service
+                                            </a>
                                         </li>
-                                       
+                                        <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a href="#" class="nav-link btn medilife-appoint-btn ml-30">Deconnection</a>
+                                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                Moi
+                                            </a>
                                         </li>
                                     </ul>
                                     <!-- Appointment Button -->
@@ -83,7 +104,7 @@
     </div>
     </header>
     <main>
-        <div class="" style="max-height:auto;min-height:1200px;background-image:url({{asset('img/bg-img/breadcumb3.jpg')}}); background-repeat:no-repeat;" >
+        <div class="" style="height:1500px;background-image:url(../img/bg-img/breadcumb3.jpg);" >
             @yield('content')
         </div>
     </main>
@@ -140,12 +161,7 @@
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
-    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready( function () {
-        $('#myTable').DataTable();
-        } );
-    </script>
+    <script src="{{asset('js/datatable.min.js')}}"></script>
     <script>
         $(document).ready(function(){
         $(".nav-tabs a").click(function(){

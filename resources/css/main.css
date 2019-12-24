@@ -1,6 +1,3 @@
-/* input[type="password"] {
-  color: transparent;
-} */
 
 
 
@@ -202,8 +199,6 @@ iframe {
   justify-content: space-between;
   padding: 43px 88px 93px 190px;
 }
-/*------------------------------------------------------------------
-[ Input ]*/
 
 
 .alert-validate::before {
