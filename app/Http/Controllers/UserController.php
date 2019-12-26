@@ -32,7 +32,15 @@ class UserController extends Controller
            $user->email=strtolower($staff->nom_staff).".".strtolower(str_replace(" ", "",$staff->prenom_staff))."@medilife.sn";
            $user->password=Hash::make("medilife2020");
            $user->staff_id=$staff->id;
-           $user->profil="moderator";
+           if($staff->poste_staff=='medecin'){
+                $user->profil="medecin";
+           }
+           elseif($staff->poste_staff=='secretaire'){
+                $user->profil="secretaire";
+            }
+            else{
+                $user->profil="user";
+            }
            $user->save();
 
            return redirect('/admin/staff')->with(['success' => "Personnel Enregistré"]);
@@ -72,4 +80,5 @@ class UserController extends Controller
             Auth::logout();
             return view('acceuil');
         }
+       
 }

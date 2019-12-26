@@ -1,7 +1,7 @@
 @extends('layouts.appsecretaire')
     @section('content')
         <div class="container" style="width:50%;margin-top:15px; border:2px solid #081f3e;background-color:#081f3e ;border-radius:4px;" >
-            <form action="">
+            <form action="{{route('create_rv')}}" method="post">
             @csrf 
                 <div class="row">
                     <div class="form-group col-6">
@@ -12,20 +12,13 @@
                     </div>
                 </div>    
                 <div class="row">
-                    <div class="form-group col-6 ml-auto">
-                        <label for="type" class="col-md-5">Service:</label>
-                        <select name="type" id="service" class="form-control" >
-                            <option value="" class="form-control">Selecttionner--</option>
-                            <option value="" class="form-control"></option>
-                            
-                        </select>
-                    </div>
                     <div class="form-group col-6">
                         <label for="type" class="col-md-5">Medecin:</label>
-                        <select name="type" id="medecin" class="form-control" >
-                            <option value="">Selecttionner--</option>
-                            <option value=""></option>
-                            
+                        <select name="type" id="medecin" class="form-control custom-select" >
+                            <option value="">Selecttionner---</option>
+                            @foreach($medecin as $value)
+                                <option value="{{$value->id}}">Dr {{$value->prenom_staff}} {{$value->nom_staff}}</option>
+                            @endforeach                           
                         </select>
                     </div>
                 </div>

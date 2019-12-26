@@ -63,7 +63,7 @@
         </div>
     </div>    
     </header>
-    <main style="margin-top:5px;margin-bottom:5px; height:auto; background-image:url(../img/bg-img/breadcumb3.jpg);">
+    <main style="background-image:url(../img/bg-img/breadcumb3.jpg);">
         <div class="d-flex justify-content-center" >
             @yield('content')
         </div>

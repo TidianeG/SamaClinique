@@ -104,7 +104,7 @@
     </div>
     </header>
     <main>
-        <div class="" style="height:1500px;background-image:url(../img/bg-img/breadcumb3.jpg);" >
+        <div class="" style="background-image:url(../img/bg-img/breadcumb3.jpg);" >
             @yield('content')
         </div>
     </main>

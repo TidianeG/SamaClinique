@@ -3564,7 +3564,11 @@ textarea {
         border-right:1px solid #e3e6f0;
         height:calc(4.375rem - 2rem);
       }
-      body{
-        min-width: 100vh;
+      html, body{
+        min-height: 100vh;
+        max-height: auto;
+      }
+      tbody{
+        background-color: white;
       }
 /*# sourceMappingURL=style.css.map */

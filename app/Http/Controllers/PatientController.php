@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 use App\Patient;
+use App\Staff;
+use App\Appointment;
 use Illuminate\Http\Request;
 
 class PatientController extends Controller
 {
         public function __construct()
         {
-            $this->middleware('auth');
+            //$this->middleware('auth');
         }
     
         public function editer_patient(){
@@ -83,7 +85,16 @@ class PatientController extends Controller
             return view('secretaire.rendez-vous');
         }
         public function newrv(){
-            return view('secretaire.new-rv');
+           
+            $medecin = \App\Staff::where('poste_staff','medecin')->get();
+            return view('secretaire.new-rv', compact('medecin'));
+        }
+        public function create_rv(Request $request){
+            $rv=new Appointment();
+            $rv->daterendez_appointment = $request->input('daterv');
+            $rv->description_appointment = $request->input('daterv');
+            $rv->staff_id = $request->input('daterv');
+
         }
 }
 ?>
