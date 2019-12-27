@@ -6,14 +6,8 @@ use App\Staff;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-       
-    }
     public function edit_staff($id){
         $staff = Staff::find($id);//on recupere le produit
         return view('admin.edit_staff', compact('staff'));
@@ -58,19 +52,8 @@ class UserController extends Controller
         public function destroy($id)
         {
             $staff = Staff::find($id);
-            $user= DB::table('users')->where('staff_id',$staff->id)->delete();
-            dd($user,$staff,$id);
-            if($staff && $user){ 
-                //$user->delete();
-                //dd($user,$staff,$id);
+            if($staff){
                 $staff->delete();
-                //dd($user,$staff,$id);
-                return redirect('/admin/staff')->with(['success' => "Personnel Supprimé"]);
-            }
-            elseif($staff && !$user){
-                $staff->delete();
-                return redirect('/admin/staff')->with(['success' => "Personnel Supprimé"]);
-            }else{
                 return redirect('/admin/staff')->with(['success' => "Personnel Supprimé"]);
             }
         }

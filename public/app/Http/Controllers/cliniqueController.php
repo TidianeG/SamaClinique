@@ -6,10 +6,7 @@ use Illuminate\Http\Request;
 
 class cliniqueController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+ 
     /*
          public function redirect(){
         $user=Auth::user();

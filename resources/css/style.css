@@ -2382,8 +2382,8 @@ img {
 .top-header-area {
   position: relative;
   z-index: 1;
-  height: auto;
-  background-color: #081f3e; }
+  height: 160px;
+  background-color: rgba(0, 108, 255, 0.5); }
   .top-header-area p {
     margin-bottom: 0;
     color: #b5b5b5; }
@@ -2405,7 +2405,7 @@ img {
   height: 110px;
   position: relative;
   z-index: 1;
-  background-color: rgba(0, 108, 255, 0.5);
+  background-color: #081f3e;
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2448,7 +2448,7 @@ img {
       margin: 1px 0; } }
 
 .header-area .main-menu .nav-item.active .nav-link {
-  background-color: #006cff; }
+  background-color: rgba(0, 108, 255, 0.5); }
 
 .dropdown-menu.show {
   border: none;
