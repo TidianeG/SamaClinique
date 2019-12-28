@@ -18,7 +18,7 @@ Route::get('/secretaire', 'cliniqueController@secretaire');
 
 Route::get('/admin', 'cliniqueController@admin');
 
-Route::get('/', 'HomeController@acceuil');
+Route::get('/', 'acceuilController@index');
 
 Route::get('/login', 'HomeController@index')->name('home');
 
@@ -42,6 +42,8 @@ Route::get('/medecin/patients', 'PatientController@patients')->name('patients');
 Route::get('/medecin/new_folder', 'PatientController@new_folder')->name('new_folder');
 
 Route::patch('/secretaire/liste/{id}/edit','PatientController@update')->name("update_patient");
+
+Route::get('/secretaire/liste/{id}/affiche','PatientController@afficher_patient')->name("afficher_patient");
 
 Route::get('secretaire/rv', 'PatientController@rendezvous')->name('rendezvous');
 

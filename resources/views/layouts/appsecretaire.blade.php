@@ -28,31 +28,15 @@
     <div class="header-area">
         <!-- Top Header Area -->
         <div class="top-header-area">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img src="../img/bg-img/breadcumb1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="../img/bg-img/breadcumb1.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                    <img src="../img/bg-img/breadcumb1.jpg" class="d-block w-100" alt="...">
+        <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="h-100 d-md-flex justify-content-between ">
+                            <p>Bienvenu à <span>Medifile</span></p>
+                            <p>jours ouvrable : du Lundi au Samedi - 8h à 23h Contact : <span>+221 33 899 99 99</span></p>
+                        </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         </div>
         <!-- Main Header Area -->
@@ -77,7 +61,7 @@
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
                                             <a class="nav-link dropdown-toggle" href="{{route('liste_patient')}}">
-                                                <i class="fas fa-wheelchair fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                                                <i class="fab fa-accessible-icon fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Gestion Patient
                                             </a>
                                         </li>
@@ -243,6 +227,11 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         }
+            jQuery(document).ready(function($) {
+                $(".clickable-row").click(function() {
+                    window.location = $(this).data("href");
+                });
+            });
         </script>
     
 </body>

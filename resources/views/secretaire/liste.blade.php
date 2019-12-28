@@ -19,7 +19,7 @@
                     </a></p>
                     
                 </div>
-                <table id="myTable" class="table" style="overflow:hedden">
+                <table id="myTable" class="table table-hover" style="overflow:hedden">
                     <thead>
                         <tr>
                             <th>Nom</th>
@@ -36,22 +36,24 @@
                     </thead>
                     <tbody>
                         @foreach($patients as $patient)
-                        <tr>
-                            <td>{{$patient->nom_patient}}</td>
-                            <td>{{$patient->prenom_patient}}</td>
-                            <td>{{$patient->adresse_patient}}</td>
-                            <td>{{$patient->telephone_patient}}</td>
-                            <td>{{$patient->profession_patient}}</td>
-                            <td>{{$patient->datenaisse_patient}}</td>
-                            <td>{{$patient->lieu_patient}}</td>
-                            <td>{{$patient->sexe_patient}}</td>
-                            <td>
-                                <p><a href="{{route('editer_patient',['id'=>$patient->id])}}" class="btn btn-primary">Editer</a></p>
-                            </td>
-                            <td>
-                                <p><a class="btn btn-danger" href="#" data-toggle="modal" data-target="#deleteModal">Delete</a></p>
-                            </td>
-                        </tr>
+                            <tr class="clickable-row" data-href="{{route('afficher_patient',['id'=>$patient->id])}}" style="cursor:pointer;">
+                                    <td>{{$patient->nom_patient}}</td>
+                                    <td>{{$patient->prenom_patient}}</td>
+                                    <td>{{$patient->adresse_patient}}</td>
+                                    <td>{{$patient->telephone_patient}}</td>
+                                    <td>{{$patient->profession_patient}}</td>
+                                    <td>{{$patient->datenaisse_patient}}</td>
+                                    <td>{{$patient->lieu_patient}}</td>
+                                    <td>{{$patient->sexe_patient}}</td>
+                                
+                                <td>
+                                    <p><a href="{{route('editer_patient',['id'=>$patient->id])}}" class="btn btn-primary">Editer</a></p>
+                                </td>
+                                <td>
+                                    <p><a class="btn btn-danger" href="#" data-toggle="modal" data-target="#deleteModal">Delete</a></p>
+                                </td>
+                            </tr>
+                        
                         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="labelModalDelete" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">

@@ -1,7 +1,7 @@
 @extends('layouts.appsecretaire')
     @section('content')
         <div class="container" style="width:50%;margin-top:15px; border:2px solid #081f3e;background-color:#081f3e ;border-radius:4px;" >
-            <form action="{{route('create_rv')}}" method="post">
+            <form action="" method="post">
             @csrf 
                 <div class="row">
                     <div class="form-group col-6">

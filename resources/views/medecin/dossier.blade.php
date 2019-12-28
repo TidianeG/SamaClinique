@@ -1,17 +1,15 @@
 @extends('layouts.appmedecin')
     @section('content')
-    <div class="container">
-        <div class="conatiner row mb-3">
-            
-            <div class="col-9">
-                <div class="container mt-3" style="">
+    <div class="container row" style="height:100%;">        
+            <div class="col-8">
+                <div class=" mt-3" style="">
                     <div class="alert alert-primary">
                         <h4>Dosssier Medical de: <span style="color:blue">{{$patients->prenom_patient}}  {{$patients->nom_patient}}</span>
                         </h4>
                     </div>
                             
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs">
+                    <ul class="nav nav-tabs" style="height:auto;">
                         <li class="nav-item">
                             <a class="nav-link active" href="#home">Etat Civil</a>
                         </li>
@@ -178,17 +176,20 @@
                 </div>
             </div>
 
-            <div class="col-3 container mt-3">
+            <div class="col-4  mt-3" style="height:100%;">
                 <div class="alert alert-primary" style="margin-bottom:0px;">
                     <h5>Creation de nouveau dossier</h5>
-                    <a  class="btn btn-primary" href="{{route('new_folder')}}">Nouveau dossier</a>
+                    <a  class="btn btn-primary" href="{{route('new_folder')}}">
+                        <i class="fas fa-folder-plus"></i>    
+                        Nouveau dossier
+                    </a>
                 </div>
                 <div><img src="{{asset('img/bg-img/breadcumb3.jpg')}}" alt="" style="overflow:hedden;margin-right:4px;"></div>
+                <div>
+                    
+                </div>
             </div>
-        </div>
-        <div style="height:100px;">
-
-        </div>
+        
     </div>
     
    

@@ -103,8 +103,8 @@
         </div>
     </div>
     </header>
-    <main>
-        <div class="" style="background-image:url(../img/bg-img/breadcumb3.jpg);" >
+    <main style="height:100%;">
+        <div class="" style="background-image:url(../img/bg-img/breadcumb3.jpg); height:100%;" >
             @yield('content')
         </div>
     </main>
@@ -174,6 +174,11 @@
             $(".prev span").text(y);
         });
         });
+        jQuery(document).ready(function($) {
+                $(".clickable-row").click(function() {
+                    window.location = $(this).data("href");
+                });
+            });
     </script>
 </body>
 

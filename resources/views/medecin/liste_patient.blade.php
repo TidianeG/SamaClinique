@@ -1,4 +1,4 @@
-@extends('layouts.appsecretaire')
+@extends('layouts.appmedecin')
 @section('content')
             <div class="row" style="height:100px;">
             @if(session('success'))
@@ -18,7 +18,7 @@
                         </div>
                     </form>
                 </div>
-                <table id="myTable" class="table" style="overflow:hedden">
+                <table id="myTable" class="table table-hover" style="overflow:hedden">
                     <thead>
                         <tr>
                             <th>Numero</th>
@@ -29,12 +29,11 @@
                             <th>Profession</th>
                             <th>Naissance</th>
                             <th>Sexe</th>
-                            <th>Dossier</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($patients as $patient)
-                        <tr>
+                        <tr class="clickable-row" data-href="{{route('afficher_dossier',['id'=>$patient->id])}}" style="cursor:pointer;">
                             <td>{{$patient->id}}</td>
                             <td>{{$patient->nom_patient}}</td>
                             <td>{{$patient->prenom_patient}}</td>
@@ -43,9 +42,6 @@
                             <td>{{$patient->profession_patient}}</td>
                             <td>{{$patient->datenaisse_patient}}</td>
                             <td>{{$patient->sexe_patient}}</td>
-                            <td>
-                                <p><a href="{{route('afficher_dossier',['id'=>$patient->id])}}" class="btn btn-primary">Afficher</a></p>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>

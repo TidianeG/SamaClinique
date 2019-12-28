@@ -74,6 +74,12 @@ class PatientController extends Controller
             return view('secretaire.edit', compact('patients'));
         }
 
+        public function afficher_patient($id){
+            $patients = Patient::find($id);//on recupere le produit
+            //dd($patients);
+            return view('secretaire.afficher_patient', compact('patients'));
+        }
+
         public function afficher_dossier($id){
             $patients = Patient::find($id);//on recupere le produit
             return view('medecin.dossier', compact('patients'));
