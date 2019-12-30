@@ -9,8 +9,7 @@ class Appointment extends Model
     public function staff(){
         return $this->belongsTo('App\Staff');   
     }
-
-    public function consultation(){
-        return $this->hasMany('App\Consultation');   
+    public function patient(){
+        return $this->belongsTo('App\Patient');   
     }
 }

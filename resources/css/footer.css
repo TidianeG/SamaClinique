@@ -36,7 +36,6 @@ right: 20px;
 font-size: 18px;
 border: none;
 outline: none;
-background-color: #304f50;
 color: white;
 padding: 15px;
 border-radius: 14px;
@@ -48,10 +47,8 @@ background-color: #555;
 }
 
 #bottom-footer {
-background-color:cadetblue;
 color:white;
-margin-top: 2rem;
-padding-top: .3rem;
+
 }
 .vertical-links>li {
 display: inline-block;

@@ -19,7 +19,6 @@ class CreateConsultationsTable extends Migration
             $table->string('description_consultation');
             $table->unsignedInteger('staff_id');
             $table->unsignedInteger('patient_id');
-            $table->unsignedInteger('appointment_id');
             $table->timestamps();
 
         });

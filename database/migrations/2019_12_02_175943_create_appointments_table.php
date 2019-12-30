@@ -15,10 +15,10 @@ class CreateAppointmentsTable extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('dateappel_appointment');
             $table->dateTime('daterendez_appointment');
             $table->string('description_appointment');
             $table->unsignedInteger('staff_id');
+            $table->unsignedInteger('patient_id');
             $table->timestamps();
         });
     }

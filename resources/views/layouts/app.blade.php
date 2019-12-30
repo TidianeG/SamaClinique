@@ -29,7 +29,18 @@
     <header>
     <div class="header-area">
         <!-- Top Header Area -->
-        
+        <div class="top-header-area">
+            <div class="container h-100">
+                <div class="row h-100">
+                    <div class="col-12 h-100">
+                        <div class="h-100 d-md-flex justify-content-between ">
+                            <p>Bienvenu à <span>Medifile</span></p>
+                            <p>jours ouvrable : du Lundi au Samedi - 8h à 23h Contact : <span>+221 33 899 99 99</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader" style="height:auto;">
             <div class="container h-100">
@@ -38,8 +49,8 @@
                         <div class="main-menu h-100">
                             <nav class="navbar h-100 navbar-expand-lg row justify-content-between align-items-center">
                                 <!-- Logo Area  -->
-                                <a class="navbar-brand" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
-                                <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button-->
+                                <a class="navbar-brand" href=""><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                                 <div class="collapse navbar-collapse" id="medilifeMenu">
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
@@ -88,13 +99,13 @@
         </div>
     </div>    
     </header>
-    <main style="background-image:url(../img/bg-img/breadcumb3.jpg);">
-        <div class="d-flex justify-content-center" >
+    <main class="content-div">
+        <div class=" content-yield main" >
             @yield('content')
         </div>
     </main>
     <footer>
-      <div class="container-fluid" style="background-color:#eff5f5;">
+      <div class="container-fluid">
 
         <div class="row row-no-gutters" id="bottom-footer" >
         

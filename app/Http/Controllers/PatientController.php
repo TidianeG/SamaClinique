@@ -87,20 +87,31 @@ class PatientController extends Controller
         public function new_folder(){
             return view('medecin.new_folder');
         }
-        public function rendezvous(){
-            return view('secretaire.rendez-vous');
-        }
-        public function newrv(){
-           
+      
+        public function newrv(){           
             $medecin = \App\Staff::where('poste_staff','medecin')->get();
-            return view('secretaire.new-rv', compact('medecin'));
+            $rv= Appointment::all();
+
+            return view('secretaire.rendez-vous', compact('medecin','rv'));
         }
         public function create_rv(Request $request){
             $rv=new Appointment();
-            $rv->daterendez_appointment = $request->input('daterv');
-            $rv->description_appointment = $request->input('daterv');
-            $rv->staff_id = $request->input('daterv');
-
+            $id=$request->input('numero');
+            $patient=Patient::find($id);
+            $date=$request->input('daterv')." ".$request->input('heure');
+            $mondate = date('Y-m-d H:i:s', strtotime($date));
+            if($patient){
+                $rv->daterendez_appointment = $mondate;
+                $rv->description_appointment = $request->input('descrv');
+                $rv->staff_id = $request->input('medecin');
+                $rv->patient_id= $id;  
+                $rv->save();
+                return redirect('/secretaire/rv')->with(['success' => "Rendez-vous creer"]); 
+            }
+           else{
+            return redirect('/secretaire/rv')->with(['danger' => "Le patient ajouter n'existe pas"]); 
+           }
         }
+        
 }
 ?>

@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Medilife - Mon clinique</title>
+    <title>Medilife - Admin</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="img/core-img/favicon.ico">
@@ -52,7 +52,7 @@
                             <nav class="navbar h-100 navbar-expand-lg row justify-content-between align-items-center">
                                 <!-- Logo Area  -->
                                 <a class="navbar-brand" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
-                                <!--button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button-->
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                                 <div class="collapse navbar-collapse" id="medilifeMenu">
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
@@ -149,15 +149,15 @@
     </div>
   </div>
     </header>
-    <main style="height:auto; background-image:url(../img/bg-img/breadcumb3.jpg)">
-        <div class="" style="height:auto;" >
+    <main class="content-div">
+        <div class="content-yield" >
             @yield('content')
         </div>
     </main>
     <footer>
-            <div class="container-fluid" style="background-color:#081f3e;">
+            <div class="container-fluid">
                  <!--  end row  --> 
-                <div class="row row-no-gutters" id="bottom-footer" style="background-color:#081f3e;">
+                <div class="row row-no-gutters" id="bottom-footer" >
                     <div class="col-xs-12 col-md-5 text-center" >
                         <ul class="vertical-links small">
                             <li><a href="#">Privacy</a></li>

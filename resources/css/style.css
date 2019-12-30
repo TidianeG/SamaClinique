@@ -2402,10 +2402,10 @@ img {
       
 .main-header-area {
   width: 100%;
-  height: 130px;
+  height: 110px;
   position: relative;
   z-index: 1;
-  background-color:  rgba(0, 108, 255, 0.5);
+  background-color: rgba(0, 108, 255, 0.5);
   -webkit-transition-duration: 500ms;
   transition-duration: 500ms; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2448,9 +2448,33 @@ img {
       margin: 1px 0; } }
 
 .header-area .main-menu .nav-item.active .nav-link {
-  background-color: rgba(0, 108, 255, 0.5);
-  border-bottom: 2px solid white; }
-  
+  background-color: #006cff; }
+
+.dropdown-menu.show {
+  border: none;
+  padding: 15px 0;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
+  margin-top: 15px; }
+
+.dropdown-item {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5f5f5f;
+  text-transform: uppercase; }
+  .dropdown-item:hover {
+    color: #006cff;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #f5f7f9; }
+  .dropdown-item:focus {
+    color: #006cff;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #f5f7f9; }
+
+.navbar {
+  padding: 0; }
+
 .navbar-toggler .navbar-toggler-icon {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -2965,7 +2989,11 @@ textarea {
     margin-bottom: 0; }
 
 /* :: 15.0 Tabs Area CSS */
-
+.medilife-tabs-content .nav-tabs {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: none; }
 .medilife-tabs-content .nav-link {
   padding: 15px 30px;
   background-color: #f0f0f0;
@@ -3536,10 +3564,45 @@ textarea {
         border-right:1px solid #e3e6f0;
         height:calc(4.375rem - 2rem);
       }
-      html, body{
-        height: auto;
+      html body{
+        min-height: 100vh;
+        max-height: auto; 
       }
       tbody{
         background-color: white;
       }
+      .content-div{
+        margin: 0;
+        padding: 0;
+        background-image:url(../img/bg-img/breadcumb3.jpg); 
+        min-height: auto;
+      }
+      .content-div::before{
+        background-color: rgba(54,84,99,0.7);
+        z-index: 1000;
+      }
+      .content-yield{
+        height:100%;
+        margin: 0;
+        padding: 0px;
+
+      }
+
+      footer{
+        background-color: #081f3e;
+
+      }
+      .fermerv{
+          display: none;
+
+      }
+      .afficherv{
+        display: block;
+      }
+      /* .login{
+        display:flex;
+        direction: column;
+        align-items: center;
+        align-content: center;
+      } */
 /*# sourceMappingURL=style.css.map */

@@ -12,6 +12,7 @@
 */
 // Route vers les pages des utilisateurs
 
+
 Route::get('/medecin', 'cliniqueController@medecin');
 
 Route::get('/secretaire', 'cliniqueController@secretaire');
@@ -20,7 +21,6 @@ Route::get('/admin', 'cliniqueController@admin');
 
 Route::get('/', 'acceuilController@index');
 
-Route::get('/login', 'HomeController@index')->name('home');
 
 #Route::get('/user', 'HomeController@redirectTo');
 
@@ -45,7 +45,9 @@ Route::patch('/secretaire/liste/{id}/edit','PatientController@update')->name("up
 
 Route::get('/secretaire/liste/{id}/affiche','PatientController@afficher_patient')->name("afficher_patient");
 
-Route::get('secretaire/rv', 'PatientController@rendezvous')->name('rendezvous');
+Route::get('secretaire/rv', 'PatientController@newrv')->name('rendezvous');
+
+Route::post('secretaire/rv', 'PatientController@create_rv')->name('createrv');
 
 Route::get('secretaire/new', 'PatientController@newrv')->name('newrv');
 
@@ -63,7 +65,7 @@ Route::delete('/admin/staff/{id}', 'UserController@destroy');
 
 Route::get('/register', 'UserController@liste_register');
 
-Route::get('/', 'UserController@deconnect')->name('deconnect');
+Route::get('/acceuil', 'UserController@deconnect')->name('deconnect');
 
 // Route vers l'authentification
 

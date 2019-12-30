@@ -14,10 +14,6 @@ class Consultation extends Model
         return $this->belongsTo('App\Patient');   
     }
 
-    public function appointment(){
-        return $this->belongsTo('App\Appointment');   
-    }
-
     public function payment(){
         return $this->hasMany('App\Payment');   
     }
