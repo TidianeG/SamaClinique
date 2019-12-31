@@ -17,6 +17,8 @@ class CreateConsultationsTable extends Migration
             $table->bigIncrements('id');
             $table->dateTime('date_consultation');
             $table->string('description_consultation');
+            $table->integer('montant_payment');
+            $table->string('type_payment');
             $table->unsignedInteger('staff_id');
             $table->unsignedInteger('patient_id');
             $table->timestamps();

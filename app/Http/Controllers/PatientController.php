@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use App\Patient;
 use App\Staff;
 use App\Appointment;
+use App\Consultation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PatientController extends Controller
 {
@@ -75,9 +77,12 @@ class PatientController extends Controller
         }
 
         public function afficher_patient($id){
-            $patients = Patient::find($id);//on recupere le produit
-            //dd($patients);
-            return view('secretaire.afficher_patient', compact('patients'));
+            //on recupere le produit
+            $consultations= Consultation::where('patient_id',$id)->get();
+            $rendezvous= Appointment::where('patient_id',$id)->get();
+            $patients = Patient::find($id);
+            //dd($rendezvous);
+            return view('secretaire.afficher_patient', compact('patients','rendezvous','consultations'));
         }
 
         public function afficher_dossier($id){
@@ -91,8 +96,8 @@ class PatientController extends Controller
         public function newrv(){           
             $medecin = \App\Staff::where('poste_staff','medecin')->get();
             $rv= Appointment::all();
-
-            return view('secretaire.rendez-vous', compact('medecin','rv'));
+            $consults= Consultation::all();
+            return view('secretaire.rendez-vous', compact('medecin','rv','consults'));
         }
         public function create_rv(Request $request){
             $rv=new Appointment();
@@ -113,5 +118,27 @@ class PatientController extends Controller
            }
         }
         
+        public function save_consult_payment(Request $request){
+            $consult= new Consultation();
+           
+            $datec=$request->input('datec')." ".$request->input('heurec');
+            $mondatec = date('Y-m-d H:i:s', strtotime($datec));
+            $id=$request->input('numerop');
+            $patient=Patient::find($id);
+            if($patient){
+                $consult->date_consultation= $mondatec;
+                $consult->description_consultation= $request->input('descc');
+                $consult->patient_id= $id;
+                $consult->staff_id= $request->input('medecinc');
+                $consult->type_payment= $request->input('typep');
+                $consult->montant_payment= $request->input('montantp');
+                $consult->save();
+                return redirect('/secretaire/rv')->with(['success' => "Consultation creer avec succes"]); 
+            }
+            else{
+                return redirect('/secretaire/rv')->with(['danger' => "Le patient ajouter n'existe pas"]); 
+               }
+        }
+
 }
 ?>

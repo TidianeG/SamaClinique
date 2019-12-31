@@ -50,12 +50,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>85sscs6553</td>
-                                            <td>Dr Moussa Gaye</td>
-                                            <td>Fracture du bras</td>
-                                        </tr>
+                                        @foreach($rendezvous as $appoint)
+                                            <tr>
+                                                <td>{{$appoint->id}}</td>
+                                                <td>{{$appoint->daterendez_appointment}}</td>
+                                                <td>{{$appoint->staff->prenom_staff}} {{$appoint->staff->nom_staff}}</td>
+                                                <td>{{$appoint->description_appointment}}</td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -65,7 +67,28 @@
                                 <h3>Consultation</h3>
                             </div>
                             <div class="card-body">
-
+                                <table class="table " id="myTable"> 
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Description</th>
+                                            <th>Medecin</th>
+                                            <th>Type paiement</th>
+                                            <th>Montant</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($consultations as $consultation)
+                                            <tr>
+                                                <td>{{$consultation->date_consultation}}</td>
+                                                <td>{{$consultation->description_consultation}}</td>
+                                                <td>{{$consultation->staff->prenom_staff}} {{$appoint->staff->nom_staff}}</td>        
+                                                <td>{{$consultation->type_payment}}</td>
+                                                <td>{{$consultation->montant_payment}}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>

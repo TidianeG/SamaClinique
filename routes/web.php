@@ -49,6 +49,8 @@ Route::get('secretaire/rv', 'PatientController@newrv')->name('rendezvous');
 
 Route::post('secretaire/rv', 'PatientController@create_rv')->name('createrv');
 
+Route::post('secretaire/consult', 'PatientController@save_consult_payment')->name('createconsultation');
+
 Route::get('secretaire/new', 'PatientController@newrv')->name('newrv');
 
 Route::delete('/secretaire/liste/{id}', 'PatientController@destroy');
