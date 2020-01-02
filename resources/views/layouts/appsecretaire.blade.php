@@ -53,7 +53,7 @@
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/secretaire">
+                                            <a class="nav-link" href="{{route('secretaire')}}">
                                                 <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Acceuil <span class="sr-only">(current)</span>
                                             </a>
@@ -209,6 +209,7 @@
     <script>
         $(document).ready( function () {
         $('#myTable').DataTable();
+        $('#myTable1').DataTable();
         } );
     </script>
     <script>

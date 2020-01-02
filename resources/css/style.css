@@ -3565,8 +3565,9 @@ textarea {
         height:calc(4.375rem - 2rem);
       }
       html body{
-        min-height: 100vh;
-        max-height: auto; 
+        margin: 0;
+        padding: 0;
+        font-family: 'Times New Roman', Times, serif; 
       }
       tbody{
         background-color: white;
@@ -3575,14 +3576,15 @@ textarea {
         margin: 0;
         padding: 0;
         background-image:url(../img/bg-img/breadcumb3.jpg); 
-        min-height: auto;
+        height: auto;
       }
       .content-div::before{
         background-color: rgba(54,84,99,0.7);
         z-index: 1000;
       }
       .content-yield{
-        height:100%;
+        min-height:80vh;
+        max-height: auto;
         margin: 0;
         padding: 0px;
 
@@ -3595,6 +3597,17 @@ textarea {
       .fermerv{
           display: none;
 
+      }
+      .etatcv{
+        margin: 0;
+        padding: 0;
+        background-image:url(../images/font8.jpg);
+        background-attachment: fixed;
+        background-position: center; 
+      }
+      .etatcv::before{
+        background-color: rgba(54,84,99,0.7);
+        z-index: 1000;
       }
       .afficherv{
         display: block;

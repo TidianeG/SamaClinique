@@ -1,15 +1,16 @@
-let rv= document.getElementById('rv');
-let newrv=document.getElementById('newrv');
-let fermerv=document.getElementById('fermerv');
-let inforv=document.getElementById('inforv');
-let newcons=document.getElementById('newcons');
-let fermecons=document.getElementById('fermecons');
-let consult=document.getElementById('consult');
 
+let inforv=document.getElementById('inforv');
+let consult=document.getElementById('consult');
+let rv= document.getElementById('rv');
+let newcons=document.getElementById('newcons');
+let newrv=document.getElementById('newrv');
+let fermecons=document.getElementById('fermecons');
+let fermerv=document.getElementById('fermerv');
 let listecons=document.getElementById('listecons');
 let listerv=document.getElementById('listerv');
 let myTable1=document.getElementById('myTable1');
 let myTable2=document.getElementById('myTable2');
+
 listecons.addEventListener('click', function(){
   myTable1.classList.remove('afficherv');
   myTable1.classList.add('fermerv');
@@ -71,6 +72,9 @@ fermerv.addEventListener('click', function(){
   consult.classList.remove('afficherv');
   consult.classList.add('fermerv');
 });
+
+
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {

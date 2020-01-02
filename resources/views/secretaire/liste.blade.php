@@ -47,10 +47,10 @@
                                     <td>{{$patient->sexe_patient}}</td>
                                 
                                 <td>
-                                    <p><a href="{{route('editer_patient',['id'=>$patient->id])}}" class="btn btn-primary">Editer</a></p>
+                                    <p><a href="{{route('editer_patient',['id'=>$patient->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
                                 </td>
                                 <td>
-                                    <p><a class="btn btn-danger" href="#" data-toggle="modal" data-target="#deleteModal">Delete</a></p>
+                                    <p><a class="btn btn-danger" href="#" data-toggle="modal" data-target="#deleteModal"><i class="fas fa-trash-alt"></i></a></p>
                                 </td>
                             </tr>
                         

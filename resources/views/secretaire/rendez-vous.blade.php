@@ -1,6 +1,6 @@
 @extends('layouts.appsecretaire')
     @section('content')
-        <div class="" style="background-color:rgba(255,255,255, 0.3); height:auto; margin-bottom:10px;">
+        <div class="" style="background-color:rgba(255,255,255, 0.3); height:100%; margin-bottom:10px;">
             @if(session('success'))
                     <div class="alert alert-success">{{session('success')}}</div>
             @endif
@@ -9,9 +9,9 @@
             @endif
             <div class=" row"  style="margin-top:50px; height:100%;">
             
-                <div class="card col-7 container " >
+                <div class="card col-xl-7 col-md-12 container " >
                     <div class="card-header">
-                        <div id="titre"><h3>Liste de tous les rendez-vous</h3></div>
+                       
                         <a href="#" id="listecons" style="width:200px;" class="btn btn-primary efficherv">
                             <i class="fas fa-list"></i>
                             liste des consultation
@@ -20,10 +20,11 @@
                         <i class="fas fa-reply"></i>
                             retour au rendez-vous
                         </a>
+                        <div id="titre"><h3>Liste de tous les rendez-vous</h3></div>
                     </div>
                     <div class="card-body" style="border:2px solid #081f3e;background-color:#081f3e;"> 
                         <div id="myTable1"class="afficherv">
-                            <table id="myTable" class="table" style="height:auto;">
+                            <table id="" class="table" style="height:auto; margin-left:5px;">
                             <thead>
                                 <tr>
                                     <th>Nom</th>
@@ -46,10 +47,10 @@
                                         <td>{{$rendv->staff->prenom_staff}} {{$rendv->staff->nom_staff}}</td>
                                         <td>{{$rendv->daterendez_appointment}}</td>
                                         <td>
-                                            <p><a href="#" class="btn btn-primary">Editer</a></p>
+                                            <p><a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
                                         </td>
                                         <td>
-                                            <p><a href="#" class="btn btn-danger">Delete</a></p>
+                                            <p><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></p>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -81,28 +82,31 @@
                                         <td>{{$consultation->type_payment}}</td>
                                         <td>{{$consultation->montant_payment}}</td>
                                         <td>
-                                            <p><a href="#" class="btn btn-primary">Editer</a></p>
+                                            <p><a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
                                         </td>
                                         <td>
-                                            <p><a href="#" class="btn btn-danger">Delete</a></p>
+                                            <p><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></p>
                                         </td>
                                     </tr>
                                 @endforeach         
                             </tbody>
                         </table>
                     </div>
-                    <div class="row justify-content-around mt-5">
-                        <a href="#" class="btn btn-success" id="newrv"><span>+</span> New rendez-vous</a>
-                        <a href="#" class="btn btn-success" id="newcons"><span>+</span>New consultation</a>
-                    </div>
                     </div>
                     <div class="card-footer">
-                    
+                    <div class="row justify-content-around mt-5">
+                        <a href="#" class="btn btn-success" id="newrv">
+                            <i class="far fa-calendar-plus"></i>
+                             New rendez-vous</a>
+                        <a href="#" class="btn btn-success" id="newcons">
+                            <i class="fas fa-stethoscope"></i>
+                            New consultation</a>
                     </div>
+                    </div>
+                    
                 </div>
-                <div class="">
-                </div>
-                <div class="col-5" style="height:100%; background-color:white; ">
+                
+                <div class="col-sm-12 col-md-10 col-xl-5 container" style="height:100%; background-color:white; ">
                     <div class="card afficherv" id="inforv">
                         <img src="{{asset('images/font2.jpg')}}" alt="">
                         <div class="card-body">
@@ -199,20 +203,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="form-group col">
-                                    <label for="inputPassword" style="color:red;" class="">Date paiement</label>
-                                    <div class="">
-                                        <input type="date" class="form-control" id="" name="datep" placeholder="date">
-                                    </div>
-                                </div>
-                                <div class="form-group col">
-                                    <label for="inputPassword" style="color:red;" class="">Heure paiement</label>
-                                    <div class="">
-                                        <input type="time" class="form-control" id="" name="heurep" placeholder="heure">
-                                    </div>
-                                </div>
-                            </div>
+                           
                             <div class="row">
                                 <div class="form-group col">
                                     <label for="inputPassword" style="color:red;" class="">Type paiement</label>

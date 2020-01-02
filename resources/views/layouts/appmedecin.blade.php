@@ -51,7 +51,7 @@
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="index.html">
+                                            <a class="nav-link" href="{{route('medecin')}}">
                                                 <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Acceuil <span class="sr-only">(current)</span>
                                             </a>
@@ -161,6 +161,7 @@
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
+    <script src="{{asset('js/folder.js')}}"></script>
     <script src="{{asset('js/datatable.min.js')}}"></script>
     <script>
         $(document).ready(function(){

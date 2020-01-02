@@ -1,14 +1,14 @@
 @extends('layouts.appsecretaire')
     @section('content')
         <div class="container">
-            <div class="card">
+            <div class="card ">
                 <div class="card-header">
                     <h2>Iformations personnelles</h2>
                 </div>
                 <div class="card-body ">
-                    <div class="row">
-                        <div class="card col-4" style="border:none;">
-                            <div class="card-body container" >
+                    <div class="d-flex  justify-content-center">
+                        <div class="card " style="border:none;">
+                            <div class="card-body fadein  container" >
                                 <?php
                                     if($patients->sexe_patient=="masculin"){
                                 ?>
@@ -26,16 +26,50 @@
                             </div>
                         </div>
                     </div><hr>
-                    <div class="container" style="margin-top:25px; border:2px solid #081f3e;border-radius:5px 5px;">
-                        <div class="row" style="border-left:3px solid #081f3e;"><span class="col-4">Date de naissance: </span><label class="col-4" for="" style="color:#081f3e;">{{$patients->datenaisse_patient}}</label></div>
-                        <br><div class="row" style="border-left:3px solid #081f3e;"><span class="col-4">Lieu de naissance: </span><label class="col-4" for="" style="color:#081f3e;">{{$patients->lieu_patient}}</label></div>
-                        <br><div class="row" style="border-left:3px solid #081f3e;"><span class="col-4">Sexe du patient: </span><label class="col-4" for="" style="color:#081f3e;">{{$patients->sexe_patient}}</label></div>
-                        <br><div class="row" style="border-left:3px solid #081f3e;"><span class="col-4">Adresse du patiet: </span><label class="col-4" for="" style="color:#081f3e;">{{$patients->adresse_patient}}</label></div>
-                        <br><div class="row" style="border-left:3px solid #081f3e;"><span class="col-4">Numéro de telephone: </span><label class="col-4" for="" style="color:#081f3e;">{{$patients->telephone_patient}}</label></div>
-                        <br><div class="row" style="border-left:3px solid #081f3e;"><span class="col-4">Profession du patient: </span><label class="col-4" for="" style="color:#081f3e;">{{$patients->profession_patient}}</label></div>
+                    <div class="container " style="margin-top:25px; ">
+                        <div class="d-flex justify-content-around m-0 p-5" >
+                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87);  width:auto;">
+                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Date de naissance: </div>
+                                <div class="card-body" style="color:#081f3e; text-align:center;font-size:16px;">
+                                    {{$patients->datenaisse_patient}}
+                                </div>
+                            </div>
+                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
+                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Lieu de naissance: </div>
+                                <div class="card-body" style="color:#081f3e;text-align:center;font-size:16px;">
+                                    {{$patients->lieu_patient}}
+                                </div>
+                            </div>
+                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
+                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Sexe du patient: </div>
+                                <div class="card-body"  style="color:#081f3e;text-align:center;font-size:16px;">
+                                    {{$patients->sexe_patient}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around m-0 p-5">
+                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
+                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87); color:white; font-size:18px; font-weight:bold;">Adresse du patient: </div>
+                                <div class="card-body"  style="color:#081f3e;text-align:center;font-size:16px;">
+                                    {{$patients->adresse_patient}}
+                                </div>
+                            </div>
+                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
+                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Numéro de telephone: </div>
+                                <div class="card-body"  style="color:#081f3e;text-align:center;font-size:16px;">
+                                    {{$patients->telephone_patient}}
+                                </div>
+                            </div>
+                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
+                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Profession du patient: </div>
+                                <div class="card-body"  style="color:#081f3e;text-align:center;font-size:16px;">
+                                    {{$patients->profession_patient}}
+                                </div>
+                            </div>
+                        </div>
                     </div><hr>
                     <div class="row container">
-                        <div class="card col-6">
+                        <div class="card col-xl-6 col-sm-12 col-md-12">
                             <div class="card-header">
                                 <h3>Rendez-vous</h3>
                             </div>
@@ -62,12 +96,12 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="card col-6">
+                        <div class="card col-xl-6 col-sm-12 col-md-12">
                             <div class="card-header">
                                 <h3>Consultation</h3>
                             </div>
                             <div class="card-body">
-                                <table class="table " id="myTable"> 
+                                <table class="table " id="myTable1"> 
                                     <thead class="table-dark">
                                         <tr>
                                             <th>Date</th>

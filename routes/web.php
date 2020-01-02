@@ -13,11 +13,11 @@
 // Route vers les pages des utilisateurs
 
 
-Route::get('/medecin', 'cliniqueController@medecin');
+Route::get('/medecin', 'cliniqueController@medecin')->name('medecin');
 
-Route::get('/secretaire', 'cliniqueController@secretaire');
+Route::get('/secretaire', 'cliniqueController@secretaire')->name('secretaire');
 
-Route::get('/admin', 'cliniqueController@admin');
+Route::get('/admin', 'cliniqueController@admin')->name('admin');
 
 Route::get('/', 'acceuilController@index');
 

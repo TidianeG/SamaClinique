@@ -5,6 +5,7 @@ use App\Patient;
 use App\Staff;
 use App\Appointment;
 use App\Consultation;
+use App\Folder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -89,6 +90,11 @@ class PatientController extends Controller
             $patients = Patient::find($id);//on recupere le produit
             return view('medecin.dossier', compact('patients'));
         }
+        public function folder_patient(Request $request){
+            $id=$request->input('numfolder');
+            $folder = Folder::find($id);//on recupere le produit
+            return view('medecin.dossier', compact('folder'));
+        }
         public function new_folder(){
             return view('medecin.new_folder');
         }
@@ -138,6 +144,22 @@ class PatientController extends Controller
             else{
                 return redirect('/secretaire/rv')->with(['danger' => "Le patient ajouter n'existe pas"]); 
                }
+        }
+
+        public function create_folder(Request $request){
+           $id=$request->input('numpatient');
+           $patient=Patient::find($id);
+           $folder =new Folder();
+           if($patient){
+                $folder->tension_folder=$request->input('tension');
+                $folder->taille_folder=$request->input('taille');
+                $folder->temperature_folder=$request->input('temperature');
+                $folder->poids_folder=$request->input('poid');
+                $folder->antecedant_folder=$request->input('antecedant');
+                $folder->typeentec_folder=$request->input('typeantecedant');
+                $folder->groupesang_folder=$request->input('groupesanguin');
+           }
+
         }
 
 }
