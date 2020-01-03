@@ -191,7 +191,7 @@ class PatientController extends Controller
         }
 
         public function create_traitement(Request $request,$id){
-            $patient=Patient::find($id);
+            
             
         }
 }

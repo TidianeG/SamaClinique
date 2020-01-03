@@ -106,7 +106,7 @@ class UserController extends Controller
             $consultations= Consultation::where('staff_id',$id)->get();
             $rendezvous= Appointment::where('staff_id',$id)->get();
             $staffs = Staff::find($id);
-            //dd($rendezvous);
+        
             return view('admin.afficher_staff', compact('staffs','rendezvous','consultations'));
         }
        
