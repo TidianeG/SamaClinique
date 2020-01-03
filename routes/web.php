@@ -37,6 +37,10 @@ Route::get('/secretaire/liste/{id}/edit','PatientController@edit_patient')->name
 
 Route::get('/medecin/patients/{id}/dossier','PatientController@afficher_dossier')->name("afficher_dossier");
 
+Route::post('/medecin/patients/{id}/dossier','PatientController@create_folder')->name("create_folder");
+
+Route::post('/medecin/patients/{id}/dossierP','PatientController@create_analyse')->name("create_analyse");
+
 Route::get('/medecin/patients', 'PatientController@patients')->name('patients');
 
 Route::get('/medecin/new_folder', 'PatientController@new_folder')->name('new_folder');
@@ -56,6 +60,7 @@ Route::get('secretaire/new', 'PatientController@newrv')->name('newrv');
 Route::delete('/secretaire/liste/{id}', 'PatientController@destroy');
 
 // Route sur les utilisateurs
+Route::get('/admin/staff/{id}/affiche','UserController@afficher_staff')->name("afficher_staff");
 
 Route::get('/admin/staff/{id}/edit_staff', 'UserController@edit_staff')->name('editer_staff');
 

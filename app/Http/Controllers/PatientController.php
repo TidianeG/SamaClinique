@@ -5,9 +5,11 @@ use App\Patient;
 use App\Staff;
 use App\Appointment;
 use App\Consultation;
+use App\Analysis;
 use App\Folder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class PatientController extends Controller
 {
@@ -87,8 +89,11 @@ class PatientController extends Controller
         }
 
         public function afficher_dossier($id){
-            $patients = Patient::find($id);//on recupere le produit
-            return view('medecin.dossier', compact('patients'));
+            $folders = Folder::where('patient_id',$id)->first();
+            $patients= Patient::find($id);
+            $analyse= Analysis::where('patient_id',$id)->get();
+            //dd($folders);
+            return view('medecin.dossier', compact('folders','patients','analyse'));
         }
         public function folder_patient(Request $request){
             $id=$request->input('numfolder');
@@ -110,6 +115,7 @@ class PatientController extends Controller
             $id=$request->input('numero');
             $patient=Patient::find($id);
             $date=$request->input('daterv')." ".$request->input('heure');
+        
             $mondate = date('Y-m-d H:i:s', strtotime($date));
             if($patient){
                 $rv->daterendez_appointment = $mondate;
@@ -138,7 +144,9 @@ class PatientController extends Controller
                 $consult->staff_id= $request->input('medecinc');
                 $consult->type_payment= $request->input('typep');
                 $consult->montant_payment= $request->input('montantp');
+            
                 $consult->save();
+
                 return redirect('/secretaire/rv')->with(['success' => "Consultation creer avec succes"]); 
             }
             else{
@@ -146,8 +154,8 @@ class PatientController extends Controller
                }
         }
 
-        public function create_folder(Request $request){
-           $id=$request->input('numpatient');
+        public function create_folder(Request $request,$id){
+           
            $patient=Patient::find($id);
            $folder =new Folder();
            if($patient){
@@ -156,11 +164,35 @@ class PatientController extends Controller
                 $folder->temperature_folder=$request->input('temperature');
                 $folder->poids_folder=$request->input('poid');
                 $folder->antecedant_folder=$request->input('antecedant');
-                $folder->typeentec_folder=$request->input('typeantecedant');
-                $folder->groupesang_folder=$request->input('groupesanguin');
+                $folder->typeentec_folder=$request->input('type');
+                $folder->groupesang_folder=$request->input('groupe');
+                $folder->patient_id=$id;
+                $folder->staff_id=Auth::id();
+                $folder->save();
+                return redirect()->route('afficher_dossier', [$id])->with(['success' => "Dossier creer avec succes"]);             
            }
-
         }
 
+        public function create_analyse(Request $request,$id){
+            $patient=Patient::find($id);
+            $analyse =new Analysis();
+            //dd($request->input('descriptionresultat'));
+            if($patient){
+                $analyse->date_analysis=$request->input('dateanalyse');
+                $analyse->designation_analysis=$request->input('designation');
+                $analyse->nom_analysis=$request->input('nomanalyse');
+                $analyse->dateresult_analysis=$request->input('dateresultat');
+                $analyse->descriptresult_analysis=$request->input('descriptionresultat');
+                $analyse->staff_id=Auth::id();
+                $analyse->patient_id=$id;
+                $analyse->save();
+                return redirect()->route('afficher_dossier', [$id])->with(['success' => "Analyse creer avec succes"]);              
+           }
+        }
+
+        public function create_traitement(Request $request,$id){
+            $patient=Patient::find($id);
+            
+        }
 }
 ?>

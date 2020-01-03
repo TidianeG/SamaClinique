@@ -14,7 +14,7 @@
                 <div class=" row justify-content-between">
                     <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>     
                 </div>
-                <table id="myTable" class="table" style="overflow:hedden; margin:5px;">
+                <table id="myTable" class="table table-hover" style="overflow:hedden; margin:5px;">
                     <thead>
                         <tr>
                             <th>Nom</th>
@@ -30,7 +30,7 @@
                     </thead>
                     <tbody>
                         @foreach($staffs as $staff)
-                        <tr>
+                        <tr class="clickable-row" data-href="{{route('afficher_staff',['id'=>$staff->id])}}" style="cursor:pointer;">
                             <td>{{$staff->nom_staff}}</td>
                             <td>{{$staff->prenom_staff}}</td>
                             <td>{{$staff->adresse_staff}}</td>

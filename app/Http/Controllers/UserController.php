@@ -3,6 +3,9 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Staff;
+use App\Appointment;
+use App\Consultation;
+use App\Analysis;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
@@ -96,6 +99,15 @@ class UserController extends Controller
         public function deconnect(){
             Auth::logout();
             return view('acceuil');
+        }
+
+        public function afficher_staff($id){
+            //on recupere le produit
+            $consultations= Consultation::where('staff_id',$id)->get();
+            $rendezvous= Appointment::where('staff_id',$id)->get();
+            $staffs = Staff::find($id);
+            //dd($rendezvous);
+            return view('admin.afficher_staff', compact('staffs','rendezvous','consultations'));
         }
        
 }

@@ -142,7 +142,7 @@
                                 <div class="form-group col">
                                     <label for="inputPassword" style="color:red;" class="">Date Rendez-vous</label>
                                     <div class="">
-                                        <input type="date" class="form-control" id="date" name="date" placeholder="date">
+                                        <input type="date" class="form-control" id="date" name="daterv" placeholder="date">
                                     </div>
                                 </div>
                                 <div class="form-group col">

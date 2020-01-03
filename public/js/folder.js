@@ -1,40 +1,134 @@
 
 let createfolder= document.getElementById('createfolder');
-let folder=document.getElementById('folder');
-let newfolder=document.getElementById('newfolder');
-let retourfolder=document.getElementById('retourfolder');
+let createanalyse=document.getElementById('createanalyse');
+let createtraitement=document.getElementById('createtraitement');
 
-let traitement= document.getElementById('traitement');
-let newtraitement=document.getElementById('newtraitement');
-let fermetraitement=document.getElementById('fermetraitement');
+let retourfolder= document.getElementById('retourfolder');
+let retouranalyse=document.getElementById('retouranalyse');
+let retourtraitement=document.getElementById('retourtraitement');
+
 
 let traitementplus= document.getElementById('traitementplus');
-let formtraitement=document.getElementById('formtraitement');
+///Affichage pour la creation de nouveau folder
+createfolder.addEventListener('click', function(){
 
-newtraitement.addEventListener('click', function(){
-  traitement.classList.remove('fermerv');
-  traitement.classList.add('afficherv');
+  let folder=document.getElementById('folder');
+  let newfolder=document.getElementById('newfolder');
+  let newtraitement=document.getElementById('newtraitement');
+  let newanalyse=document.getElementById('newanalyse');
+
+  newfolder.classList.remove('fermerv');
+  newfolder.classList.add('afficherv');
+
+  folder.classList.remove('afficherv');
+  folder.classList.add('fermerv');
 
   newtraitement.classList.remove('afficherv');
   newtraitement.classList.add('fermerv');
+
+  newanalyse.classList.remove('afficherv');
+  newanalyse.classList.add('fermerv');
+
+  createanalyse.classList.remove('afficherv');
+  createanalyse.classList.add('fermerv');
+
+  createfolder.classList.remove('afficherv');
+  createfolder.classList.add('fermerv');
+
+  createtraitement.classList.remove('afficherv');
+  createtraitement.classList.add('fermerv');
 });
-fermetraitement.addEventListener('click', function(){
-  traitement.classList.remove('afficherv');
-  traitement.classList.add('fermerv');
+
+///Affichage pour la creation de nouvelle analyse
+createanalyse.addEventListener('click', function(){
+
+  let folder=document.getElementById('folder');
+  let newfolder=document.getElementById('newfolder');
+  let newtraitement=document.getElementById('newtraitement');
+  let newanalyse=document.getElementById('newanalyse');
+  let ajoutnew=document.getElementById('ajoutnew');
+
+  newanalyse.classList.remove('fermerv');
+  newanalyse.classList.add('afficherv');
+
+  folder.classList.remove('afficherv');
+  folder.classList.add('fermerv');
+
+  newtraitement.classList.remove('afficherv');
+  newtraitement.classList.add('fermerv');
+
+  newfolder.classList.remove('afficherv');
+  newfolder.classList.add('fermerv');
+
+  createanalyse.classList.remove('afficherv');
+  createanalyse.classList.add('fermerv');
+
+  createfolder.classList.remove('afficherv');
+  createfolder.classList.add('fermerv');
+
+  createtraitement.classList.remove('afficherv');
+  createtraitement.classList.add('fermerv');
+ 
+});
+
+///Affichage pour la creation de nouveau folder
+createtraitement.addEventListener('click', function(){
+
+  let folder=document.getElementById('folder');
+  let newfolder=document.getElementById('newfolder');
+  let newtraitement=document.getElementById('newtraitement');
+  let newanalyse=document.getElementById('newanalyse');
+
+
+  folder.classList.remove('afficherv');
+  folder.classList.add('fermerv');
+
+  newfolder.classList.remove('afficherv');
+  newfolder.classList.add('fermerv');
+
+  newanalyse.classList.remove('afficherv');
+  newanalyse.classList.add('fermerv');
 
   newtraitement.classList.remove('fermerv');
   newtraitement.classList.add('afficherv');
+
+  createanalyse.classList.remove('afficherv');
+  createanalyse.classList.add('fermerv');
+
+  createfolder.classList.remove('afficherv');
+  createfolder.classList.add('fermerv');
+
+  createtraitement.classList.remove('afficherv');
+  createtraitement.classList.add('fermerv');
+});
+
+
+retourtraitement.addEventListener('click', function(){
+  let folder=document.getElementById('folder');
+  let newtraitement=document.getElementById('newtraitement');
+  newtraitement.classList.remove('afficherv');
+  newtraitement.classList.add('fermerv');
+
+  folder.classList.remove('fermerv');
+  folder.classList.add('afficherv');
   
 });
 
-createfolder.addEventListener('click', function(){
-  folder.classList.remove('afficherv');
-  folder.classList.add('fermerv');
-  newfolder.classList.remove('fermerv');
-  newfolder.classList.add('afficherv');
+retouranalyse.addEventListener('click', function(){
+  let folder=document.getElementById('folder');
+  let newanalyse=document.getElementById('newanalyse');
+  newtraitement.classList.remove('afficherv');
+  newtraitement.classList.add('fermerv');
+
+  folder.classList.remove('fermerv');
+  folder.classList.add('afficherv');
+  
 });
 
+
 retourfolder.addEventListener('click', function(){
+  let newfolder=document.getElementById('newfolder');
+  let folder=document.getElementById('folder');
   newfolder.classList.remove('afficherv');
   newfolder.classList.add('fermerv');
   folder.classList.remove('fermerv');
