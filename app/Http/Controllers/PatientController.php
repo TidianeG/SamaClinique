@@ -95,10 +95,14 @@ class PatientController extends Controller
             //dd($folders);
             return view('medecin.dossier', compact('folders','patients','analyse'));
         }
-        public function folder_patient(Request $request){
+        public function recherche_dossier(Request $request){
             $id=$request->input('numfolder');
-            $folder = Folder::find($id);//on recupere le produit
-            return view('medecin.dossier', compact('folder'));
+            $folders = Folder::find($id);
+            $patients=Patient::where('id',$folders->patient_id)->first();
+            $analyse=Analysis::where('patient_id',$folders->patient_id)->get();
+            //on recupere le produit
+            //dd($folders,$patients,$analyse);
+            return view('medecin.dossier', compact('folders','patients','analyse'));
         }
         public function new_folder(){
             return view('medecin.new_folder');
@@ -155,10 +159,10 @@ class PatientController extends Controller
         }
 
         public function create_folder(Request $request,$id){
-           
+            $user=Auth::user();
            $patient=Patient::find($id);
            $folder =new Folder();
-           if($patient){
+           if($patient && $user->profil=="medecin"){
                 $folder->tension_folder=$request->input('tension');
                 $folder->taille_folder=$request->input('taille');
                 $folder->temperature_folder=$request->input('temperature');
@@ -167,28 +171,81 @@ class PatientController extends Controller
                 $folder->typeentec_folder=$request->input('type');
                 $folder->groupesang_folder=$request->input('groupe');
                 $folder->patient_id=$id;
-                $folder->staff_id=Auth::id();
+                $folder->staff_id=$user->staff_id;
                 $folder->save();
                 return redirect()->route('afficher_dossier', [$id])->with(['success' => "Dossier creer avec succes"]);             
+           }
+           else{
+            return redirect()->route('afficher_dossier', [$id])->with(['success' => "Vous ne pouvez pas creer de dossier"]);
            }
         }
 
         public function create_analyse(Request $request,$id){
             $patient=Patient::find($id);
             $analyse =new Analysis();
+            $user=Auth::user();
+
             //dd($request->input('descriptionresultat'));
-            if($patient){
+            if($patient && $user->profil=="medecin"){
                 $analyse->date_analysis=$request->input('dateanalyse');
                 $analyse->designation_analysis=$request->input('designation');
                 $analyse->nom_analysis=$request->input('nomanalyse');
                 $analyse->dateresult_analysis=$request->input('dateresultat');
                 $analyse->descriptresult_analysis=$request->input('descriptionresultat');
-                $analyse->staff_id=Auth::id();
+                $analyse->staff_id=$user->staff_id;
                 $analyse->patient_id=$id;
                 $analyse->save();
                 return redirect()->route('afficher_dossier', [$id])->with(['success' => "Analyse creer avec succes"]);              
            }
+           else{
+            return redirect()->route('afficher_dossier', [$id])->with(['success' => "Vous ne pouvez pas creer une nouvelle analyse"]);
+           }
         }
+
+        public function edit_dossier($id){
+            $analyse = Analysis::find($id);//on recupere le produit
+            return view('medecin.edit_dossier', compact('analyse'));
+        }
+
+        public function update_analyse(Request $request, $id)
+        {
+            $analyse = \App\Analysis::find($id);
+            if($analyse){
+                $analyse->update([
+                    'nom_analysis' => $request->input('nomanalyse'),
+                    'date_analysis' => $request->input('dateanalyse'),
+                    'designation_analysis' => $request->input('designation'),
+                    'dateresult_analysis' => $request->input('dateresultat'),
+                    'descriptresult_analysis' => $request->input('description')
+                ]);
+            }
+            return redirect()->route('afficher_dossier', [$analyse->patient_id])->with(['success' => "Analyse modifiee avec succes"]);              
+        }
+///////////////////////////// edit dossier
+        public function edit_folder($id){
+            $folders = Folder::find($id);//on recupere le produit
+            return view('medecin.edit_folder', compact('folders'));
+        }
+
+        public function update_folder(Request $request, $id)
+        {
+            $folder = \App\Folder::find($id);
+            if($folder){
+                $folder->update([
+                    'tension_folder' => $request->input('tension'),
+                    'taille_folder' => $request->input('taille'),
+                    'temperature_folder' => $request->input('temperature'),
+                    
+                    'poids_folder' => $request->input('poid'),
+                    'antecedant_folder' => $request->input('antecedant'),
+                    'typeentec_folder' => $request->input('type')
+                    
+                ]);
+            }
+            return redirect()->route('afficher_dossier', [$folder->patient_id])->with(['success' => "Analyse modifiee avec succes"]);              
+        }
+
+        /////////////////// fin edit dossier
 
         public function create_traitement(Request $request,$id){
             

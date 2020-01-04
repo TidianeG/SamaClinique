@@ -12,6 +12,7 @@
 */
 // Route vers les pages des utilisateurs
 
+Route::get('/medilife', 'acceuilController@medilife')->name('medilife');
 
 Route::get('/medecin', 'cliniqueController@medecin')->name('medecin');
 
@@ -41,9 +42,25 @@ Route::post('/medecin/patients/{id}/dossier','PatientController@create_folder')-
 
 Route::post('/medecin/patients/{id}/dossierP','PatientController@create_analyse')->name("create_analyse");
 
+Route::post('/medecin/patients/dossier','PatientController@recherche_dossier')->name("recherche_dossier");
+
 Route::get('/medecin/patients', 'PatientController@patients')->name('patients');
 
+Route::get('/medecin/appointment', 'UserController@mes_rv')->name('mes_rv');
+
 Route::get('/medecin/new_folder', 'PatientController@new_folder')->name('new_folder');
+
+Route::get('/medecin/analyse/{id}/edit','PatientController@edit_dossier')->name("editer_dossier");
+
+Route::patch('/medecin/analyse/{id}/edit','PatientController@update_analyse')->name("update_analyse");
+
+/////////////////edit folderrrr
+
+Route::get('/medecin/folder/{id}/edit','PatientController@edit_folder')->name("editer_folder");
+
+Route::patch('/medecin/folder/{id}/edit','PatientController@update_folder')->name("update_folder");
+
+//////////////////fin edit folder
 
 Route::patch('/secretaire/liste/{id}/edit','PatientController@update')->name("update_patient");
 

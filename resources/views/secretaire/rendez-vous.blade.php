@@ -11,15 +11,24 @@
             
                 <div class="card col-xl-7 col-md-12 container " >
                     <div class="card-header">
-                       
-                        <a href="#" id="listecons" style="width:200px;" class="btn btn-primary efficherv">
-                            <i class="fas fa-list"></i>
-                            liste des consultation
-                        </a>
-                        <a href="#" id="listerv" style="width:200px;" class="btn btn-primary fermerv">
-                        <i class="fas fa-reply"></i>
-                            retour au rendez-vous
-                        </a>
+                        <div class="row justify-content-between"> 
+                            <a href="#" id="listecons" style="width:200px;" class="btn btn-primary efficherv">
+                                <i class="fas fa-list"></i>
+                                liste des consultation
+                            </a>
+                            <a href="#" id="listerv" style="width:200px;" class="btn btn-primary fermerv">
+                            <i class="fas fa-reply"></i>
+                                retour au rendez-vous
+                            </a>
+                            <div class="">
+                                <a href="#" class="btn btn-success" id="newrv">
+                                    <i class="far fa-calendar-plus"></i>
+                                    New rendez-vous</a>
+                                <a href="#" class="btn btn-success" id="newcons">
+                                    <i class="fas fa-stethoscope"></i>
+                                    New consultation</a>
+                            </div>
+                        </div>
                         <div id="titre"><h3>Liste de tous les rendez-vous</h3></div>
                     </div>
                     <div class="card-body" style="border:2px solid #081f3e;background-color:#081f3e;"> 
@@ -93,16 +102,7 @@
                         </table>
                     </div>
                     </div>
-                    <div class="card-footer">
-                    <div class="row justify-content-around mt-5">
-                        <a href="#" class="btn btn-success" id="newrv">
-                            <i class="far fa-calendar-plus"></i>
-                             New rendez-vous</a>
-                        <a href="#" class="btn btn-success" id="newcons">
-                            <i class="fas fa-stethoscope"></i>
-                            New consultation</a>
-                    </div>
-                    </div>
+                   
                     
                 </div>
                 

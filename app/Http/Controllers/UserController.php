@@ -110,4 +110,10 @@ class UserController extends Controller
             return view('admin.afficher_staff', compact('staffs','rendezvous','consultations'));
         }
        
+        public function mes_rv(){
+            $user=Auth::user();
+            $rv=Appointment::where('staff_id',$user->staff_id)->get();
+            //dd($rv);
+            return view('medecin.rv_medecin',compact('rv'));
+        }
 }

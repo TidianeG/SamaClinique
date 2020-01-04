@@ -60,17 +60,17 @@
                                                 Acceuil 
                                             </a>
                                         </li>
-                                        <div class="topbar-divider d-none d-sm-block"></div>
+                                        <!--div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link " href="#">
                                             <i class="fab fa-hire-a-helper fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Services
                                             </a>
                                             
-                                        </li>
+                                        </li-->
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">
+                                            <a class="nav-link" href="{{route('medilife')}}">
                                             <i class="fas fa-hospital-alt fa-md fa-fw mr-2 text-gray-400"></i>
                                                 A Propos
                                             </a>

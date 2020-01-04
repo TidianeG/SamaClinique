@@ -96,27 +96,23 @@
                                             <div class="topbar-divider d-none d-sm-block"></div>
 
                                             <!-- Nav Item - User Information -->
-                                            <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                Admin
+                                            <li class="nav-item">
+                                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                    Moi
                                                 </a>
-                                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        
+                                                <!-- Dropdown - User Information -->
+                                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                                     <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                        Profil
+                                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                    Profil
                                                     </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                        Parametre
-                                                    </a>
-                                                    <a class="dropdown-item" href="#">
-                                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                        Activité
-                                                    </a>
+                                                    
                                                     <div class="dropdown-divider"></div>
                                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                        Deconnexion
+                                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                    Deconnexion
                                                     </a>
                                                 </div>
                                             </li>
@@ -132,22 +128,25 @@
         </div>
     </div>
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Vous etes sùr?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
+        <div class="modal-dialog" role="document" >
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel" style="color:white;">Vous etes sùr?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style="color;white;">×</span>
+                    </button>
+                </div>
+                <div class="modal-body" style="background-color:white;">
+                    Selectionner Deconnecter si tu es pret à quitter la session. <br>
+                    Et Cancel pour annuler.
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="{{route('deconnect')}}">Deconnecter</a>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">Selectionner Deconnecter si tues pret à quitter la session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="{{route('deconnect')}}">Deconnecter</a>
-        </div>
-      </div>
     </div>
-  </div>
     </header>
     <main class="content-div">
         <div class="content-yield" >
@@ -216,6 +215,8 @@
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
     <script src="{{asset('js/datatable.min.js')}}"></script>
+    <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <!--script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script-->
     <script>
         $(document).ready( function () {

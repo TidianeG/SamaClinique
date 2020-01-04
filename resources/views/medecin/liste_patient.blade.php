@@ -9,11 +9,12 @@
                
                 <div class=" row justify-content-between">
                     <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
-                    <form action="" method="post">
+                    <form action="{{route('recherche_dossier')}}" method="post">
+                        @csrf 
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control"  placeholder="Recherche par numero dossier">
+                            <input type="text" class="form-control" name="numfolder"  placeholder="Recherche par numero dossier">
                             <div class="input-group-append">
-                                <button class="btn btn-success" name="numfolder" type="submit">Go</button>
+                                <button class="btn btn-success"  type="submit">Go</button>
                             </div>
                         </div>
                     </form>

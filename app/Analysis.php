@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Analysis extends Model
 {
+    protected $guarded = [];
     public function staff(){
         return $this->belongsTo('App\Staff');   
     }

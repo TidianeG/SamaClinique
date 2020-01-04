@@ -130,12 +130,16 @@
                                                         <label for="temp" class="label-form">Temperature:</label>
                                                         <input type="text" class="form-control" value="{{$folders->temperature_folder ?? 'null'}}" disabled style="border:none;">
                                                     </div>
+                                                    <div class="form-group col">
+                                                        <label for="temp" class="label-form">Taille:</label>
+                                                        <input type="text" class="form-control" value="{{$folders->taille_folder ?? 'null'}}" disabled style="border:none;">
+                                                    </div>
                                                 </div>
                                                 
                                                 <div class="row mb-3 justify-content-around">    
                                                     <div class="form-group col">
                                                         <label for="poid" class="label-form ">Date Consultation:</label>
-                                                        <input type="date" class="form-control" value="{{$folders->created_at ?? 'null'}}" disabled style="border:none;">
+                                                        <input type="datetime" class="form-control" value="{{$folders->created_at ?? 'null'}}" disabled style="border:none;">
                                                     </div>
                                                     <div class="form-group col">
                                                         <label for="tension" class="label-form">Tension:</label>
@@ -149,32 +153,33 @@
                                                     </div>
                                                     <div class="form-group col">
                                                         <label for="type" class="label-form">Type antecedant:</label><br>
-                                                        <select name="type" id="" class="form-control" style="border:none;" disabled>
-                                                            <option value="{{$folders->typeentec_folder ?? 'null'}}">{{$folders->typeentec_folder ?? 'null'}}</option>
-                                                            <option value="familial">Familial</option>
-                                                            <option value="personnel">Personnel</option>
-                                                            <option value="autre">Autres</option>
-                                                        </select>
+                                                        <input type="text" class="form-control" value="{{$folders->typeentec_folder ?? 'null'}}" disabled style="border:none;">
+                                                        
                                                     </div>
                                                 </div>
                                                 <div class="row mb-3">
                                                     <div class="form-group col">
                                                         <label for="groupe" class="label-form">Groupe Sanguin:</label><br>
-                                                        <select name="groupe" class="form-control" id="" style="border:none;" disabled>
-                                                            <option value="{{$folders->groupesang_folder ?? 'null'}}">{{$folders->groupesang_folder ?? 'null'}}</option>
-                                                            <option value="O">O</option>
-                                                            <option value="O+">O+</option>
-                                                            <option value="A+">A+</option>
-                                                        </select>
+                                                        <input type="text" class="form-control" value="{{$folders->groupesang_folder ?? 'null'}}" disabled style="border:none;">
+                                                        
                                                     </div>
                                                     
                                                 </div>
-                                                <div class="row">
-                                                    <div class="form-group col-6">
-                                                        <label for="groupe" class="label-form">Description:</label>
-                                                        <textarea name="" id="" class="form-control" cols="15" rows="6" disabled style="border:none;"></textarea>
-                                                    </div>
-                                                </div>
+                                                    <?php
+                                                        if(@$folders->id){
+                                                    ?>
+                                                            <div class="d-flex justify-content-end">
+                                                                <a href="{{route('editer_folder',['id'=>$folders->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i>Modifier</a>
+                                                                <span style="width:5px;"></span>                                                
+                                                                <form action="" method="post">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <button type="submit" class="btn btn-danger" name="delete">Delete</button>
+                                                                </form>
+                                                            </div>
+                                                    <?php
+                                                        }
+                                                    ?>
                                             </form>
                                                                  
                                         </div>
@@ -212,6 +217,8 @@
                                                 <th>Designation</th>
                                                 <th>Date resultat</th>
                                                 <th>Decription Resultat</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
                                             </tr>
                                         </thead>
                                         <tbody class="table-dark">
@@ -222,6 +229,12 @@
                                                     <td>{{$analysis->designation_analysis ?? 'null'}}</td>
                                                     <td>{{$analysis->dateresult_analysis ?? 'null'}}</td>
                                                     <td>{{$analysis->descriptresult_analysis ?? 'null'}}</td>
+                                                    <td>
+                                                        <p><a href="{{route('editer_dossier',['id'=>$analysis->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
+                                                    </td>
+                                                    <td>
+                                                        <p><a class="btn btn-danger" href="#"  ><i class="fas fa-trash-alt"></i></a></p>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -281,7 +294,7 @@
             <!-----------------------------creation newdossier-->
             <div class="col-7 mt-3 fermerv mb-2" id="newfolder" style="height:100%;">
                     <div class="container  ">
-                            <a href="" id="retourfolder" class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i>Retour</a>
+                            <a href="{{route('afficher_dossier',['id'=>$patients->id])}}"  class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i>Retour</a>
                             <div class="" >
                                 <div class="card mb-3 mt-3 ">
                                     <div class="card-header ml-0">
@@ -361,7 +374,7 @@
             <!-------------- creation Analyse----->
             <div class="col-7 mt-3 fermerv mb-2" id="newanalyse" style="height:100%;">
                 <div class="container">
-                    <a href="" id="retouranalyse" class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i>Retour</a>
+                    <a href="{{route('afficher_dossier',['id'=>$patients->id])}}"  class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i>Retour</a>
                         <div class="card mb-3 mt-3 ">
                             <div class="card-header ml-0">
                                 <h3>Création d'une nouvelle analyse</h3>
@@ -408,7 +421,7 @@
             <!--------------Creation Traitement------------>
             <div class="col-7 mt-3 fermerv mb-2" id="newtraitement" style="height:100%;">
                 <div class="container">
-                    <a href="" id="retourtraitement" class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i>Retour</a>
+                    <a href="{{route('afficher_dossier',['id'=>$patients->id])}}"  class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i>Retour</a>
                         <div class="card mb-3 mt-3 ">
                             <div class="card-header ml-0">
                                 <h3>Création d'un nouveau traitement</h3>
@@ -490,10 +503,7 @@
                         Toutes ces informations médicales ou paramédicales du dossier, dès lors qu’elles concernent bien le patient et non un tiers, font partie de ce dossier médical, au sens légal du terme, et doivent ainsi être portées à sa connaissance s’il le demande
                     </p>
                 </div>
-            </div>
-        
+            </div>        
     </div>
-    
-   
  @endsection
                                             

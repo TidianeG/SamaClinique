@@ -28,6 +28,7 @@ class cliniqueController extends Controller
         return view('medecin/medecin');
     }
 
+
     public function secretaire(){
         return view('secretaire/secretaire');
     }
