@@ -22,7 +22,6 @@ class CreateFoldersTable extends Migration
             $table->string('antecedant_folder');
             $table->string('typeentec_folder');
             $table->string('groupesang_folder');
-            $table->string('radio_folder');
             $table->unsignedInteger('staff_id');
             $table->unsignedInteger('patient_id');
             $table->timestamps();

@@ -365,10 +365,7 @@
                                                     <option value="autre">Autres</option>
                                                 </select>
                                             </div>
-                                            <div class="form-group ">
-                                                <label for="file" class="label-form">Radio:</label>
-                                                <input type="file" class="form-control" name="file" id="file">
-                                            </div>
+                                            
                                         </div>
                                         <button type="submit" class="btn btn-success">Valider</button>
                                         <button type="reset" class="btn btn-danger" id="">Annuler</button>
