@@ -13,7 +13,7 @@
             </div>
             <div class="container d-flex justify-content-between">
                 <div>
-                    <img src="{{asset('images/index.jpeg')}}" alt="" style="height:150px;width:150px;">
+                    <img src="{{asset('images/personnel.png')}}" alt="" style="height:150px;width:150px;">
                 </div>
             </div>
         </div>
