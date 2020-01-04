@@ -11,85 +11,111 @@
 |
 */
 // Route vers les pages des utilisateurs
+Route::middleware(['can:admin'])->prefix('admin')->group(function(){
+        Route::get('/', 'cliniqueController@admin')->name('admin');
+        Route::get('/staff/{id}/affiche','UserController@afficher_staff')->name("afficher_staff");
 
-Route::get('/medilife', 'acceuilController@medilife')->name('medilife');
+        Route::get('/staff/{id}/edit_staff', 'UserController@edit_staff')->name('editer_staff');
 
-Route::get('/medecin', 'cliniqueController@medecin')->name('medecin');
+        Route::post('/staff', 'UserController@store')->name('ajouter_user');
 
-Route::get('/secretaire', 'cliniqueController@secretaire')->name('secretaire');
+        Route::get('/staff', 'UserController@liste_staff')->name('liste_staff');
 
-Route::get('/admin', 'cliniqueController@admin')->name('admin');
+        Route::delete('/staff/{id}', 'UserController@destroy');
 
-Route::get('/', 'acceuilController@index');
-
-
+});
 #Route::get('/user', 'HomeController@redirectTo');
 
 
 //Route::get('/secretaire/edit', 'PatientController@editer_patient')->name('edit_patient');
 
-// Route sur les patients
+//Secretaire
+Route::middleware(['can:secretaire'])->prefix('secretaire')->group(function(){
+        Route::get('/', 'cliniqueController@secretaire')->name('secretaire');
+        Route::post('/liste', 'PatientController@store')->name('ajouter_patient');
 
-Route::post('/secretaire/liste', 'PatientController@store')->name('ajouter_patient');
+        Route::get('/liste', 'PatientController@liste_patient')->name('liste_patient');
 
-Route::get('/secretaire/liste', 'PatientController@liste_patient')->name('liste_patient');
+        Route::get('/liste/{id}/edit','PatientController@edit_patient')->name("editer_patient");
 
-Route::get('/secretaire/liste/{id}/edit','PatientController@edit_patient')->name("editer_patient");
+        Route::get('/rv/{id}/edit', 'PatientController@edit_rv')->name('editer_rv');
 
-Route::get('/medecin/patients/{id}/dossier','PatientController@afficher_dossier')->name("afficher_dossier");
+        Route::patch('/rv/{id}/edit','PatientController@update_rv')->name("update_rv");
 
-Route::post('/medecin/patients/{id}/dossier','PatientController@create_folder')->name("create_folder");
+        Route::delete('/rv/{id}','PatientController@delete_rv')->name("delete_rv");
+        ///////////fin edit rv
+        /////////////  edit consultation//////////////////////
 
-Route::post('/medecin/patients/{id}/dossierP','PatientController@create_analyse')->name("create_analyse");
+        Route::get('/rv/{id}/edit_consult', 'PatientController@edit_consultation')->name('editer_consultation');
 
-Route::post('/medecin/patients/dossier','PatientController@recherche_dossier')->name("recherche_dossier");
+        Route::patch('/rv/{id}/edit_consult','PatientController@update_consultation')->name("update_consultation");
 
-Route::get('/medecin/patients', 'PatientController@patients')->name('patients');
+        Route::delete('/rvs/{id}','PatientController@delete_consultation')->name("delete_consultation");
 
-Route::get('/medecin/appointment', 'UserController@mes_rv')->name('mes_rv');
+        //////////// fin edit consultation/////////////////
+        Route::patch('/liste/{id}/edit','PatientController@update')->name("update_patient");
 
-Route::get('/medecin/new_folder', 'PatientController@new_folder')->name('new_folder');
+        Route::get('/liste/{id}/affiche','PatientController@afficher_patient')->name("afficher_patient");
 
-Route::get('/medecin/analyse/{id}/edit','PatientController@edit_dossier')->name("editer_dossier");
+        Route::get('/rv', 'PatientController@newrv')->name('rendezvous');
 
-Route::patch('/medecin/analyse/{id}/edit','PatientController@update_analyse')->name("update_analyse");
+        Route::post('/rv', 'PatientController@create_rv')->name('createrv');
 
-/////////////////edit folderrrr
+        Route::post('/consult', 'PatientController@save_consult_payment')->name('createconsultation');
 
-Route::get('/medecin/folder/{id}/edit','PatientController@edit_folder')->name("editer_folder");
+        Route::get('/new', 'PatientController@newrv')->name('newrv');
 
-Route::patch('/medecin/folder/{id}/edit','PatientController@update_folder')->name("update_folder");
+        Route::delete('/liste/{id}', 'PatientController@destroy');
 
+});
+//////////////////////  Medecinnnnn
+
+Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
+        Route::get('/', 'cliniqueController@medecin')->name('medecin');
+
+        Route::get('/patients/{id}/dossier','PatientController@afficher_dossier')->name("afficher_dossier");
+
+        Route::post('/patients/{id}/dossier','PatientController@create_folder')->name("create_folder");
+        Route::post('/patients/{id}/dossierP','PatientController@create_analyse')->name("create_analyse");
+
+        Route::post('/patients/dossier','PatientController@recherche_dossier')->name("recherche_dossier");
+
+        Route::get('/patients', 'PatientController@patients')->name('patients');
+
+        Route::get('/appointment', 'UserController@mes_rv')->name('mes_rv');
+
+        Route::get('/new_folder', 'PatientController@new_folder')->name('new_folder');
+
+        /////////////// edit analyse ///////////////////////////
+
+        Route::get('/analyse/{id}/edit','PatientController@edit_dossier')->name("editer_dossier");
+
+        Route::patch('/analyse/{id}/edit','PatientController@update_analyse')->name("update_analyse");
+
+        Route::delete('/patients/{id}/dossiers','PatientController@delete_analyse')->name("delete_analyse");
+
+        //////////////// fin edit analyse//////////////////////
+        /////////////////edit folderrrr////////////////////////////////
+
+        Route::get('/folder/{id}/edit','PatientController@edit_folder')->name("editer_folder");
+
+        Route::patch('/folder/{id}/edit','PatientController@update_folder')->name("update_folder");
+
+        Route::delete('/patients/{id}/dossier','PatientController@delete_folder')->name("delete_folder");
+
+});
 //////////////////fin edit folder
 
-Route::patch('/secretaire/liste/{id}/edit','PatientController@update')->name("update_patient");
+///////////// editer rv
+ 
 
-Route::get('/secretaire/liste/{id}/affiche','PatientController@afficher_patient')->name("afficher_patient");
-
-Route::get('secretaire/rv', 'PatientController@newrv')->name('rendezvous');
-
-Route::post('secretaire/rv', 'PatientController@create_rv')->name('createrv');
-
-Route::post('secretaire/consult', 'PatientController@save_consult_payment')->name('createconsultation');
-
-Route::get('secretaire/new', 'PatientController@newrv')->name('newrv');
-
-Route::delete('/secretaire/liste/{id}', 'PatientController@destroy');
 
 // Route sur les utilisateurs
-Route::get('/admin/staff/{id}/affiche','UserController@afficher_staff')->name("afficher_staff");
 
-Route::get('/admin/staff/{id}/edit_staff', 'UserController@edit_staff')->name('editer_staff');
-
-Route::post('/admin/staff', 'UserController@store')->name('ajouter_user');
-
-Route::get('/admin/staff', 'UserController@liste_staff')->name('liste_staff');
-
-Route::delete('/admin/staff/{id}', 'UserController@destroy');
-
+Route::get('/medilife', 'acceuilController@medilife')->name('medilife');
 Route::get('/register', 'UserController@liste_register');
-
 Route::get('/acceuil', 'UserController@deconnect')->name('deconnect');
+Route::get('/', 'acceuilController@index');
 
 // Route vers l'authentification
 

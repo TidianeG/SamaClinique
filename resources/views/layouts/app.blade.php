@@ -35,7 +35,7 @@
                     <div class="col-12 h-100">
                         <div class="h-100 d-md-flex justify-content-between ">
                             <p>Bienvenu à <span>Medifile</span></p>
-                            <p>jours ouvrable : du Lundi au Samedi - 8h à 23h Contact : <span>+221 33 899 99 99</span></p>
+                            <p>jours ouvrable : du Lundi au Samedi - 8h à 23h Contact : <span></span></p>
                         </div>
                     </div>
                 </div>
@@ -111,10 +111,10 @@
         
           <div class="col-xs-12 col-md-5 text-center" >
               <ul class="vertical-links small">
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Site Map</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#"><i class="fas fa-map-marker-alt"></i> Dakar Ngor-Almadies</a></li>
+                <li><a href="#"><i class="fas fa-phone"></i>+221 33 899 99 99</a></li>
+                <li><a href="#"><i class="far fa-envelope"></i> medilife@gmail.com</a></li>
+                <li><a href="#">site web : www.medilife.sn</a></li>
               </ul>
           </div>
           <div class="col-xs-12 col-md-2 text-center" >
@@ -122,7 +122,7 @@
           </div>
           <div class="col-xs-12 col-md-5 text-center" >
             <ul>
-              <li class="small">© Copyright 2019 Website by <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
+              <li class="small">© Copyright 2019 Developpeur web/mobile<a href="#" style="color:white;font-weight:500;">Galima Academy</a>. Tous droits reserves.</li>
             </ul>
           </div>
         </div> <!--  end row  -->

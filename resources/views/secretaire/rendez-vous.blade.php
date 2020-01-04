@@ -56,10 +56,14 @@
                                         <td>{{$rendv->staff->prenom_staff}} {{$rendv->staff->nom_staff}}</td>
                                         <td>{{$rendv->daterendez_appointment}}</td>
                                         <td>
-                                            <p><a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
+                                            <p><a href="{{route('editer_rv',['id'=>$rendv->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
                                         </td>
                                         <td>
-                                            <p><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></p>
+                                            <form action="{{route('delete_rv',['id'=>$rendv->id])}}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                    <i class="fas fa-trash-alt"></i><input type="submit" class="btn btn-danger"  value="Delete">
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -91,10 +95,14 @@
                                         <td>{{$consultation->type_payment}}</td>
                                         <td>{{$consultation->montant_payment}}</td>
                                         <td>
-                                            <p><a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
+                                            <p><a href="{{route('editer_consultation',['id'=>$consultation->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
                                         </td>
                                         <td>
-                                            <p><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></p>
+                                            <form action="{{route('delete_consultation',['id'=>$consultation->id])}}" method="post">
+                                                @csrf
+                                                @method('delete')
+                                                <i class="fas fa-trash-alt"></i><input type="submit" class="btn btn-danger"  value="Delete">
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach         

@@ -165,24 +165,28 @@
                                                     </div>
                                                     
                                                 </div>
+                                                </form>
+                                                </div>
+                                                <div class="d-flex justify-content-end">
                                                     <?php
                                                         if(@$folders->id){
                                                     ?>
-                                                            <div class="d-flex justify-content-end">
+                                                            
                                                                 <a href="{{route('editer_folder',['id'=>$folders->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i>Modifier</a>
                                                                 <span style="width:5px;"></span>                                                
-                                                                <form action="" method="post">
+                                                                <form action="{{route('delete_folder',['id'=>$folders->id])}}" method="post">
                                                                     @csrf
                                                                     @method('delete')
-                                                                    <button type="submit" class="btn btn-danger" name="delete">Delete</button>
+                                                                    <input type="submit" class="btn btn-danger"  value="Delete">
                                                                 </form>
-                                                            </div>
+                                                            
                                                     <?php
                                                         }
                                                     ?>
-                                            </form>
+                                                </div>
+                                            
                                                                  
-                                        </div>
+                                        
                                                                           
                                     </div>
                             
@@ -233,7 +237,12 @@
                                                         <p><a href="{{route('editer_dossier',['id'=>$analysis->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
                                                     </td>
                                                     <td>
-                                                        <p><a class="btn btn-danger" href="#"  ><i class="fas fa-trash-alt"></i></a></p>
+                                                                <form action="{{route('delete_analyse',['id'=>$analysis->id])}}" method="post">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <i class="fas fa-trash-alt"></i><input type="submit" class="btn btn-danger"  value="Delete">
+                                                                </form>
+                                                       
                                                     </td>
                                                 </tr>
                                             @endforeach

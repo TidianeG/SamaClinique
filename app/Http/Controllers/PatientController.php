@@ -206,7 +206,7 @@ class PatientController extends Controller
             $analyse = Analysis::find($id);//on recupere le produit
             return view('medecin.edit_dossier', compact('analyse'));
         }
-
+//////////////////// edit analyse///////////////////////
         public function update_analyse(Request $request, $id)
         {
             $analyse = \App\Analysis::find($id);
@@ -221,6 +221,18 @@ class PatientController extends Controller
             }
             return redirect()->route('afficher_dossier', [$analyse->patient_id])->with(['success' => "Analyse modifiee avec succes"]);              
         }
+        public function delete_analyse($id)
+        {
+            $analyse = Analysis::find($id);
+            $id_pat=$analyse->patient_id;
+            if($analyse){
+                $analyse->delete();
+                return redirect()->route('afficher_dossier', [$id_pat])->with(['success'=>"Analyse supprime"]); 
+            }
+            
+        }
+
+        //////////////////////  fin edit analyse //////////////
 ///////////////////////////// edit dossier
         public function edit_folder($id){
             $folders = Folder::find($id);//on recupere le produit
@@ -245,8 +257,97 @@ class PatientController extends Controller
             return redirect()->route('afficher_dossier', [$folder->patient_id])->with(['success' => "Analyse modifiee avec succes"]);              
         }
 
-        /////////////////// fin edit dossier
+        ///////////////delete dossier
+        public function delete_folder($id)
+        {
+            $folder = Folder::find($id);
+            $id_pat=$folder->patient_id;
+            if($folder){
+                $folder->delete();
+                return redirect()->route('afficher_dossier', [$id_pat])->with(['success'=>"Dossier supprime"]); 
+            }
+            
+        }
 
+        /////////////////// fin edit dossier
+        ///////////////// edit rv
+
+        public function edit_rv($id){
+            $rv = Appointment::find($id);//on recupere le produit
+            $medecin=Staff::where('poste_staff','medecin')->get();
+            return view('secretaire.edit_rv', compact('rv','medecin'));
+        }
+
+        public function update_rv(Request $request, $id)
+        {
+            $rv = \App\Appointment::find($id);
+            $patient=Patient::find($request->input('numero'));
+            if($rv && $patient){
+                
+                $mondate = date('Y-m-d H:i:s', strtotime($request->input('daterv')));
+                //dd($mondate);
+                $rv->update([
+                    'daterendez_appointment' => $mondate,
+                    'description_appointment' => $request->input('descrv'),
+                    'staff_id' => $request->input('medecin'),
+                    'patient_id' => $request->input('numero')
+                    
+                ]);
+            }
+            return redirect()->route('rendezvous')->with(['success' => "Rendez-vous modifiee avec succes"]);              
+        }
+
+        public function delete_rv($id)
+        {
+            $appoint = Appointment::find($id);
+            $id_pat=$appoint->patient_id;
+            if($appoint){
+                $appoint->delete();
+                return redirect()->route('rendezvous', [$id_pat])->with(['success'=>"Rendez-vous supprime"]); 
+            }
+            
+        }
+        ///////fin edit rv
+
+        //////////  edit consultation
+        public function edit_consultation($id){
+            $consult = Consultation::find($id);//on recupere le produit
+            $medecin=Staff::where('poste_staff','medecin')->get();
+            return view('secretaire.edit_consultation', compact('consult','medecin'));
+        }
+
+        public function update_consultation(Request $request, $id)
+        {
+            $consult = \App\Consultation::find($id);
+            $patient=Patient::find($request->input('numero'));
+            if($consult && $patient){
+                
+                $mondate = date('Y-m-d H:i:s', strtotime($request->input('datec')));
+                //dd($mondate);
+                $consult->update([
+                    'date_consultation' => $mondate,
+                    'description_consultation' => $request->input('description'),
+                    'type_payment' => $request->input('typepayment'),
+                    'montant_payment' => $request->input('montantpayment'),
+                    'staff_id' => $request->input('medecin'),
+                    'patient_id' => $request->input('numero')
+                    
+                ]);
+            }
+            return redirect()->route('rendezvous')->with(['success' => "Consultation modifiee avec succes"]);              
+        }
+
+        public function delete_consultation($id)
+        {
+            $consult = Consultation::find($id);
+            $id_pat=$consult->patient_id;
+            if($consul){
+                $consul->delete();
+                return redirect()->route('rendezvous', [$id_pat])->with(['success'=>"Consultation supprime"]); 
+            }
+            
+        }
+        //////////// fin edit concultation ////////////////
         public function create_traitement(Request $request,$id){
             
             

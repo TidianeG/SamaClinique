@@ -154,28 +154,30 @@
         </div>
     </main>
     <footer>
-            <div class="container-fluid">
-                 <!--  end row  --> 
-                <div class="row row-no-gutters" id="bottom-footer" >
-                    <div class="col-xs-12 col-md-5 text-center" >
-                        <ul class="vertical-links small">
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Site Map</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-md-2 text-center" >
-                        <p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
-                    </div>
-                    <div class="col-xs-12 col-md-5 text-center" >
-                        <ul>
-                        <li class="small">© Copyright 2019 Website by <a href="#" style="color:white;font-weight:500;">Developr</a>. All Rights reserved.</li>
-                        </ul>
-                    </div>
-                </div> <!--  end row  -->
-            </div> <!--  end container-fluid  -->
+      <div class="container-fluid">
 
+        <div class="row row-no-gutters" id="bottom-footer" >
+        
+          <div class="col-xs-12 col-md-5 text-center" >
+              <ul class="vertical-links small">
+                <li><a href="#"><i class="fas fa-map-marker-alt"></i> Dakar Ngor-Almadies</a></li>
+                <li><a href="#"><i class="fas fa-phone"></i>+221 33 899 99 99</a></li>
+                <li><a href="#"><i class="far fa-envelope"></i> medilife@gmail.com</a></li>
+                <li><a href="#">site web : www.medilife.sn</a></li>
+              </ul>
+          </div>
+          <div class="col-xs-12 col-md-2 text-center" >
+            <p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
+          </div>
+          <div class="col-xs-12 col-md-5 text-center" >
+            <ul>
+              <li class="small">© Copyright 2019 Developpeur web/mobile<a href="#" style="color:white;font-weight:500;">Galima Academy</a>. Tous droits reserves.</li>
+            </ul>
+          </div>
+        </div> <!--  end row  -->
+
+      </div> <!--  end container-fluid  -->
+    </footer>
         <script>
         // Script from W3 Schools  
         // When the user scrolls down 20px from the top of the document, show the button
@@ -193,8 +195,6 @@
         document.documentElement.scrollTop = 0;
         }
         </script>
-            
-</footer>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
   crossorigin="anonymous">
