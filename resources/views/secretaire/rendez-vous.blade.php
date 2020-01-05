@@ -62,7 +62,7 @@
                                             <form action="{{route('delete_rv',['id'=>$rendv->id])}}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                    <i class="fas fa-trash-alt"></i><input type="submit" class="btn btn-danger"  value="Delete">
+                                                <button type="submit" class="btn btn-danger"  value="Delete" ><i class="fas fa-trash-alt"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -101,7 +101,7 @@
                                             <form action="{{route('delete_consultation',['id'=>$consultation->id])}}" method="post">
                                                 @csrf
                                                 @method('delete')
-                                                <i class="fas fa-trash-alt"></i><input type="submit" class="btn btn-danger"  value="Delete">
+                                                <button type="submit" class="btn btn-danger"  value="Delete" ><i class="fas fa-trash-alt"></i>Delete</button>
                                             </form>
                                         </td>
                                     </tr>
@@ -124,7 +124,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="fermerv"  id="rv" style="height:100%; margin-bottom:3px;">
+                    <div class="fermerv"  id="rv" style="height:100%; margin-bottom:3px;margin-top:20px;">
                         <form action="{{route('createrv')}}" method="post">
                             @csrf 
                             <div class="row">
@@ -175,7 +175,7 @@
                         </form>
                     </div>
                     <!----------------------------------------------------->
-                    <div class="fermerv"  id="consult" style="height:100%; margin-bottom:3px;">
+                    <div class="fermerv"  id="consult" style="height:100%; margin-bottom:3px;argin-top:20px;">
                         <form action="{{route('createconsultation')}}" method="post">
                             @csrf 
                             <div class="row">

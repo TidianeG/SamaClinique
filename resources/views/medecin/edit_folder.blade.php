@@ -52,17 +52,9 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="row mb-3">
-                                                    <div class="form-group col">
-                                                        <label for="groupe" class="">Groupe Sanguin:</label><br>
-                                                        <input type="text" class="form-control" name="groupe" value="{{$folders->groupesang_folder ?? 'null'}}" disabled >
-                                                        
-                                                    </div>
-                                                    
-                                                </div>
                                                 <div class="">         
                                                     <button type="submit" class="btn btn-success">Modifier</button>
-                                                    <button type="reset" class="btn btn-danger" >Close</button>
+                                                    <a href="" class="btn btn-danger" >fermer</a>
                                                 </div>
                                             </form>
                                             </div>      

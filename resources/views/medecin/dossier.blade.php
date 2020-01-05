@@ -351,7 +351,7 @@
                                                         </select>
                                                     </div>
                                                 </div>                                       
-                                        <div class="row justify-content-between">
+                                        <div class="row justify-content-around">
                                             <div class="form-group ">
                                                 <label for="ante" class="label-form">Antecedant:</label>
                                                 <input type="text" class="form-control" name="antecedant">
