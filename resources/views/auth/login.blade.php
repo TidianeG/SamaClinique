@@ -45,7 +45,7 @@
 								</a>
 							@endif
 						</div>
-						<div class="container-login100-form-btn" style="width:120px;">
+						<div class="container-login100-form-btn" style="width:100px;">
 							<button class="login100-form-btn btn btn-success" >
 								Se Connecter
 							</button>

@@ -26,6 +26,10 @@ class PatientController extends Controller
             return view('secretaire.liste', compact('patients'));
         }
 
+        public function liste_patientAdmin(){
+            $patients = Patient::all();
+            return view('admin.listePatient', compact('patients'));
+        }
         public function patients(){
             $patients = Patient::all();
             return view('medecin.liste_patient', compact('patients'));
@@ -86,6 +90,15 @@ class PatientController extends Controller
             $patients = Patient::find($id);
             //dd($rendezvous);
             return view('secretaire.afficher_patient', compact('patients','rendezvous','consultations'));
+        }
+
+        public function afficher_patientAdmin($id){
+            //on recupere le produit
+            $consultations= Consultation::where('patient_id',$id)->get();
+            $rendezvous= Appointment::where('patient_id',$id)->get();
+            $patients = Patient::find($id);
+            //dd($rendezvous);
+            return view('admin.afficherPatient', compact('patients','rendezvous','consultations'));
         }
 
         public function afficher_dossier($id){

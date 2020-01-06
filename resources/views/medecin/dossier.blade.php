@@ -2,7 +2,7 @@
     @section('content')
         <div style="margin-top:10px;"><a href="{{route('patients')}}" class="btn btn-primary" style="width:auto;"><i class="fas fa-long-arrow-alt-left"></i>Retour a la liste des patients</a></div>       
         <div class="row">
-            <div class="col-7 mt-3 mb-2 afficherv" id="folder" style="height:100%;">
+            <div class="col-xl-7 col-sm-12 col-md-7 mt-3 mb-2 afficherv" id="folder" style="height:100%;">
                     <div class="alert alert-primary">
                         <h4>Dosssier Medical de: <span style="color:blue">{{$patients->prenom_patient ?? ''}}  {{$patients->nom_patient ?? ''}}</span>
                         </h4>
@@ -28,11 +28,11 @@
                         </li>
                     </ul>
                 <!-- Tab panes -->
-                    <div class="container tab-content border mb-2" style=" background-color:rgba(255, 255, 255, 0.5); border-left:5px solid #081f3e; height:auto;">
-                        <div id="home" class="container tab-pane active"><br>
+                    <div class=" tab-content border mb-2" style=" background-color:rgba(255, 255, 255, 0.5); border-left:5px solid #081f3e; height:auto;">
+                        <div id="home" class=" tab-pane active"><br>
                             <h3>Etat Civil</h3>
-                                <div class="container d-flex justify-content-center" style="border-left:10px solid rgba(23, 111, 226, 0.87);background-color:white; border-radius:15px 15px;">
-                                    <div class="" style="width:90%; ">
+                                <div class=" d-flex justify-content-center" style="border-left:10px solid rgba(23, 111, 226, 0.87);background-color:white; border-radius:15px 15px;">
+                                    <div class="" style="width:100%; ">
                                         <div class="card " style="border:none;">
                                             <div class="card-body fadein  container" >
                                                 <?php
@@ -94,10 +94,10 @@
                                     </div>                          
                                 </div>
                             </div>
-                            <div id="menu1" class="container tab-pane fade " style="height:100%;">
+                            <div id="menu1" class=" tab-pane fade " style="height:100%;">
                                 <h3>Résumé Clinique</h3>
-                                        <div class="container d-flex justify-content-center" style="background-color:white;border-left:10px solid rgba(23, 111, 226, 0.87); border-radius:15px 15px;">
-                                            <form class="form-group" action="/action_page.php" style="width:100%;">
+                                        <div class=" d-flex justify-content-center" style="background-color:white;border-left:10px solid rgba(23, 111, 226, 0.87); border-radius:15px 15px;">
+                                            <form class="form-group" action="#" style="width:100%;">
                                                 <div class="card " style="border:none;">
                                                     <div class="card-body fadein  container" >
                                                         <?php
@@ -190,12 +190,12 @@
                                                                           
                                     </div>
                             
-                            <div id="menu2" class="container tab-pane fade" style="height:100%;background-color:white;">
+                            <div id="menu2" class=" tab-pane fade" style="height:100%;background-color:white;">
                                 <h3>Bilan Paraclinique</h3>
-                                <div class="container" style="background-color:white;border-left:10px solid rgba(23, 111, 226, 0.87); border-radius:15px 15px;">
+                                <div class="" style="background-color:white;border-left:10px solid rgba(23, 111, 226, 0.87); border-radius:15px 15px;">
                                     <div class="card " style="border:none;">
                                     
-                                        <div class="card-body fadein  container" >
+                                        <div class="card-body fadein  " >
                                             <?php
                                                 if($patients->sexe_patient=="masculin"){
                                             ?>
@@ -240,7 +240,7 @@
                                                                 <form action="{{route('delete_analyse',['id'=>$analysis->id])}}" method="post">
                                                                     @csrf
                                                                     @method('delete')
-                                                                    <i class="fas fa-trash-alt"></i><input type="submit" class="btn btn-danger"  value="Delete">
+                                                                    <button type="submit" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
                                                                 </form>
                                                        
                                                     </td>
@@ -250,12 +250,12 @@
                                     </table>                            
                             </div>
                         </div>  
-                        <div id="menu3" class="container tab-pane fade" style="height:100%; background:white;"><br>     
+                        <div id="menu3" class=" tab-pane fade" style="height:100%; background:white;"><br>     
                             <h3>Traitement</h3>
                             <div class="" style="background-color:white;border-left:10px solid rgba(23, 111, 226, 0.87); border-radius:15px 15px;">
                                 <div class="card " style="border:none;">
                                 
-                                    <div class="card-body fadein  container" >
+                                    <div class="card-body fadein  " >
                                         <?php
                                             if($patients->sexe_patient=="masculin"){
                                         ?>
@@ -301,7 +301,7 @@
                     </div>
             </div>
             <!-----------------------------creation newdossier-->
-            <div class="col-7 mt-3 fermerv mb-2" id="newfolder" style="height:100%;">
+            <div class="col-xl-7 col-sm-12 col-md-7 mt-3 fermerv mb-2" id="newfolder" style="height:100%;">
                     <div class="container  ">
                             <a href="{{route('afficher_dossier',['id'=>$patients->id])}}"  class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i>Retour</a>
                             <div class="" >
@@ -378,7 +378,7 @@
             </div>
             <!--------------fin creation dossier-->
             <!-------------- creation Analyse----->
-            <div class="col-7 mt-3 fermerv mb-2" id="newanalyse" style="height:100%;">
+            <div class="col-xl-7 col-sm-12 col-md-7 mt-3 fermerv mb-2" id="newanalyse" style="height:100%;">
                 <div class="container">
                     <a href="{{route('afficher_dossier',['id'=>$patients->id])}}"  class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i>Retour</a>
                         <div class="card mb-3 mt-3 ">
@@ -404,14 +404,14 @@
                                             </div>
                                         </div>
                                        
-                                        <div class="row justify-content-around">   
-                                            <div class="form-group col-5">
+                                        <div class="row justify-content-between">   
+                                            <div class="form-group col-xl-6 col-sm-12 col-md-12">
                                                 <label for="tension" class="label-form">Designation:</label>
-                                                <textarea  name="designation" class="form-control" cols="15" rows="8"></textarea>
+                                                <textarea  name="designation" class="description" cols="15" rows="8"></textarea>
                                             </div>
-                                            <div class="form-group col-5">
+                                            <div class="form-group col-xl-6 col-sm-12 col-md-12">
                                                 <label for="tension" class="label-form">Description resultat:</label>
-                                                <textarea  name="descriptionresultat" cols="15" class="form-control" rows="6"></textarea>
+                                                <textarea  name="descriptionresultat" cols="15" class="description" rows="6"></textarea>
                                             </div>
                                             
                                         </div>
@@ -425,7 +425,7 @@
 
             <!---------------- fin creation analyse-------->
             <!--------------Creation Traitement------------>
-            <div class="col-7 mt-3 fermerv mb-2" id="newtraitement" style="height:100%;">
+            <div class="col-xl-7 col-sm-12 col-md-7 mt-3 fermerv mb-2" id="newtraitement" style="height:100%;">
                 <div class="container">
                     <a href="{{route('afficher_dossier',['id'=>$patients->id])}}"  class="btn btn-primary"><i class="fas fa-long-arrow-alt-left"></i>Retour</a>
                         <div class="card mb-3 mt-3 ">
@@ -478,7 +478,7 @@
                 </div>
             
             <!-------------fin creation traitement---------->
-            <div class="col-5  mt-3" style="height:100%;background-color:white;text-align:justify;">
+            <div class="col-xl-5 col-sm-12 col-md-5  mt-3" style="height:100%;background-color:white;text-align:justify;">
                 <div class="alert alert-primary" style="margin-bottom:0px;">
                     <h5>Creation de nouveau dossier</h5>
                     <div class=" row justify-content-between" id="">

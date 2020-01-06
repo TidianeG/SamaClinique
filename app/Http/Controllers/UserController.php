@@ -103,11 +103,30 @@ class UserController extends Controller
 
         public function afficher_staff($id){
             //on recupere le produit
+            $user= User::where('staff_id',$id)->first();
             $consultations= Consultation::where('staff_id',$id)->get();
             $rendezvous= Appointment::where('staff_id',$id)->get();
             $staffs = Staff::find($id);
         
-            return view('admin.afficher_staff', compact('staffs','rendezvous','consultations'));
+            return view('admin.afficher_staff', compact('staffs','rendezvous','consultations','user'));
+        }
+
+        public function afficher_medecin(){
+            //on recupere le produit
+            $user= Auth::user();
+            $consultations= Consultation::where('staff_id',$user->staff_id)->get();
+            $rendezvous= Appointment::where('staff_id',$user->staff_id)->get();
+            $staffs = Staff::find($user->staff_id);
+        
+            return view('medecin.mon_profil', compact('staffs','rendezvous','consultations','user'));
+        }
+
+        public function afficher_secretaire(){
+            //on recupere le produit
+            $user= Auth::user();
+            $staffs = Staff::find($user->staff_id);
+        
+            return view('secretaire.profil_secretaire', compact('staffs','user'));
         }
        
         public function mes_rv(){
@@ -115,5 +134,43 @@ class UserController extends Controller
             $rv=Appointment::where('staff_id',$user->staff_id)->get();
             //dd($rv);
             return view('medecin.rv_medecin',compact('rv'));
+        }
+        public function update_password_medecin(Request $request,$id)
+        {
+            
+            $user = User::find($id);
+            $consultations= Consultation::where('staff_id',$user->staff_id)->get();
+            $rendezvous= Appointment::where('staff_id',$user->staff_id)->get();
+            $staffs = Staff::find($user->staff_id);
+            $password=$request->input('password');
+            $confirme=$request->input('confirme');
+            if($user && $password==$confirme){
+                $user->update([
+                    'password' => Hash::make($password)
+                ]);
+          
+                return view('/medecin/mon_profil',compact('user','consultatios','rendezvouz','staffs'))->with(['success' => "Mot de passe Modifié"]);
+            }
+            else{
+                return view('/medecin/mon_profil',compact('user','consultatios','rendezvouz','staffs'))->with(['danger' => "Veuiller verifier la conformité des deux mot de passe"]);
+            }
+        }
+
+        public function update_password_secretaire(Request $request,$id)
+        {
+            $user = User::find($id);
+            $staffs=Staff::find($user->staff_id);
+            $password=$request->input('password');
+            $confirme=$request->input('confirme');
+            if($user && $password==$confirme){
+                $user->update([
+                    'password' => Hash::make($password)
+                ]);
+           
+                return view('/secretaire/profil_secretaire',compact('user','staffs'))->with(['success' => "Mot de passe Modifié"]);
+            }
+            else{
+                return view('/secretaire/profil_secretaire',compact('user','staffs'))->with(['danger' => "Veuiller verifier la conformité des deux mot de passe"]);
+            }
         }
 }

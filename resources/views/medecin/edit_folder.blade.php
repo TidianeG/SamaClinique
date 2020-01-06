@@ -54,7 +54,7 @@
                                                 </div>
                                                 <div class="">         
                                                     <button type="submit" class="btn btn-success">Modifier</button>
-                                                    <a href="" class="btn btn-danger" >fermer</a>
+                                                    <a href="{{route('afficher_dossier',['id'=>$folders->id])}}" class="btn btn-danger" >fermer</a>
                                                 </div>
                                             </form>
                                             </div>      

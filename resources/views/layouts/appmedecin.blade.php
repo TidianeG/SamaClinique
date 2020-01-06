@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
 </head>
 
@@ -51,20 +52,20 @@
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('medecin')}}">
+                                            <a class="nav-link style-bar" href="{{route('medecin')}}">
                                                 <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Acceuil <span class="sr-only">(current)</span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="">
+                                            <a class="nav-link style-bar" href="">
                                                 <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400" aria-hidden="true" ></i>
                                                 Clinique
                                             </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link " href="{{route('patients')}}">
+                                            <a class="nav-link style-bar" href="{{route('patients')}}">
                                                 <i class="fas fa-wheelchair fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Patient
                                             </a>
@@ -72,21 +73,21 @@
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('mes_rv')}}">
+                                            <a class="nav-link style-bar" href="{{route('mes_rv')}}">
                                                 <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
                                                 Rendez-Vous
                                             </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <a class="nav-link dropdown-toggle style-bar" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                                     Moi
                                                 </a>
                                         
                                                 <!-- Dropdown - User Information -->
                                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                                    <a class="dropdown-item" href="#">
+                                                    <a class="dropdown-item" href="{{route('afficher_medecin')}}">
                                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                                     Profil
                                                     </a>
@@ -189,26 +190,39 @@
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
     <script src="{{asset('js/folder.js')}}"></script>
-    <script src="{{asset('js/datatable.min.js')}}"></script>
+    <!--script src="{{asset('js/datatables.min.js')}}"></script-->
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
+    $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
         $(document).ready(function(){
-        $(".nav-tabs a").click(function(){
-            $(this).tab('show');
+            $(".nav-tabs a").click(function(){
+                $(this).tab('show');
+            });
+            $('.nav-tabs a').on('shown.bs.tab', function(event){
+                var x = $(event.target).text();         // active tab
+                var y = $(event.relatedTarget).text();  // previous tab
+                $(".act span").text(x);
+                $(".prev span").text(y);
+            });
         });
-        $('.nav-tabs a').on('shown.bs.tab', function(event){
-            var x = $(event.target).text();         // active tab
-            var y = $(event.relatedTarget).text();  // previous tab
-            $(".act span").text(x);
-            $(".prev span").text(y);
-        });
-        });
-        jQuery(document).ready(function($) {
+        
+            jQuery(document).ready(function($) {
                 $(".clickable-row").click(function() {
                     window.location = $(this).data("href");
                 });
             });
+    </script>
+    <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
+    <script>
+        tinymce.init({
+            selector:'textarea.description',
+            width: 350,
+            height: 200
+        });
     </script>
 </body>
 

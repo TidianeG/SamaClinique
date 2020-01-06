@@ -9,14 +9,14 @@
             @endif
             <div class=" row"  style="margin-top:50px; height:100%;">
             
-                <div class="card col-xl-7 col-md-12 container " >
+                <div class="card col-xl-7 col-md-12  " >
                     <div class="card-header">
                         <div class="row justify-content-between"> 
-                            <a href="#" id="listecons" style="width:200px;" class="btn btn-primary efficherv">
+                            <a href="#" id="listecons" style="width:auto;" class="btn btn-primary efficherv">
                                 <i class="fas fa-list"></i>
                                 liste des consultation
                             </a>
-                            <a href="#" id="listerv" style="width:200px;" class="btn btn-primary fermerv">
+                            <a href="#" id="listerv" style="width:auto;" class="btn btn-primary fermerv">
                             <i class="fas fa-reply"></i>
                                 retour au rendez-vous
                             </a>

@@ -53,28 +53,28 @@
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('secretaire')}}">
+                                            <a class="nav-link style-bar" href="{{route('secretaire')}}">
                                                 <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Acceuil <span class="sr-only">(current)</span>
                                             </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link dropdown-toggle" href="{{route('liste_patient')}}">
+                                            <a class="nav-link style-bar dropdown-toggle" href="{{route('liste_patient')}}">
                                                 <i class="fab fa-accessible-icon fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Gestion Patient
                                             </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('rendezvous')}}">
+                                            <a class="nav-link style-bar" href="{{route('rendezvous')}}">
                                                 <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
                                                 Gestio Rendez-Vous
                                             </a>
                                             </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Pharmacie</a>
+                                            <a class="nav-link style-bar" href="#">Pharmacie</a>
                                         </li>
                                         <!--div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
@@ -92,7 +92,7 @@
                                         
                                                 <!-- Dropdown - User Information -->
                                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                                    <a class="dropdown-item" href="#">
+                                                    <a class="dropdown-item" href="{{route('afficher_secretaire')}}">
                                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                                     Profil
                                                     </a>
@@ -200,13 +200,18 @@
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
-    <script src="{{asset('js/datatable.min.js')}}"></script>
+    <script src="{{asset('js/datatables.min.js')}}"></script>
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script>
         $(document).ready( function () {
         $('#myTable').DataTable();
-        $('#myTable1').DataTable();
+        });
+        jQuery(document).ready(function($) {
+                $(".clickable-row").click(function() {
+                    window.location = $(this).data("href");
+                });
+           
         } );
     </script>
     <script>
@@ -225,13 +230,17 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         }
-            jQuery(document).ready(function($) {
-                $(".clickable-row").click(function() {
-                    window.location = $(this).data("href");
-                });
-            });
+        
+           
         </script>
-    
+    <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
+    <script>
+        tinymce.init({
+            selector:'textarea.description',
+            width: 900,
+            height: 300
+        });
+    </script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@
     @section('content')
         <div class="" style="background-color:rgba(255,255,255, 0.3); height:100%; margin-bottom:10px;">
             <div class=" row"  style="margin-top:50px; height:100%;">
-                <div class="card col-xl-7 col-md-12 container " >
+                <div class="card col-xl-7 col-md-12  " >
                     <div class="card-header">                       
                         <div id="titre"><h3>Liste de mes rendez-vous</h3></div>
                     </div>
@@ -16,8 +16,6 @@
                                         <th>Telephone</th>
                                         <th>Description</th>
                                         <th>Date</th>
-                                        <th>Editer</th>
-                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-dark">          
@@ -28,12 +26,6 @@
                                             <td>{{$rendv->patient->telephone_patient ?? 'null'}}</td>
                                             <td>{{$rendv->description_appointment ?? 'null'}}</td>
                                             <td>{{$rendv->daterendez_appointment ?? 'null'}}</td>
-                                            <td>
-                                                <p><a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
-                                            </td>
-                                            <td>
-                                                <p><a href="#" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></p>
-                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

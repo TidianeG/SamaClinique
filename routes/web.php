@@ -22,7 +22,8 @@ Route::middleware(['can:admin'])->prefix('admin')->group(function(){
         Route::get('/staff', 'UserController@liste_staff')->name('liste_staff');
 
         Route::delete('/staff/{id}', 'UserController@destroy');
-
+        Route::get('/listePatient', 'PatientController@liste_patientAdmin')->name('liste_patientAdmin');
+        Route::get('/listePatient/{id}/affiche','PatientController@afficher_patientAdmin')->name("afficher_patientAdmin");
 });
 #Route::get('/user', 'HomeController@redirectTo');
 
@@ -43,6 +44,10 @@ Route::middleware(['can:secretaire'])->prefix('secretaire')->group(function(){
         Route::patch('/rv/{id}/edit','PatientController@update_rv')->name("update_rv");
 
         Route::delete('/rv/{id}','PatientController@delete_rv')->name("delete_rv");
+
+        Route::get('/profil', 'UserController@afficher_secretaire')->name('afficher_secretaire');
+        
+        Route::patch('/profil/{id}', 'UserController@update_password_secretaire')->name('update_password_secretaire');
         ///////////fin edit rv
         /////////////  edit consultation//////////////////////
 
@@ -86,6 +91,9 @@ Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
 
         Route::get('/new_folder', 'PatientController@new_folder')->name('new_folder');
 
+        Route::get('/profil', 'UserController@afficher_medecin')->name('afficher_medecin');
+
+        Route::patch('/profil/{id}', 'UserController@update_password_medecin')->name('update_password_medecin');
         /////////////// edit analyse ///////////////////////////
 
         Route::get('/analyse/{id}/edit','PatientController@edit_dossier')->name("editer_dossier");

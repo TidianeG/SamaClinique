@@ -34,8 +34,8 @@
                 <div class="row h-100">
                     <div class="col-12 h-100">
                         <div class="h-100 d-md-flex justify-content-between ">
-                            <p>Bienvenu à <span>Medifile</span></p>
-                            <p>jours ouvrable : du Lundi au Samedi - 8h à 23h Contact : <span></span></p>
+                            <p style="font-weight:bold;">Bienvenu à <span>Medifile</span></p>
+                            <p style="font-weight:bold;">jours ouvrable : du Lundi au Samedi - 8h à 23h<span></span></p>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item">
-                                            <a class="nav-link" href="/">
+                                            <a class="nav-link style-bar" href="/">
                                                 <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Acceuil 
                                             </a>
@@ -70,18 +70,12 @@
                                         </li-->
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{{route('medilife')}}">
-                                            <i class="fas fa-hospital-alt fa-md fa-fw mr-2 text-gray-400"></i>
-                                                A Propos
-                                            </a>
-                                        </li>
-                                        <div class="topbar-divider d-none d-sm-block"></div>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="/login">
+                                            <a class="nav-link style-bar" href="/login">
                                             <i class="fas fa-sign-in-alt fa-md fa-fw mr-2 text-gray-400" aria-hidden="true" ></i>
                                                 Connexion
                                             </a>
                                         </li>
+                                        <div class="topbar-divider d-none d-sm-block style-bar"></div>
                                         <li class="nav-item">
                                             <a class="nav-link" href="/register">
                                             <i class="fas fa-user-plus fa-md fa-fw mr-2 text-gray-400" aria-hidden="true" ></i>
@@ -161,6 +155,14 @@ function topFunction() {
     <!-- Active js -->
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
+    <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
+    <script>
+        tinymce.init({
+            selector:'textarea.description',
+            width: 900,
+            height: 300
+        });
+    </script>
 
 </body>
 

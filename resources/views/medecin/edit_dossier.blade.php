@@ -51,7 +51,7 @@
                                 
                                 <div class="">         
                                     <button type="submit" class="btn btn-success">Modifier</button>
-                                    <button type="reset" class="btn btn-danger" >Close</button>
+                                    <a href="{{route('afficher_dossier',['id'=>$analyse->id])}}" class="btn btn-danger" >Fermer</a>
                                 </div>
                             </form>
                         </div>      
