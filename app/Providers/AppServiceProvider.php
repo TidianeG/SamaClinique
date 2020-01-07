@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Providers;
-
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use App\User;
 use Illuminate\Support\Facades\Gate;
@@ -36,6 +36,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema :: defaultStringLength (191); 
+        Schema::defaultStringLength(191); 
     }
 }
