@@ -51,7 +51,7 @@
                             </div> 
                             
                             <button type="submit" class="btn btn-success">Valider</button>
-                            <button type="reset" class="btn btn-danger" >Annuler</button>
+                            <a href="{{route('rendezvous')}}" class="btn btn-danger" >Annuler</a>
                         </form>
                         </div>      
                      <div class="row" style="height:50px;">

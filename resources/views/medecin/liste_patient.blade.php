@@ -1,8 +1,8 @@
     @extends('layouts.appmedecin')
         @section('content')
             <div class="row" style="height:100px;">
-            @if(session('success'))
-                <div class="alert alert-success">{{session('success')}}</div>
+            @if(session('danger'))
+                <div class="alert alert-danger">{{session('danger')}}</div>
             @endif
             </div>
             <div class="container" style="padding-top:25px;width:60%;border:2px solid #081f3e;background-color:#081f3e ;border-radius:4px;">

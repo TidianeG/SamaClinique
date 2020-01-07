@@ -57,12 +57,7 @@
                                                 Acceuil <span class="sr-only">(current)</span>
                                             </a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link style-bar" href="">
-                                                <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400" aria-hidden="true" ></i>
-                                                Clinique
-                                            </a>
-                                        </li>
+                                        
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link style-bar" href="{{route('patients')}}">

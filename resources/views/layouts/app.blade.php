@@ -76,12 +76,12 @@
                                             </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block style-bar"></div>
-                                        <li class="nav-item">
+                                        <!--li class="nav-item">
                                             <a class="nav-link" href="/register">
                                             <i class="fas fa-user-plus fa-md fa-fw mr-2 text-gray-400" aria-hidden="true" ></i>
                                                 Inscription
                                             </a>
-                                        </li>
+                                        </li-->
                                       
                                       </ul>
                                 </div>

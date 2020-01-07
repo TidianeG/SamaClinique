@@ -1,6 +1,9 @@
 @extends('layouts.appadmin')
     @section('content')
         <div class="container">
+            
+                <a href="{{route('liste_staff')}}" class="btn btn-primary mb-2"><i class="fas fa-long-arrow-alt-left"></i>retour à la liste des personnels</a>
+           
             <div class="card ">
                 <div class="card-header">
                     <h2>Iformations personnelles et compte</h2>

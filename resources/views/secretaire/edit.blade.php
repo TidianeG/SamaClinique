@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="form-group" style="margin-bottom:10px;">
                                     <button type="submit" class="btn btn-success">Modifier</button>
-                                    <button type="reset" class="btn btn-danger">Close</button>
+                                    <a href="{{route('liste_patient')}}" class="btn btn-danger">Close</a>
                                 </div>
                         </form>
                     </div>  

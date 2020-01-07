@@ -111,11 +111,17 @@ class PatientController extends Controller
         public function recherche_dossier(Request $request){
             $id=$request->input('numfolder');
             $folders = Folder::find($id);
-            $patients=Patient::where('id',$folders->patient_id)->first();
-            $analyse=Analysis::where('patient_id',$folders->patient_id)->get();
-            //on recupere le produit
-            //dd($folders,$patients,$analyse);
-            return view('medecin.dossier', compact('folders','patients','analyse'));
+            if($folders){
+                $patients=Patient::where('id',$folders->patient_id)->first();
+                $analyse=Analysis::where('patient_id',$folders->patient_id)->get();
+                //on recupere le produit
+                //dd($folders,$patients,$analyse);
+                return view('medecin.dossier', compact('folders','patients','analyse'));
+            }
+            else{
+                return redirect()->route('patients')->with(['danger' => "Le dossier demandé n'existe pas"]);
+            }
+            
         }
         public function new_folder(){
             return view('medecin.new_folder');
