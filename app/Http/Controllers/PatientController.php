@@ -133,7 +133,7 @@ class PatientController extends Controller
             $consults= Consultation::all();
             return view('secretaire.rendez-vous', compact('medecin','rv','consults'));
         }
-        public function create_rv(Request $request){
+        public function create_rv(Request $request){      
             $rv=new Appointment();
             $id=$request->input('numero');
             $patient=Patient::find($id);

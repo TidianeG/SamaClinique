@@ -115,6 +115,11 @@
                 </div>
                 
                 <div class="col-sm-12 col-md-10 col-xl-5 container" style="height:100%; background-color:white; ">
+                            @if($errors->any())
+                                @foreach($errors->all() as $error)
+                                    <div class="alert alert-danger">{{$error}}</div>
+                                @endforeach
+                            @endif
                     <div class="card afficherv" id="inforv">
                         <img src="{{asset('images/font2.jpg')}}" alt="">
                         <div class="card-body">
@@ -125,8 +130,11 @@
                         </div>
                     </div>
                     <div class="fermerv"  id="rv" style="height:100%; margin-bottom:3px;margin-top:20px;">
+                           
                         <form action="{{route('createrv')}}" method="post">
                             @csrf 
+                            
+
                             <div class="row">
                                 <div class="form-group col">
                                     <label for="numero" style="color:red;" class="">Numero Patient</label>
