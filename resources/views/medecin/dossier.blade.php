@@ -407,11 +407,11 @@
                                         <div class="row justify-content-between">   
                                             <div class="form-group col-xl-6 col-sm-12 col-md-12">
                                                 <label for="tension" class="label-form">Designation:</label>
-                                                <textarea  name="designation" class="description" cols="15" rows="8"></textarea>
+                                                <textarea  name="designation" class="" cols="15" rows="8"></textarea>
                                             </div>
                                             <div class="form-group col-xl-6 col-sm-12 col-md-12">
                                                 <label for="tension" class="label-form">Description resultat:</label>
-                                                <textarea  name="descriptionresultat" cols="15" class="description" rows="6"></textarea>
+                                                <textarea  name="descriptionresultat" cols="15" class="" rows="6"></textarea>
                                             </div>
                                             
                                         </div>

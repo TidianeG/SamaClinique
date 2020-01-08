@@ -3198,7 +3198,7 @@ iframe {
 }
 .label-input100 {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 17px;
+  font-size: 15px;
   color: #181717;
   line-height: 1.2;
   text-align: right;
@@ -3347,7 +3347,7 @@ input.input100 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 5px;
   min-width: 160px;
   height: 40px;
   background-color: #57b846;
@@ -6962,8 +6962,9 @@ textarea {
       .content-div{
         margin: 0;
         padding: 0;
-        background-image:url(../img/bg-img/breadcumb3.jpg); 
+        background-image:url(../images/medecin2.jpg); 
         height: auto;
+        background-repeat: no-repeat;
       }
       .content-div::before{
         background-color: rgba(54,84,99,0.7);

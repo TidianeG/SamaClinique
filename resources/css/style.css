@@ -3575,8 +3575,9 @@ textarea {
       .content-div{
         margin: 0;
         padding: 0;
-        background-image:url(../img/bg-img/breadcumb3.jpg); 
+        background-image:url(../images/medecin2.jpg); 
         height: auto;
+        background-repeat: no-repeat;
       }
       .content-div::before{
         background-color: rgba(54,84,99,0.7);

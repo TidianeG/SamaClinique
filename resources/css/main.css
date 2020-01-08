@@ -204,7 +204,7 @@ iframe {
 }
 .label-input100 {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 17px;
+  font-size: 15px;
   color: #181717;
   line-height: 1.2;
   text-align: right;
@@ -353,7 +353,7 @@ input.input100 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 5px;
   min-width: 160px;
   height: 40px;
   background-color: #57b846;

@@ -11,7 +11,7 @@
 					<form class=" validate-form" method="POST" action="{{ route('login') }}">
 						@csrf
 						<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-							<span class="label-input100">Identifiant</span>
+							<!-- class="label-input100">Identifiant</span-->
 							<div class="">
 								<input id="email" type="email" class="input100  @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Entrer votre login">
 
@@ -25,7 +25,7 @@
 						</div>
 
 						<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
-							<span class="label-input100">Mot de passe</span>
+							<!--span class="label-input100">Mot de passe</span-->
 							<div class="">
 								<input id="password" type="password" class="input100 @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Entrer votre mot de passe">
 
