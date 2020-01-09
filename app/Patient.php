@@ -22,4 +22,8 @@ class Patient extends Model
     public function appointment(){
         return $this->hasMany('App\Appointment');
     }
+
+    public function order(){
+        return $this->hasMany('App\Order');
+    }
 }

@@ -183,19 +183,14 @@
                                                     <?php
                                                         }
                                                     ?>
-                                                </div>
-                                            
-                                                                 
-                                        
-                                                                          
-                                    </div>
-                            
+                                                </div>                                                                
+                                            </div>
                             <div id="menu2" class=" tab-pane fade" style="height:100%;background-color:white;">
                                 <h3>Bilan Paraclinique</h3>
                                 <div class="" style="background-color:white;border-left:10px solid rgba(23, 111, 226, 0.87); border-radius:15px 15px;">
                                     <div class="card " style="border:none;">
                                     
-                                        <div class="card-body fadein  " >
+                                        <div class="card-body fadein">
                                             <?php
                                                 if($patients->sexe_patient=="masculin"){
                                             ?>

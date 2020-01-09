@@ -121,7 +121,7 @@
                                 @endforeach
                             @endif
                     <div class="card afficherv" id="inforv">
-                        <img src="{{asset('images/font2.jpg')}}" alt="">
+                        <img src="{{asset('images/medecin2.jpg')}}" alt="">
                         <div class="card-body">
                             <h3>N'esiter pas de prendre rendez-vous à Medilife</h3>
                             <p class="text-justify">

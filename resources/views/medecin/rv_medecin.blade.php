@@ -35,7 +35,7 @@
                 </div>
                 <div class="col-sm-12 col-md-10 col-xl-5 container" style="height:100%; background-color:white; ">
                     <div class="card afficherv" id="inforv">
-                        <img src="{{asset('images/font2.jpg')}}" alt="">
+                        <img src="{{asset('images/medecin3.jpg')}}" alt="">
                         <div class="card-body">
                             <h3>N'esiter pas de prendre rendez-vous à Medilife</h3>
                             <p class="text-justify">
