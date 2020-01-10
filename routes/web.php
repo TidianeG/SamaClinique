@@ -102,6 +102,8 @@ Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
 
         Route::delete('/patients/{id}/dossiers','PatientController@delete_analyse')->name("delete_analyse");
 
+        Route::post('/patients/dossiers/order','OrderController@ajout_order')->name("ajout_order");
+       
         //////////////// fin edit analyse//////////////////////
         /////////////////edit folderrrr////////////////////////////////
 

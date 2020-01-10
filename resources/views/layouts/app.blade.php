@@ -156,6 +156,8 @@ function topFunction() {
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
     <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
     <script>
         tinymce.init({
             selector:'textarea.description',

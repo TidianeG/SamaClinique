@@ -78,6 +78,8 @@ createtraitement.addEventListener('click', function(){
   let newfolder=document.getElementById('newfolder');
   let newtraitement=document.getElementById('newtraitement');
   let newanalyse=document.getElementById('newanalyse');
+  let order=document.getElementById('order');
+  let treatment=document.getElementById('treatmet');
 
 
   folder.classList.remove('afficherv');
@@ -91,6 +93,12 @@ createtraitement.addEventListener('click', function(){
 
   newtraitement.classList.remove('fermerv');
   newtraitement.classList.add('afficherv');
+
+  order.classList.remove('fermerv');
+  order.classList.add('afficherv');
+
+  treatment.classList.remove('afficherv');
+  treatment.classList.add('fermerv');
 
   createanalyse.classList.remove('afficherv');
   createanalyse.classList.add('fermerv');

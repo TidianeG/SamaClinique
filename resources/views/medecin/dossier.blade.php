@@ -428,7 +428,21 @@
                                 <h3>Création d'un nouveau traitement</h3>
                             </div>
                             <div class="card-body">
-                                <form action="" method="post">
+                                <form action="" id="order" class="fermerv">
+                                    <div class="row justify-content-around">
+                                        <div class="form-group ">
+                                            <label for="medoc" class="label-form ">Nom ordonnance:</label>
+                                        <input type="text" class="form-control" id="ordonnance"  name="nom">
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="medoc" class="label-form ">Date de l'ordonnance:</label>
+                                            <input type="date" class="form-control" id="date" name="date">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success">Ajouter Traitement</button>
+                                    <button class="btn btn-danger">Annuler</button> 
+                                </form>
+                                <form action="" method="post" id="treatment" class="fermerv">
                                     <div >
                                         <div class="row justify-content-between">
                                             <div class="form-group ">
