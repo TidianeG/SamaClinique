@@ -94,11 +94,8 @@ createtraitement.addEventListener('click', function(){
   newtraitement.classList.remove('fermerv');
   newtraitement.classList.add('afficherv');
 
-  order.classList.remove('fermerv');
-  order.classList.add('afficherv');
-
-  treatment.classList.remove('afficherv');
-  treatment.classList.add('fermerv');
+  treatment.classList.remove('fermerv');
+  treatment.classList.add('afficherv');
 
   createanalyse.classList.remove('afficherv');
   createanalyse.classList.add('fermerv');
@@ -142,3 +139,29 @@ retourfolder.addEventListener('click', function(){
   folder.classList.remove('fermerv');
   folder.classList.add('afficherv');
 });
+
+    let order = document.getElementById("order");
+            order.addEventListener('submit', function (e) {
+                e.preventDefault();
+                let newtraitement=document.getElementById('newtraitement');
+                let order=document.getElementById('order');
+                let treatment=document.getElementById('treatmet');
+                let donnees_formulaire = $(this).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: "{{route('ajout_order')}}",
+                    data: donnees_formulaire,
+                    success: function(data){
+                        alert("order ajoutée");
+                        
+                    }
+                });
+                newtraitement.classList.remove('fermerv');
+                newtraitement.classList.add('afficherv');
+
+                order.classList.remove('afficherv');
+                order.classList.add('fermerv');
+
+                treatment.classList.remove('fermerv');
+                treatment.classList.add('afficherv');
+            });

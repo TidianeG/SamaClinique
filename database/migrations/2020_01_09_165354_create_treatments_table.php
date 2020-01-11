@@ -20,6 +20,8 @@ class CreateTreatmentsTable extends Migration
             $table->string('posologie');
             $table->string('forme');
             $table->string('duree');
+            $table->unsignedInteger('staff_id');
+            $table->unsignedInteger('patient_id');
             $table->timestamps();
         });
     }

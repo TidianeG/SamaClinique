@@ -428,21 +428,8 @@
                                 <h3>Création d'un nouveau traitement</h3>
                             </div>
                             <div class="card-body">
-                                <form action="" id="order" class="fermerv">
-                                    <div class="row justify-content-around">
-                                        <div class="form-group ">
-                                            <label for="medoc" class="label-form ">Nom ordonnance:</label>
-                                        <input type="text" class="form-control" id="ordonnance"  name="nom">
-                                        </div>
-                                        <div class="form-group ">
-                                            <label for="medoc" class="label-form ">Date de l'ordonnance:</label>
-                                            <input type="date" class="form-control" id="date" name="date">
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-success">Ajouter Traitement</button>
-                                    <button class="btn btn-danger">Annuler</button> 
-                                </form>
                                 <form action="" method="post" id="treatment" class="fermerv">
+                                    @csrf
                                     <div >
                                         <div class="row justify-content-between">
                                             <div class="form-group ">
@@ -502,7 +489,7 @@
                         <a href="#" class="btn btn-primary afficherv" style="width:150px;" id="createtraitement">New Traitement</a>
                     </div>
                 </div>
-                <div><img src="{{asset('img/bg-img/breadcumb3.jpg')}}" alt="" style="overflow:hedden;margin-right:4px;"></div>
+                <div><img src="{{asset('../images/medecin4.jpg')}}" alt="" style="overflow:hedden;margin-right:4px;"></div>
                 <div>
                     <p>
                         Ce dossier médical regroupe donc l’ensemble des informations qui sont formalisées et qui ont « contribué à l’élaboration et au suivi du diagnostic et du traitement ou d’une action de prévention ou ont fait l’objet d’échanges écrits entre professionnels de santé, notamment des résultats d’examens, comptes rendus de consultation, d'intervention, d'exploration ou d'hospitalisation, des protocoles et prescriptions thérapeutiques mis en œuvre, feuilles de surveillance, correspondances entre professionnels de santé, à l'exception des informations mentionnant qu'elles ont été recueillies auprès de tiers n'intervenant pas dans la prise en charge thérapeutique ou concernant un tel tiers ».

@@ -30,18 +30,3 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
-
-let order = document.getElementById("order");
-   order.addEventListener('submit', function (e) {
-       e.preventDefault();
-       let donnees_formulaire = $(this).serialize();
-       $.ajax({
-           type: "POST",
-           url: '/medecin/patients/dossiers/order',
-           data: donnees_formulaire,
-           success: function(data){
-               alert("Category ajoutée");
-               console.log(donnees_formulaire);
-           }
-       });
-    });

@@ -171,7 +171,7 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         }
-        </script>
+        </scsript>
     
     <script src="{{asset('js/app.js')}}"></script>  
     <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
@@ -189,10 +189,8 @@
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
     <script>
-    $(document).ready( function () {
+        $(document).ready( function () {
             $('#myTable').DataTable();
         } );
         $(document).ready(function(){
@@ -221,6 +219,7 @@
             height: 200
         });
     </script>
+    <!--script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script-->
 </body>
 
 </html>
