@@ -315,6 +315,17 @@ class PatientController extends Controller
             }
             return redirect()->route('afficher_dossier', [$traitement->patient_id])->with(['success' => "Analyse modifiee avec succes"]);              
         }
+
+        public function delete_traitement($id)
+        {
+            $traitement = Treatment::find($id);
+            $id_pat=$traitement->patient_id;
+            if($traitement){
+                $traitement->delete();
+                return redirect()->route('afficher_dossier', [$id_pat])->with(['success'=>"Traitement supprime"]); 
+            }
+            
+        }
         ////////////////fin traitement/////////////////////
         ///////////////// edit rv
 
