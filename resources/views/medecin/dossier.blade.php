@@ -282,13 +282,13 @@
                                     <tbody>
                                         @foreach($traitement as $treatment)
                                             <tr>
-                                                <td>{{$treatment->date}}</td>
-                                                <td>{{$treatment->date}}</td>
-                                                <td>{{$treatment->dosage}}</td>
-                                                <td>{{$treatment->forme}}</td>
-                                                <td>{{$treatment->quantite}}</td>
-                                                <td>{{$treatment->posologie}}</td>
-                                                <td>{{$treatment->duree}}</td>
+                                                <td>{{$treatment->date ?? 'null'}}</td>
+                                                <td>{{$treatment->date ?? 'null'}}</td>
+                                                <td>{{$treatment->dosage ?? 'null'}}</td>
+                                                <td>{{$treatment->forme ?? 'null'}}</td>
+                                                <td>{{$treatment->quantite ?? 'null'}}</td>
+                                                <td>{{$treatment->posologie ?? 'null'}}</td>
+                                                <td>{{$treatment->duree ?? 'null'}}</td>
                                                 <td>
                                                     <p><a href="{{route('edit_traitement',['id'=>$treatment->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
                                                 </td>
