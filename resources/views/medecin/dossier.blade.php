@@ -232,11 +232,9 @@
                                                         <p><a href="{{route('editer_dossier',['id'=>$analysis->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
                                                     </td>
                                                     <td>
-                                                                <form action="{{route('delete_analyse',['id'=>$analysis->id])}}" method="post">
-                                                                    @csrf
-                                                                    @method('delete')
-                                                                    <button type="submit" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
-                                                                </form>
+                                                                
+                                                                    <button type="" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
+                                                        
                                                        
                                                     </td>
                                                 </tr>
