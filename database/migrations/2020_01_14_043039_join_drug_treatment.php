@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class JoinTreatmentDrug extends Migration
+class JoinDrugTreatment extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class JoinTreatmentDrug extends Migration
      */
     public function up()
     {
-        Schema::create('treatment_drug', function (Blueprint $table) {
+        Schema::create('drug_treatment', function(Blueprint $table){
             $table->bigIncrements('id');
             $table->unsignedInteger('treatment_id');
             $table->unsignedInteger('drug_id');
             $table->timestamps();
-        });
+            });
+        
     }
 
     /**

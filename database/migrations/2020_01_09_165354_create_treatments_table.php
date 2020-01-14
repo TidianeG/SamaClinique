@@ -17,6 +17,7 @@ class CreateTreatmentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('dosage');
             $table->string('quantite');
+            $table->date('date');
             $table->string('posologie');
             $table->string('forme');
             $table->string('duree');

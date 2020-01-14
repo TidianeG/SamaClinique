@@ -37,6 +37,14 @@ Route::middleware(['can:secretaire'])->prefix('secretaire')->group(function(){
 
         Route::get('/liste', 'PatientController@liste_patient')->name('liste_patient');
 
+        Route::get('/pharmacie', 'OrderController@pharmacie')->name('pharmacie');
+
+        Route::post('/pharmacie', 'OrderController@ajout_medoc')->name('ajout_medoc');
+
+        Route::patch('/pharmacie/{id}/edit_medoc','OrderController@update_medoc')->name("update_medoc");
+
+        Route::get('/pharmacie/{id}/edit_medoc', 'OrderController@edit_medicament')->name('edit_medicament');
+
         Route::get('/liste/{id}/edit','PatientController@edit_patient')->name("editer_patient");
 
         Route::get('/rv/{id}/edit', 'PatientController@edit_rv')->name('editer_rv');
@@ -82,6 +90,7 @@ Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
 
         Route::post('/patients/{id}/dossier','PatientController@create_folder')->name("create_folder");
         Route::post('/patients/{id}/dossierP','PatientController@create_analyse')->name("create_analyse");
+        Route::post('/patients/{id}/dossierT','OrderController@create_traitement')->name("new_traitement");
 
         Route::post('/patients/dossier','PatientController@recherche_dossier')->name("recherche_dossier");
 

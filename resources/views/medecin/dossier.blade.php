@@ -428,13 +428,13 @@
                                 <h3>Création d'un nouveau traitement</h3>
                             </div>
                             <div class="card-body">
-                                <form action="" method="post" id="treatment" class="fermerv">
+                                <form action="{{route('new_traitement',['id'=>$patients->id])}}" method="post">
                                     @csrf
                                     <div >
                                         <div class="row justify-content-between">
                                             <div class="form-group ">
                                                 <label for="medoc" class="label-form ">Date Traitement:</label>
-                                                <input type="date" class="form-control" id="dateT"  name="dateT">
+                                                <input type="date" class="form-control" id="date"  name="date">
                                             </div>
                                             <div class="form-group ">
                                                 <label for="medoc" class="label-form ">Nom medicament:</label>
@@ -442,7 +442,7 @@
                                             </div> 
                                             <div class="form-group ">
                                                 <label for="dose" class="label-form ">Dosage:</label>
-                                                <input type="text" class="form-control" id="dose" name="dose">
+                                                <input type="text" class="form-control" id="dosage" name="dosage">
                                             </div>
                                             <div class="form-group ">
                                                 <label for="forme" class="label-form ">Forme:</label>
@@ -464,7 +464,7 @@
                                             </div>
                                         </div>
                                     </div><hr>
-                                    <div class="d-flex justify-content-end"><a href="" id="traitementplus" class="btn btn-success">Plus</a></div>
+                                    <!--div class="d-flex justify-content-end"><a href="" id="traitementplus" class="btn btn-success">Plus</a></div-->
                                     <button type="submit" class="btn btn-primary">Valider</button>
                                     <button type="reset" class="btn btn-danger" id="fermetraitement">Annuler</button>
                                 </form>

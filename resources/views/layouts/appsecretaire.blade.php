@@ -76,7 +76,7 @@
                                             </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link style-bar" href="#">Pharmacie</a>
+                                            <a class="nav-link style-bar" href="{{route('pharmacie')}}">Pharmacie</a>
                                         </li>
                                         <!--div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
