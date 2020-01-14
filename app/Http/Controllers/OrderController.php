@@ -60,8 +60,8 @@ class OrderController extends Controller
         if($patient){
             $traitement=new Treatment(); 
             $medoc=$request->input('medoc');
-            $medicament=Drug::where('nom',$medoc)->first();
-           
+            $medicament=Drug::where('nom',$medoc)->first(); 
+            $traitement->medoc=$request->input('medoc');          
             $traitement->date=$request->input('date');
             $traitement->forme=$request->input('forme');
             $traitement->dosage=$request->input('dosage');

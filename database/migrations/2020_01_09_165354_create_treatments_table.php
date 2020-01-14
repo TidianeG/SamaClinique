@@ -16,6 +16,7 @@ class CreateTreatmentsTable extends Migration
         Schema::create('treatments', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('dosage');
+            $table->string('medoc');
             $table->string('quantite');
             $table->date('date');
             $table->string('posologie');

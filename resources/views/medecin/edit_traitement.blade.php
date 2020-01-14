@@ -19,7 +19,7 @@
                                             </div>
                                             <div class="form-group ">
                                                 <label for="medoc" class="label-form ">Nom medicament:</label>
-                                                <input type="text" class="form-control" id="medoc" name="medoc" value="">
+                                                <input type="text" class="form-control" id="medoc" name="medoc" value="{{$traitement->medoc}}">
                                             </div> 
                                             <div class="form-group ">
                                                 <label for="dose" class="label-form ">Dosage:</label>
