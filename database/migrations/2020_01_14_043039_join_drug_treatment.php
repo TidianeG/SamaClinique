@@ -18,7 +18,7 @@ class JoinDrugTreatment extends Migration
             $table->unsignedInteger('treatment_id');
             $table->unsignedInteger('drug_id');
             $table->timestamps();
-            });
+        });
         
     }
 

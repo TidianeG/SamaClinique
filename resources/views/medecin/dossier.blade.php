@@ -277,18 +277,32 @@
                                             <th>Quantitie</th>
                                             <th>Posologie</th>
                                             <th>Durée Traitement</th>
+                                            <th>Editer</th>
+                                            <th>Delete</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
+                                        @foreach($traitement as $treatment)
+                                            <tr>
+                                                <td>{{$treatment->date}}</td>
+                                                <td>{{$treatment->date}}</td>
+                                                <td>{{$treatment->dosage}}</td>
+                                                <td>{{$treatment->forme}}</td>
+                                                <td>{{$treatment->quantite}}</td>
+                                                <td>{{$treatment->posologie}}</td>
+                                                <td>{{$treatment->duree}}</td>
+                                                <td>
+                                                    <p><a href="{{route('edit_traitement',['id'=>$treatment->id])}}" class="btn btn-primary"><i class="fas fa-edit"></i></a></p>
+                                                </td>
+                                                <td>
+                                                    <form action="{{route('delete_traitement',['id'=>$treatment->id])}}" method="post">
+                                                        @csrf
+                                                        @method('delete')
+                                                        <button type="submit" class="btn btn-danger" ><i class="fas fa-trash-alt"></i></button>
+                                                    </form>                              
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>

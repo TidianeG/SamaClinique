@@ -7,6 +7,7 @@ use App\Appointment;
 use App\Consultation;
 use App\Analysis;
 use App\Folder;
+use App\Treatment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -105,8 +106,9 @@ class PatientController extends Controller
             $folders = Folder::where('patient_id',$id)->first();
             $patients= Patient::find($id);
             $analyse= Analysis::where('patient_id',$id)->get();
-            //dd($folders);
-            return view('medecin.dossier', compact('folders','patients','analyse'));
+            $traitement= Treatment::where('patient_id',$id)->get();
+            
+            return view('medecin.dossier', compact('folders','patients','analyse','traitement'));
         }
         public function recherche_dossier(Request $request){
             $id=$request->input('numfolder');
@@ -289,6 +291,31 @@ class PatientController extends Controller
         }
 
         /////////////////// fin edit dossier
+
+        ///////////////partie traitement//////////////////
+        public function edit_traitement($id){
+            $traitement = Treatment::find($id);//on recupere le produit
+            return view('medecin.edit_traitement', compact('traitement'));
+        }
+
+        public function update_traitement(Request $request, $id)
+        {
+            $traitement = \App\Treatment::find($id);
+            if($traitement){
+                $traitement->update([
+                    'date' => $request->input('date'),
+                    'dosage' => $request->input('dosage'),
+                    'forme' => $request->input('forme'),
+                    
+                    'quantite' => $request->input('quantite'),
+                    'posologie' => $request->input('posologie'),
+                    'duree' => $request->input('dure')
+                    
+                ]);
+            }
+            return redirect()->route('afficher_dossier', [$traitement->patient_id])->with(['success' => "Analyse modifiee avec succes"]);              
+        }
+        ////////////////fin traitement/////////////////////
         ///////////////// edit rv
 
         public function edit_rv($id){

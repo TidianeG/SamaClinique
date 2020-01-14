@@ -171,8 +171,8 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         }
-        </scsript>
-    
+        
+</script>
     <script src="{{asset('js/app.js')}}"></script>  
     <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->
@@ -185,7 +185,7 @@
     <script src="{{asset('js/active.js')}}"></script>
     <script src="{{asset('js/footer.js')}}"></script>
     <script src="{{asset('js/folder.js')}}"></script>
-    <!--script src="{{asset('js/datatables.min.js')}}"></script-->
+   
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>

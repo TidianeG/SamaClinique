@@ -114,6 +114,13 @@ Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
         Route::post('/patients/dossiers/order','OrderController@ajout_order')->name("ajout_order");
        
         //////////////// fin edit analyse//////////////////////
+        /////////////////////// traitement//////////////////////////////
+        Route::get('/traitement/{id}/edit','PatientController@edit_traitement')->name("edit_traitement");
+
+        Route::patch('/traitement/{id}/edit','PatientController@update_traitement')->name("update_traitement");
+
+        Route::delete('/patients/{id}/dossiers','PatientController@delete_traitement')->name("delete_traitement");
+        //////////////////////fin traitement///////////////////////
         /////////////////edit folderrrr////////////////////////////////
 
         Route::get('/folder/{id}/edit','PatientController@edit_folder')->name("editer_folder");
