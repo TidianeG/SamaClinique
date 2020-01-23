@@ -18,9 +18,6 @@
                     <thead>
                         <tr>
                             <th>Nom</th>
-                            <th>Prenom</th>
-                            <th>Adresse</th>
-                            <th>Telephone</th>
                             <th>Specialite</th>
                             <th>Sexe</th>
                             <th>Poste</th>
@@ -31,11 +28,8 @@
                     <tbody>
                         @foreach($staffs as $staff)
                         <tr class="clickable-row" data-href="{{route('afficher_staff',['id'=>$staff->id])}}" style="cursor:pointer;">
-                            <td>{{$staff->nom_staff}}</td>
-                            <td>{{$staff->prenom_staff}}</td>
+                            <td>{{$staff->prenom_staff}} {{$staff->nom_staff}}</td>
                             <td>{{$staff->adresse_staff}}</td>
-                            <td>{{$staff->telephone_staff}}</td>
-                            <td>{{$staff->specialite_staff}}</td>
                             <td>{{$staff->sexe_staff}}</td>
                             <td>{{$staff->poste_staff}}</td>
                             
