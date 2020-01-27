@@ -102,13 +102,13 @@ class PatientController extends Controller
             return view('admin.afficherPatient', compact('patients','rendezvous','consultations'));
         }
 
-        public function afficher_dossier($id){
-            $folders = Folder::where('patient_id',$id)->first();
-            $patients= Patient::find($id);
-            $analyse= Analysis::where('patient_id',$id)->get();
-            $traitement= Treatment::where('patient_id',$id)->get();
+        public function afficher_dossier(){
+            //$folders = Folder::where('patient_id',$id)->first();
+            //$patients= Patient::find($id);
+            //$analyse= Analysis::where('patient_id',$id)->get();
+            //$traitement= Treatment::where('patient_id',$id)->get();
             
-            return view('medecin.dossier', compact('folders','patients','analyse','traitement'));
+            return view('medecin.folder');
         }
         public function recherche_dossier(Request $request){
             $id=$request->input('numfolder');

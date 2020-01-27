@@ -59,17 +59,29 @@
                                     <!-- Menu Area -->
                                     <ul class="navbar-nav ml-auto">
                                         <li class="nav-item ">
-                                            <a class="nav-link style-bar" href="{{route('admin')}}">Acceuil <span class="sr-only">(current)</span></a>
+                                            <a class="nav-link style-bar" href="{{route('admin')}}">
+                                                <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                                                Acceuil <span class="sr-only">(current)</span>
+                                            </a>
+                                        </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
+                                        <li class="nav-item ">
+                                            <a class="nav-link style-bar" href="">
+                                            <i class="far fa-hospital"></i>
+                                                Clinique
+                                            </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link style-bar" href="{{route('liste_staff')}}">Gestion Utilisateurs</a>
-                                                
+                                            <a class="nav-link style-bar" href="{{route('liste_staff')}}">
+                                                <i class="fas fa-users"></i>
+                                                Gestion Utilisateurs
+                                            </a>    
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
                                             <a class="nav-link style-bar" href="{{route('liste_patientAdmin')}}">
-                                            <i class="fas fa-hospital-user"></i>    
+                                            <i class="fab fa-accessible-icon fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>    
                                             Patients</a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>

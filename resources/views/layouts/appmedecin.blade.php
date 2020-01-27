@@ -60,7 +60,7 @@
                                         
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item dropdown">
-                                            <a class="nav-link style-bar" href="{{route('patients')}}">
+                                            <a class="nav-link style-bar" href="{{route('afficher_dossier')}}">
                                                 <i class="fas fa-wheelchair fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Patient
                                             </a>
@@ -125,7 +125,7 @@
     </div>
     </header>
     <main class="content-div">
-        <div class="content-yield" >
+        <div class="content-yield p-1" >
             @yield('content')
         </div>
     </main>
@@ -176,7 +176,9 @@
     <script src="{{asset('js/app.js')}}"></script>  
     <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->
+    
     <script src="{{asset('js/popper.min.js')}}"></script>
+    <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
     <!-- Bootstrap js -->
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- Plugins js -->

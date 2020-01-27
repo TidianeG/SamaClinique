@@ -34,8 +34,9 @@
                 <div class="row h-100">
                     <div class="col-12 h-100">
                         <div class="h-100 d-md-flex justify-content-between ">
-                            <p>Bienvenu à <span>Medifile</span></p>
+                            <p>Bienvenu à <span>Medilife</span></p>
                             <p>jours ouvrable : du Lundi au Samedi - 8h à 23h Contact : <span>+221 33 899 99 99</span></p>
+                             
                         </div>
                     </div>
                 </div>
@@ -76,12 +77,17 @@
                                             </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link style-bar" href="{{route('pharmacie')}}">Pharmacie</a>
+                                            <a class="nav-link style-bar" href="{{route('pharmacie')}}">
+                                                <i class="fas fa-tablets"></i>
+                                                Pharmacie</a>
                                         </li>
-                                        <!--div class="topbar-divider d-none d-sm-block"></div>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="blog.html">Gestion Caisse</a>
-                                        </li-->
+                                            <a class="nav-link" href="blog.html">
+                                                <i class="fas fa-money-check"></i>
+                                                Caisse
+                                            </a>
+                                        </li>
                                     
                                             <div class="topbar-divider d-none d-sm-block"></div>
 

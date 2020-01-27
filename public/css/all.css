@@ -5789,7 +5789,7 @@ img {
       
 .main-header-area {
   width: 100%;
-  height: 110px;
+  height: 130px;
   position: relative;
   z-index: 1;
   background-color: rgba(0, 108, 255, 0.5);
@@ -6974,8 +6974,8 @@ textarea {
         z-index: 1000;
       }
       .content-yield{
-        min-height:80vh;
-        max-height: auto;
+        height:82vh;
+       
         margin: 0;
         padding:0;
         width: 100%;
