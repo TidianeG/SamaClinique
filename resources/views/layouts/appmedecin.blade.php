@@ -125,7 +125,7 @@
     </div>
     </header>
     <main class="content-div">
-        <div class="content-yield p-1" >
+        <div class="content-yield p-0" >
             @yield('content')
         </div>
     </main>

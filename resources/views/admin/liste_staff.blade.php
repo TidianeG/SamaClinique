@@ -1,16 +1,17 @@
 @extends('layouts.appadmin')
 @section('content')
-    <div class="container" style="padding-top:25px;">     
-        <div class="card" style="border:2px solid #ffffff;border-radius:4px;">
-            <div class="card-header d-flex justify-content-center">
+    <div class="container mb-5" style="padding-top:20px;height:100%;">     
+        <div class="card p-0 mb-0" style="background-color:#081f3e;border:2px solid #ffffff;border-radius:4px;height:100%;">
+            <div class="card-header d-flex justify-content-between" style="background-color:white;">
                 <h2>La liste des Personnels de Medilife</h2>
-            </div>
-            <div class="card-body" style="background-color:#081f3e ;">
-                <div class="row" style="height:auto;">
+                <div class="" style="height:auto;">
                     @if(session('success'))
                         <div class="alert alert-success">{{session('success')}}</div>
                     @endif
                 </div>
+            </div>
+                
+            <div class="card-body mb-0" style="background-color:#081f3e;overflow-x:scroll;">
                 <div class=" row justify-content-between">
                     <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>     
                 </div>
@@ -44,8 +45,6 @@
                                 </form>
                             </td>
                         </tr>
-                      
-
                         @endforeach
                     </tbody>
                 </table>
@@ -54,9 +53,6 @@
                     <p><a class="btn btn-success" style="height:auto; " data-toggle="modal" data-target="#myModal"><span>+</span> Nouveau Utilisateur</a></p>
                    
                 </div>
-            </div>
-            <div class="row" style="height:100px;">
-
             </div>
         </div>
     </div>

@@ -17,7 +17,9 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
+    
 
 </head>
 
@@ -94,7 +96,7 @@
     </div>    
     </header>
     <main class="content-div">
-        <div class=" content-yield main" >
+        <div class=" content-yield " >
             @yield('content')
         </div>
     </main>
@@ -157,8 +159,7 @@ function topFunction() {
     <script src="{{asset('js/footer.js')}}"></script>
     <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-
-    <script>
+     <script>
         tinymce.init({
             selector:'textarea.description',
             width: 900,

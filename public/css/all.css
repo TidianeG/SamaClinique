@@ -3065,28 +3065,9 @@ iframe {
 
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
-.container-login100 {
-  width: 100%;  
-  min-height: 70vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-}
 
 
-.wrap-login100 {
-  width: 670px;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  height: 100%;
-}
+
 
 /*==================================================================
 [ Title form ]*/
@@ -3134,257 +3115,54 @@ iframe {
 /*==================================================================
 [ Form ]*/
 
-.login100-form {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 53px 88px 93px 190px;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
-}
 
 
-.alert-validate::before {
-  content: attr(data-validate);
-  position: absolute;
-  max-width: 70%;
-  background-color: #fff;
-  border: 1px solid #c80000;
-  border-radius: 2px;
-  padding: 4px 25px 4px 10px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 2px;
-  pointer-events: none;
-
-  font-family: Poppins-Medium;
-  color: #c80000;
-  font-size: 13px;
-  line-height: 1.4;
-  text-align: left;
-
-  visibility: hidden;
-  opacity: 0;
-
-  -webkit-transition: opacity 0.4s;
-  -o-transition: opacity 0.4s;
-  -moz-transition: opacity 0.4s;
-  transition: opacity 0.4s;
-}
-
-.alert-validate::after {
-  content: "\f06a";
-  font-family: FontAwesome;
-  display: block;
-  position: absolute;
-  color: #c80000;
-  font-size: 15px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  right: 8px;
-}
-.label-input100 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 15px;
-  color: #181717;
-  line-height: 1.2;
-  text-align: right;
-
-  position: absolute;
-  top: 14px;
-  left: -105px;
-  width: 80px;
-  display: block;
-  margin: 0;
-}
-
-
-.input100:focus::-webkit-input-placeholder { color:transparent; }
-.input100:focus:-moz-placeholder { color:transparent; }
-.input100:focus::-moz-placeholder { color:transparent; }
-.input100:focus:-ms-input-placeholder { color:transparent; }
-
-
-.input100::-webkit-input-placeholder {color: #999999;}
-.input100:-moz-placeholder {color: #999999;}
-.input100::-moz-placeholder {color: #999999;}
-.input100:-ms-input-placeholder {color: #999999;}
-/*---------------------------------------------*/
-.input100 {
-  font-family: Poppins-Regular;
-  font-size: 17px;
-  color: #302369;
-  line-height: 1.2;
-  outline: none;
-	border: none;
-  display: block;
-  width: 100%;
-  background: transparent;
-  padding: 0 5px;
-}
-
-.focus-input100 {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-}
-
-.focus-input100::before {
-  content: "";
-  display: block;
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 1px;
-
-  -webkit-transition: all 0.6s;
-  -o-transition: all 0.6s;
-  -moz-transition: all 0.6s;
-  transition: all 0.6s;
-
-  background: #57b846;
-}
-
-
-/*---------------------------------------------*/
-input.input100 {
-  height: 45px;
-}
-
-
-.input100:focus + .focus-input100::before {
-  width: 100%;
-}
-
-.has-val.input100 + .focus-input100::before {
-  width: 100%;
-}
-
-/*==================================================================
-[ Restyle Checkbox ]*/
-
-.input-checkbox100 {
-  display: none;
-}
-.wrap-input100 {
-  width: 100%;
-  position: relative;
-  border-bottom: 1px solid #b2b2b2;
-}
-
-.label-checkbox100 {
-  font-family: Poppins-Regular;
-  font-size: 13px;
-  color: #999999;
-  line-height: 1.4;
-
-  display: block;
-  position: relative;
-  padding-left: 26px;
-  cursor: pointer;
-}
-
-.label-checkbox100::before {
-  content: "\f00c";
-  font-family: FontAwesome;
-  font-size: 13px;
-  color: transparent;
-
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border-radius: 2px;
-  background: #fff;
-  border: 1px solid #e6e6e6;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-.container-login100-form-btn {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.login100-form-btn {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 5px;
-  min-width: 160px;
-  height: 40px;
-  background-color: #57b846;
-  border-radius: 25px;
-
-  font-family: Poppins-Regular;
-  font-size: 16px;
-  color: #fff;
-  line-height: 1.2;
-
-  -webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  transition: all 0.4s;
-}
-.login100-form-btn{
-  outline: none !important;
-	border: none;
-	background-color: #2b791c;
-}
-.login100-form-btn:hover {
-  background-color: #2c8333;
-  cursor: pointer;
-}
-.alert-validate:hover:before {
-  visibility: visible;
-  opacity: 1;
-}
 @media (max-width: 992px) {
   .alert-validate::before {
     visibility: visible;
     opacity: 1;
   }
 }
+.auth{
+  width: 60%;
+  height:100%;
+  border: 2px solid white;
+  border-radius: 20px ;
+}
+.auth-body{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 5px;
+  
+}
+.auth-form{
+  width: 60%;
+  height: auto;
+  
+}
+.container-auth{
+  padding-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+.btn-auth{
+  width: 200px;
+  border-radius: 20px;
+}
 
+.login{
+  border-radius: 20px;
 
-
+}
+.pass{
+  border-radius: 20px;
+}
 
 
 .owl-carousel .animated {
@@ -3444,6 +3222,7 @@ input.input100 {
   /* position relative and z-index fix webkit rendering fonts issue */
   position: relative;
   z-index: 1;
+  height: 100%;
 }
 .owl-carousel .owl-stage {
   position: relative;
@@ -3462,6 +3241,7 @@ input.input100 {
   overflow: hidden;
   /* fix for flashing background */
   -webkit-transform: translate3d(0px, 0px, 0px);
+  height: 100%;
 }
 .owl-carousel .owl-controls .owl-nav .owl-prev,
 .owl-carousel .owl-controls .owl-nav .owl-next,
@@ -5895,7 +5675,7 @@ img {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100vh;
+  height: 82vh;
   background-size: 100%; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .single-hero-slide {
@@ -5918,6 +5698,10 @@ img {
   color: #081f3e;
   font-size: 22px;
   font-weight: 600; }
+
+  .hero-area{
+    height:100%;
+  }
 
 .hero-area .owl-prev,
 .hero-area .owl-next {
@@ -7008,13 +6792,21 @@ textarea {
         font-weight: bold;
 
       }
-      /* .login{
-        display:flex;
+      .patient{
+        display: flex;
         direction: column;
         align-items: center;
+        justify-content: center;
         align-content: center;
-      } */
-/*# sourceMappingURL=style.css.map */
+      }
+     .border-doc{
+        border: 2px solid rgb(75, 187, 231);
+        background: white;
+     }
+     .blue{
+       color:rgb(99, 99, 250);
+       
+     }
 
 /*
  * This combined file was created by the DataTables downloader builder:

@@ -80,58 +80,88 @@
                         </li>
                     </ul>
                 <!-- Tab panes -->
-                    <div class=" tab-content border mb-2 p-2" style=" background-color:rgba(255, 255, 255, 0.5); border-left:5px solid #081f3e; height:auto;">
+                    <div class=" tab-content border mb-0 p-2" style="background:rgba(0, 80, 255, 0.2); height:auto;">
                         
-                        <div id="home" class=" tab-pane active" ><br>
-                            <h4 class="mb-2">Dossier Administratif</h4>
-                            <div class="mb-2" style=" border:2px solid rgba(23, 111, 226, 0.87);background-color:white; border-radius:15px 15px;">
-                                <div class=" d-flex justify-content-center" style="background-color:white;">
-                                    <div class="d-flex justify-content-between" style="width:100%; ">
-                                        <div class="col-4">
-                                            <div class="card " style="border:none;">
-                                                <div class="card-body fadein  container" >
-                                                        <img class="card-img-top img-cercle" style="width:100px;height:100px;" src="{{asset('images/avatar-fem.png')}}" alt="Card image femel">                                                     
-                                                </div>
-                                                <div class="">
-                                                    <div class=""> Numero patient : </div>
-                                                    <input type="text" class="form-control" style="color:blue; border:none;" value="" disabled>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-4">
-                                            <div class="">
-                                                <div class=""> Prenom : </div>
-                                                <input type="text" class="form-control" style="color:blue; border:none;" value="" disabled>
-                                            </div>
-                                            <div class="">
-                                                <div class="">Nom : </div>
-                                                <input type="text" class="form-control" style="color:blue; border:none;" value="" disabled>
-                                            </div>
+                        <div id="home" class="container tab-pane active" >
+                            <div class="row justify-content-around mb-5 ">
+                                <div class="col-5 border-doc">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="blue">Patient</h5>
+                                        <i class="fas fa-bars"></i>
+                                    </div>
+                                    <hr>
+                                    <div class="patient">
+                                        <h4 class="blue">Mosieur Cheikh Gaye, nee le 03/09/1996, 23ans</h4>
                                         
-                                            <div class="">
-                                                <div class=""> Née le : </div>
-                                                <input type="date" class="form-control" style="color:blue; border:none;" value="" disabled>
-                                            </div>  
-                                        </div>
-                                        <div class="col-4 ">
-                                            <div class="">
-                                                <div class="">Adresse : </div>
-                                                <input class="form-control" type="text" style="color:blue; border:none;" value="" disabled>
-                                            </div>
-                                            <div class="">
-                                                <div class="">Sexe : </div>
-                                                <input type="text" class="form-control" style="color:blue; border:none;" value="" disabled>
-                                            </div>
-                                        
-                                            <div class="">
-                                                <div class="">Profession : </div>
-                                                <input class="form-control" type="text" style="color:blue; border:none;" value="" disabled>
-                                            </div>
-                                        </div>
-                                    </div>                          
+                                    </div>
                                 </div>
-                            </div>     
-                            <h4 class="mb-2">Dossier Medical</h4>  
+                                <div class="col-5 border-doc" >
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="blue">Correspondant</h5>
+                                        <i class="fas fa-bars"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around mb-5">
+                                <div class="col-5 border-doc" >
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="blue">Antécédant</h5>
+                                        <i class="fas fa-bars"></i>
+                                    </div><hr>
+                                    <div class="d-flex ">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-5 border-doc" >
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="blue">Pense-bete</h5>
+                                        <i class="fas fa-bars"></i>
+                                    </div>
+                                    <div class="d-flex">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-around mb-5">
+                                <div class="col-5 border-doc" >
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="blue">Suivis</h5>
+                                        <i class="fas fa-bars"></i>
+                                    </div><hr>
+                                    <div class="d-flex ">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-5 border-doc">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="blue">Alergies</h5>
+                                        <i class="fas fa-bars"></i>
+                                    </div>
+                                    <div class="d-flex">
+                                        
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="row justify-content-around">
+                                <div class="col-5 border-doc" >
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="blue">Consultations</h5>
+                                        <i class="fas fa-bars"></i>
+                                    </div><hr>
+                                    <div class="d-flex ">
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-5 border-doc">
+                                    <div class="d-flex justify-content-between">
+                                        <h5 class="blue">Bilans & Examens</h5>
+                                        <i class="fas fa-bars"></i>
+                                    </div>
+                                    <div class="d-flex">
+                                        
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
                         <div id="menu1" class=" tab-pane fade " style="height:100%;">
                             <h3>Ordonnance</h3>                                                                       
