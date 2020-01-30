@@ -13,7 +13,7 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .styles(['resources/css/util.css','resources/css/main.css','resources/css/style.css','resources/css/datatables.min.css','resources/css/footer.css'], 'public/css/all.css');
+    .styles(['resources/css/util.css','resources/css/main.css','resources/css/footer.css','resources/css/style.css','resources/css/sb-admin-2.min.css','resources/css/dataTables.bootstrap4.min.css'], 'public/css/all.css');
    
 mix.copyDirectory('node_modules/tinymce/plugins', 'public/node_modules/tinymce/plugins');
 mix.copyDirectory('node_modules/tinymce/skins', 'public/node_modules/tinymce/skins');

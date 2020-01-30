@@ -2005,9 +2005,24 @@ a {
     font-size: 14px;
     font-weight: 700; }
     th{
-      color:white;
+      
       font-weight: bold;
       font-family: 'Times New Roman', Times, serif;
+    }
+    .modal-header{
+      background: rgba(0, 108, 255, 0.7);
+    }
+    .modal-content{
+      margin:0px;
+      border: 4px solid white;
+    }
+    .modal-dialog{
+      padding:0px;
+     
+    }
+    .save-patient{
+      border-radius: 20px;
+      width: 350px;
     }
 #preloader {
   overflow: hidden;
@@ -2535,6 +2550,8 @@ img {
   font-weight: 600; }
 
   .hero-area{
+    padding:0px;
+    margin: 0px;
     height:100%;
   }
 
@@ -3593,7 +3610,7 @@ textarea {
         z-index: 1000;
       }
       .content-yield{
-        height:82vh;
+        height:85vh;
        
         margin: 0;
         padding:0;

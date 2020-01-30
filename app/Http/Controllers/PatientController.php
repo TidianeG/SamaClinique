@@ -24,7 +24,7 @@ class PatientController extends Controller
         }
         public function liste_patient(){
             $patients = Patient::all();
-            return view('secretaire.liste', compact('patients'));
+            return view('secretaire.liste_patient', compact('patients'));
         }
 
         public function liste_patientAdmin(){

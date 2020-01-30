@@ -80,7 +80,7 @@
                         </li>
                     </ul>
                 <!-- Tab panes -->
-                    <div class=" tab-content border mb-0 p-2" style="background:rgba(0, 80, 255, 0.2); height:auto;">
+                    <div class=" tab-content border mb-0 p-2" style="background:rgba(0, 80, 255, 0.5); height:auto;">
                         
                         <div id="home" class="container tab-pane active" >
                             <div class="row justify-content-around mb-5 ">
