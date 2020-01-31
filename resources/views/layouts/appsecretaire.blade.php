@@ -59,11 +59,18 @@
                                             </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
-                                        <li class="nav-item">
-                                            <a class="nav-link style-bar dropdown-toggle" href="{{route('liste_patient')}}">
+                                        
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle style-bar" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="fab fa-accessible-icon fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Gestion Patients
                                             </a>
+                                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{route('liste_patient')}}">Liste Patients</a>
+                                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#myModal">Nouveau Patient</a>
+                                                <div class="dropdown-divider"></div>
+                                            
+                                            </div>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
@@ -71,7 +78,8 @@
                                                 <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
                                                 Gestio Rendez-Vous
                                             </a>
-                                            </li>
+                                        </li>
+                                        
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
                                             <a class="nav-link style-bar" href="{{route('pharmacie')}}">
@@ -263,11 +271,7 @@
                     <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group">
                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fas fa-search fa-sm"></i>
-                        </button>
-                        </div>
+                        
                     </div>
                     </form>
 
@@ -433,10 +437,91 @@
 
                 </nav>
           <!-- End of Topbar --> 
-                <div class="container content-yield" style="overflow-x:scroll;" >
+                <div class=" content-yield" style="overflow-x:scroll;" >
                     @yield('content')
                 </div>
-             
+                <div class="modal fade" id="myModal">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                        <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>                        
+                        <!-- Modal body -->
+                        <div class="modal-body container">
+                            <form action="{{route('ajouter_patient')}}" method="post">
+                            @csrf
+                           
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label for="inputEmail" class="col-sm-2 ">Prenom<span style="background-colol:red;">*</span></span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrer Prenom">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Nom</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer Nom">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row ">
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Date Naissance</label>
+                                        <div class="col-sm-10">
+                                            <input type="date" class="form-control" id="date" name="date" placeholder="">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Lieu Naissance</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="lieu" name="lieu" placeholder="Entrer Lieu">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                        <div class="form-group col">
+                                            <label for="inputPassword" class="col-sm-2 ">Adresse</label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Entrer Adresse">
+                                            </div>
+                                        </div>
+                                       
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Telephone</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Entrer Telephone"">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col">
+                                        <label for="inputPassword" class="col-sm-2 ">Profession</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="profession" name="profession" placeholder="Entrer Profession">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="sexe" class="col-sm-4 ">Sexe</label>
+                                        <div class="col-sm-10">
+                                            <select name="genre" id="genre" class="form-control">
+                                                <option value="masculin">Masculin</option>
+                                                <option value="feminin">Feminin</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-center">         
+                                    <button type="submit" class="btn btn-success save-patient">Enregistrer</button>
+                                </div>
+                            </form>
+                        </div>      
+                        <!-- Modal footer -->                
+                    </div>
+                </div>
+            </div>  
         </div>
     </div>
     </main>

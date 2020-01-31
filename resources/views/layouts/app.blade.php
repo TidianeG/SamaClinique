@@ -95,8 +95,8 @@
         </div>
     </div>    
     </header>
-    <main class="content-div">
-        <div class=" content-yield " >
+    <main class="container content-div">
+        <div class="container content-yield " >
             @yield('content')
         </div>
     </main>

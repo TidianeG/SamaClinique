@@ -3124,7 +3124,7 @@ iframe {
   }
 }
 .auth{
-  width: 60%;
+
   height:100%;
   border: 2px solid white;
   border-radius: 20px ;
@@ -3142,14 +3142,14 @@ iframe {
   
 }
 .auth-form{
-  width: 60%;
+  width: 85%;
   height: auto;
   
 }
 .container-auth{
-  padding-top: 5px;
+  padding-top: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .btn-auth{
   width: 200px;
@@ -6629,7 +6629,15 @@ textarea {
     margin-bottom: 0; }
     @media only screen and (max-width: 767px) {
       .single_comment_area .comment-wrapper .comment-content p {
-        font-size: 13px; } }
+        font-size: 13px; }
+        .login100-form-title-1 {
+          font-family: Poppins-Bold;
+          font-size: 14px;
+          color: #fff;
+          text-transform: uppercase;
+          line-height: 1.2;
+          text-align: center;
+        } }
   .single_comment_area .children {
     margin-top: 50px;
     padding-left: 90px; }
@@ -6807,7 +6815,7 @@ textarea {
       }
 
       .card-header{
-        
+        background: rgba(0, 108, 255, 0.7);
         border-radius: 5px 5px;
       }
       .topbar-divider{

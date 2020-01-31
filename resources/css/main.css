@@ -130,7 +130,7 @@ iframe {
   }
 }
 .auth{
-  width: 60%;
+
   height:100%;
   border: 2px solid white;
   border-radius: 20px ;
@@ -148,14 +148,14 @@ iframe {
   
 }
 .auth-form{
-  width: 60%;
+  width: 85%;
   height: auto;
   
 }
 .container-auth{
-  padding-top: 5px;
+  padding-top: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .btn-auth{
   width: 200px;
