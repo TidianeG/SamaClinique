@@ -6834,10 +6834,11 @@ textarea {
       .content-div{
         margin: 0;
         padding: 0;
+        height: 85vh;
         background-image:url("../images/medecinacceuil.jpg"); 
-        height: auto;
+        
         background-repeat: no-repeat;
-        background-size: 100%;
+     
         width: 100vw;
       }
       .content-div::before{
@@ -6845,7 +6846,7 @@ textarea {
         z-index: 1000;
       }
       .content-yield{
-        height:85vh;
+        height:auto;
        
         margin: 0;
         padding:0;
