@@ -150,114 +150,116 @@
     
 
     <!-- ***** Header Area Start ***** -->
-    <main class="content-div" style="overflow-y:scroll;">
+    <main class="content-div" style="">
         
             <div id="page-top" style="height:100%;">
                 <div id="wrapper" style="height:100%;">
 
                 <!-- Sidebar -->
-                    <ul class="navbar-nav  sidebar sidebar-dark accordion nav-bord" id="accordionSidebar" >
+                    <div class="mb-0" style="overflow-y:scroll;">
+                        <ul class="navbar-nav  sidebar sidebar-dark accordion nav-bord" id="accordionSidebar" >
 
-                            <!-- Sidebar - Brand -->
-                            <a class="navbar-brand align-items-center justify-content-center" href="index.html"></a>
-                            <!-- Divider -->
-                            <hr class="sidebar-divider my-0">
+                                <!-- Sidebar - Brand -->
+                                <a class="navbar-brand align-items-center justify-content-center" href="index.html"></a>
+                                <!-- Divider -->
+                                <hr class="sidebar-divider my-0">
 
-                            <!-- Nav Item - Dashboard -->
-                            
-                            <!-- Divider -->
-                            <hr class="sidebar-divider">
-
-                            <!-- Heading -->
-                            <div class="sidebar-heading">
-                            Patient et Rv
-                            </div>
-
-                            <!-- Nav Item - Pages Collapse Menu -->
-                            <li class="nav-item">
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            <i class="fab fa-accessible-icon fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
-                                <span>Patients</span>
-                            </a>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                                <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Gestion patients</h6>
-                                <a class="collapse-item" href="" data-toggle="modal" data-target="#myModal">Nouveau</a>
-                                <a class="collapse-item" href="{{route('liste_patient')}}">Liste</a>
-                                </div>
-                            </div>
-                            </li>
-
-                            <!-- Nav Item - Utilities Collapse Menu -->
-                            <li class="nav-item">
-                            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                            <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
-                                <span>Rendez-Vous</span>
-                            </a>
-                            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                                <div class="bg-white py-2 collapse-inner rounded">
-                                <h6 class="collapse-header">Gestion rendez-vous</h6>
-                                <a class="collapse-item" href="utilities-color.html">Nouveau</a>
-                                <a class="collapse-item" href="utilities-border.html">RV a venir</a>
-                                <a class="collapse-item" href="utilities-animation.html">RV passee</a>
+                                <!-- Nav Item - Dashboard -->
                                 
+                                <!-- Divider -->
+                                <hr class="sidebar-divider">
+
+                                <!-- Heading -->
+                                <div class="sidebar-heading">
+                                Patient et Rv
                                 </div>
-                            </div>
-                            </li>
 
-                            <!-- Divider -->
-                            <hr class="sidebar-divider">
-
-                            <!-- Heading -->
-                            <div class="sidebar-heading">
-                            caisse et medocs
-                            </div>
-
-                            <!-- Nav Item - Pages Collapse Menu -->
-                            <li class="nav-item">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                                    <i class="fas fa-money-check"></i>
-                                    <span>Caisse</span>
+                                <!-- Nav Item - Pages Collapse Menu -->
+                                <li class="nav-item">
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                <i class="fab fa-accessible-icon fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
+                                    <span>Patients</span>
                                 </a>
-                                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
-                                        <h6 class="collapse-header">Gestion Caisse</h6>
-                                        <a class="collapse-item" href="login.html">Recette</a>
-                                        <a class="collapse-item" href="register.html">Depense</a>
-                                        
+                                    <h6 class="collapse-header">Gestion patients</h6>
+                                    <a class="collapse-item" href="" data-toggle="modal" data-target="#myModal">Nouveau</a>
+                                    <a class="collapse-item" href="{{route('liste_patient')}}">Liste</a>
                                     </div>
                                 </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMedoc" aria-expanded="true" aria-controls="collapsePages">
-                                    <i class="fas fa-tablets"></i>
-                                    <span>Medicaments</span>
+                                </li>
+
+                                <!-- Nav Item - Utilities Collapse Menu -->
+                                <li class="nav-item">
+                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                                <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
+                                    <span>Rendez-Vous</span>
                                 </a>
-                                <div id="collapseMedoc" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
-                                        <h6 class="collapse-header">Gestion medocs</h6>
-                                        <a class="collapse-item" href="login.html">Liste des Medocs</a>
-                                        <a class="collapse-item" href="register.html">Nouveau Medoc</a>
-                                        <a class="collapse-item" href="register.html">Medocs a retourner</a>
+                                    <h6 class="collapse-header">Gestion rendez-vous</h6>
+                                    <a class="collapse-item" href="utilities-color.html">Nouveau</a>
+                                    <a class="collapse-item" href="utilities-border.html">RV a venir</a>
+                                    <a class="collapse-item" href="utilities-animation.html">RV passee</a>
+                                    
                                     </div>
                                 </div>
-                            </li>
-                        
-                        <hr class="sidebar-divider d-none d-md-block">
+                                </li>
 
-                        <!-- Sidebar Toggler (Sidebar) -->
-                        <div class="text-center d-none d-md-inline">
-                            <button class="rounded-circle border-0" id="sidebarToggle"></button>
-                        </div>
+                                <!-- Divider -->
+                                <hr class="sidebar-divider">
 
-                    </ul>
+                                <!-- Heading -->
+                                <div class="sidebar-heading">
+                                caisse et medocs
+                                </div>
+
+                                <!-- Nav Item - Pages Collapse Menu -->
+                                <li class="nav-item">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+                                        <i class="fas fa-money-check"></i>
+                                        <span>Caisse</span>
+                                    </a>
+                                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                        <div class="bg-white py-2 collapse-inner rounded">
+                                            <h6 class="collapse-header">Gestion Caisse</h6>
+                                            <a class="collapse-item" href="login.html">Recette</a>
+                                            <a class="collapse-item" href="register.html">Depense</a>
+                                            
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMedoc" aria-expanded="true" aria-controls="collapsePages">
+                                        <i class="fas fa-tablets"></i>
+                                        <span>Medicaments</span>
+                                    </a>
+                                    <div id="collapseMedoc" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                                        <div class="bg-white py-2 collapse-inner rounded">
+                                            <h6 class="collapse-header">Gestion medocs</h6>
+                                            <a class="collapse-item" href="login.html">Liste des Medocs</a>
+                                            <a class="collapse-item" href="register.html">Nouveau Medoc</a>
+                                            <a class="collapse-item" href="register.html">Medocs a retourner</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            
+                            <hr class="sidebar-divider d-none d-md-block">
+
+                            <!-- Sidebar Toggler (Sidebar) -->
+                            <div class="text-center d-none d-md-inline">
+                                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                            </div>
+
+                        </ul>
+                    </div>
             <!-- End of Sidebar -->
 
             <!-- Content Wrapper -->
             
-                    <div id="content-wrapper" class="d-flex flex-column h-100 mb-0">
+                    <div id="content-wrapper" class="d-flex flex-column h-100 mb-0 ml-2 mr-2">
                         <!-- Main Content -->
-                        <div id="content" class="h-100">
+                        <div id="content" class="h-100" style="overflow-y:scroll;">
 
                         <!-- Topbar -->
                             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -438,7 +440,7 @@
                             </nav>
                     
                 <!-- End of Topbar --> 
-                            <div class="container content-yield " style="height:100%;" >
+                            <div class=" content-yield " style="height:100%;" >
                                 @yield('content')
                             </div>
                         </div>
