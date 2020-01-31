@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-		<div class="container container-auth pb-2" style="height:100%;">
-			<div class="card auth " style="overflow-x:scroll;">
-				<div class="card-header auth-header login100-form-title" style="height:200px;background-image: url({{asset('images/consultation-medicale.jpg')}});">
+		<div class=" container-auth" style="height:100%;">
+			<div class="card auth ">
+				<div class="card-header auth-header login100-form-title" style="">
 					<span class="login100-form-title-1">
 						Authentification
 					</span>

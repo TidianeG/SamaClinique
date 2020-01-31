@@ -131,7 +131,7 @@ iframe {
 }
 .auth{
 
-  height:100%;
+  height:auto;
   border: 2px solid white;
   border-radius: 20px ;
 }
@@ -152,10 +152,17 @@ iframe {
   height: auto;
   
 }
+.auth-header{
+  height: 150px;
+  background-image: url('../images/consultation-medicale.jpg');
+}
 .container-auth{
-  padding-top: 0px;
   display: flex;
-  justify-content: space-around;
+  
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  
 }
 .btn-auth{
   width: 200px;
