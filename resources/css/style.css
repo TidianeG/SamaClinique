@@ -2902,7 +2902,7 @@ textarea {
     .footer-widget-area .footer-contact-form {
       padding: 30px 20px; } 
       .auth-header{
-        height: 100px;
+        height: 200px;
         
       }}
 .footer-widget-area .footer-newsletter-area form {
@@ -3591,10 +3591,7 @@ textarea {
         outline: 0;
       }
 
-      .card-header{
-        background: rgba(0, 108, 255, 0.7);
-        border-radius: 5px 5px;
-      }
+      
       .topbar-divider{
         width:0;
         border-right:1px solid #e3e6f0;

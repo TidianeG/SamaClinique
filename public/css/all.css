@@ -3079,14 +3079,16 @@ iframe {
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
+  
   display: flex;
+
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-
+  height: 150px;
   padding: 70px 15px 74px 15px;
 }
 
@@ -3146,10 +3148,7 @@ iframe {
   height: auto;
   
 }
-.auth-header{
-  height: 150px;
-  background-image: url('../images/consultation-medicale.jpg');
-}
+
 .container-auth{
   display: flex;
   
@@ -6136,7 +6135,7 @@ textarea {
     .footer-widget-area .footer-contact-form {
       padding: 30px 20px; } 
       .auth-header{
-        height: 100px;
+        height: 200px;
         
       }}
 .footer-widget-area .footer-newsletter-area form {
@@ -6825,10 +6824,7 @@ textarea {
         outline: 0;
       }
 
-      .card-header{
-        background: rgba(0, 108, 255, 0.7);
-        border-radius: 5px 5px;
-      }
+      
       .topbar-divider{
         width:0;
         border-right:1px solid #e3e6f0;
