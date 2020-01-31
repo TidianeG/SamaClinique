@@ -23,9 +23,6 @@
 
 <body>
     <!-- Preloader -->
-    
-
-    <!-- ***** Header Area Start ***** -->
     <header>
     <div class="header-area">
         <!-- Top Header Area -->
@@ -44,13 +41,13 @@
         </div>
         <!-- Main Header Area -->
         <div class="main-header-area" id="stickyHeader" style="height:auto;">
-            <div class="container h-100">
+            <div class=" h-100">
                 <div class="row h-100 justify-content-between">
                     <div class="col-12 h-100">
                         <div class="main-menu h-100">
                             <nav class="navbar h-100 navbar-expand-lg row justify-content-between align-items-center">
                                 <!-- Logo Area  -->
-                                <a class="navbar-brand" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                                <a class="navbar-brand ml-25" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
                                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#medilifeMenu" aria-controls="medilifeMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                                 <div class="collapse navbar-collapse" id="medilifeMenu">
                                     <!-- Menu Area -->
@@ -58,14 +55,14 @@
                                         <li class="nav-item">
                                             <a class="nav-link style-bar" href="{{route('secretaire')}}">
                                                 <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
-                                                Acceuil <span class="sr-only">(current)</span>
+                                                Accueuil <span class="sr-only">(current)</span>
                                             </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
                                             <a class="nav-link style-bar dropdown-toggle" href="{{route('liste_patient')}}">
                                                 <i class="fab fa-accessible-icon fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
-                                                Gestion Patient
+                                                Gestion Patients
                                             </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -79,13 +76,13 @@
                                         <li class="nav-item">
                                             <a class="nav-link style-bar" href="{{route('pharmacie')}}">
                                                 <i class="fas fa-tablets"></i>
-                                                Pharmacie</a>
+                                                Gestion Medicaments</a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
                                             <a class="nav-link" href="blog.html">
                                                 <i class="fas fa-money-check"></i>
-                                                Caisse
+                                                Gestion Caisse
                                             </a>
                                         </li>
                                     
@@ -142,16 +139,19 @@
         </div>
     </div>
     </header>
+    
+
+    <!-- ***** Header Area Start ***** -->
     <main class="content-div" >
         
             <div id="page-top" style="height:100%;">
-                <div id="wrapper" style="height:100%;overflow-y:scroll;">
+                <div id="wrapper" style="height:100%;">
 
                 <!-- Sidebar -->
-                <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+                <ul class="navbar-nav  sidebar sidebar-dark accordion nav-bord" id="accordionSidebar" style="">
 
                     <!-- Sidebar - Brand -->
-                    <a class="navbar-brand align-items-center justify-content-center" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                    <a class="navbar-brand align-items-center justify-content-center" href="index.html"></a>
                     <!-- Divider -->
                     <hr class="sidebar-divider my-0">
 
@@ -246,8 +246,8 @@
             <!-- End of Sidebar -->
 
             <!-- Content Wrapper -->
+            
             <div id="content-wrapper" class="d-flex flex-column">
-
                 <!-- Main Content -->
                 <div id="content">
 
@@ -433,9 +433,10 @@
 
                 </nav>
           <!-- End of Topbar --> 
-                <div class="container content-yield" >
+                <div class="container content-yield" style="overflow-x:scroll;" >
                     @yield('content')
                 </div>
+             
         </div>
     </div>
     </main>
@@ -464,6 +465,7 @@
 
       </div> <!--  end container-fluid  -->
     </footer>
+    
         <script>
         // Script from W3 Schools  
         // When the user scrolls down 20px from the top of the document, show the button

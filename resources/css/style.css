@@ -3657,3 +3657,7 @@ textarea {
      .blue{
        color:rgb(99, 99, 250);
      }
+     .nav-bord{
+      background-color:#081f3e;
+      border: 4px groove white;
+     }
