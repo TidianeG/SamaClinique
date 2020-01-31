@@ -110,7 +110,7 @@
                 <li><a href="#"><i class="fas fa-map-marker-alt"></i> Dakar Ngor-Almadies</a></li>
                 <li><a href="#"><i class="fas fa-phone"></i>+221 33 899 99 99</a></li>
                 <li><a href="#"><i class="far fa-envelope"></i> medilife@gmail.com</a></li>
-                <li><a href="#">site web : www.medilife.sn</a></li>
+                <li><a href="#"><i class="fab fa-internet-explorer"></i>site web : www.medilife.sn</a></li>
               </ul>
           </div>
           <div class="col-xs-12 col-md-2 text-center" >
