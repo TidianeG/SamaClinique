@@ -8,9 +8,9 @@
                 <div class="alert alert-danger">{{session('danger')}}</div>
             @endif
                 <div class="card shadow" >
-                    <div class="card-header py-3 d-flex justify-content-between">
+                    <div class="card-header py-3 ">
                           
-                            <div class="">
+                            <div class="d-flex justify-content-end">
                                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalrv">
                                     <i class="far fa-calendar-plus"></i>
                                     New rendez-vous</a>    
