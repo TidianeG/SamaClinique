@@ -156,7 +156,7 @@
                 <div id="wrapper" style="height:100%;">
 
                 <!-- Sidebar -->
-                    <div class="mb-0" style="overflow-x:scroll;">
+                    <div class="" style="">
                         <ul class="navbar-nav w-100 sidebar sidebar-dark accordion nav-bord" id="accordionSidebar" >
 
                                 <!-- Sidebar - Brand -->
@@ -257,7 +257,7 @@
 
             <!-- Content Wrapper -->
             
-                    <div id="content-wrapper" class="d-flex flex-column h-100 mb-0 ml-2 mr-2">
+                    <div id="content-wrapper" class="d-flex flex-column h-100 w-100 m-0 p-0">
                         <!-- Main Content -->
                         <div id="content" class="h-100" style="overflow-x:scroll;">
 
