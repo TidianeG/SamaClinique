@@ -50,6 +50,11 @@ background-color: #555;
 color:white;
 
 }
+footer{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 .vertical-links>li {
 display: inline-block;
 vertical-align: text-bottom;

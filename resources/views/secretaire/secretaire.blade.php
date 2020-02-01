@@ -1,6 +1,6 @@
 @extends('layouts.appsecretaire')
 @section('content')
-   <div style="background-image:url(../images/medecin2.jpg);height:100%;">
+   <div style="background-image:url(../images/medecin2.jpg);height:100%;background-position:center;">
 
    </div>
 @endsection

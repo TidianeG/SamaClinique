@@ -3221,6 +3221,11 @@ background-color: #555;
 color:white;
 
 }
+footer{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 .vertical-links>li {
 display: inline-block;
 vertical-align: text-bottom;
@@ -6831,8 +6836,8 @@ textarea {
         height:calc(4.375rem - 2rem);
       }
       html body{
-        margin: 0;
-        padding: 0;
+        margin: 0px;
+        padding: 0px;
         font-family: 'Times New Roman', Times, serif; 
       }
       tbody{
@@ -6841,7 +6846,7 @@ textarea {
       .content-div{
         margin: 0;
         padding: 0;
-        height: 85vh;
+        height: 80vh;
         background-image:url("../images/medecinacceuil.jpg"); 
         
         background-repeat: no-repeat;
@@ -6854,7 +6859,6 @@ textarea {
       }
       .content-yield{
         height:100%;
-       
         margin: 0;
         padding:0;
         width: 100%;

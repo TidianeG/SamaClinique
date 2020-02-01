@@ -156,8 +156,8 @@
                 <div id="wrapper" style="height:100%;">
 
                 <!-- Sidebar -->
-                    <div class="mb-0" style="overflow-y:scroll;">
-                        <ul class="navbar-nav  sidebar sidebar-dark accordion nav-bord" id="accordionSidebar" >
+                    <div class="mb-0" style="overflow-x:scroll;">
+                        <ul class="navbar-nav w-100 sidebar sidebar-dark accordion nav-bord" id="accordionSidebar" >
 
                                 <!-- Sidebar - Brand -->
                                 <a class="navbar-brand align-items-center justify-content-center" href="index.html"></a>
@@ -259,10 +259,10 @@
             
                     <div id="content-wrapper" class="d-flex flex-column h-100 mb-0 ml-2 mr-2">
                         <!-- Main Content -->
-                        <div id="content" class="h-100" style="overflow-y:scroll;">
+                        <div id="content" class="h-100" style="overflow-x:scroll;">
 
                         <!-- Topbar -->
-                            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                            <nav class="navbar navbar-expand navbar-light bg-white topbar  static-top shadow">
 
                                 <!-- Sidebar Toggle (Topbar) -->
                                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
