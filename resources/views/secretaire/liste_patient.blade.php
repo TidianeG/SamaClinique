@@ -10,7 +10,7 @@
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-              <div class="card-header py-3 d-flex justify-content-between">
+              <div class="card-header">
                 <a class="navbar-brand ml-25" href="#"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
               </div>
               <div class="card-body">

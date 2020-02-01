@@ -105,13 +105,13 @@
                             @csrf
                            
                                 <div class="row">
-                                    <div class="form-group col">
+                                    <div class="form-group col-12 col-sm-12 col-md-6">
                                         <label for="inputEmail" class="col-sm-2 ">Prenom<span style="background-colol:red;">*</span></span></label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrer Prenom">
                                         </div>
                                     </div>
-                                    <div class="form-group col">
+                                    <div class="form-group col-12 col-sm-12 col-md-6">
                                         <label for="inputPassword" class="col-sm-2 ">Nom</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer Nom">
@@ -119,13 +119,13 @@
                                     </div>
                                 </div>
                                 <div class="row ">
-                                    <div class="form-group col">
+                                    <div class="form-group col-12 col-sm-12 col-md-6">
                                         <label for="inputPassword" class="col-sm-2 ">Date Naissance</label>
                                         <div class="col-sm-10">
                                             <input type="date" class="form-control" id="date" name="date" placeholder="">
                                         </div>
                                     </div>
-                                    <div class="form-group col">
+                                    <div class="form-group col-12 col-sm-12 col-md-6">
                                         <label for="inputPassword" class="col-sm-2 ">Lieu Naissance</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="lieu" name="lieu" placeholder="Entrer Lieu">
@@ -133,14 +133,14 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                        <div class="form-group col">
+                                        <div class="form-group col-12 col-sm-12 col-md-6">
                                             <label for="inputPassword" class="col-sm-2 ">Adresse</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Entrer Adresse">
                                             </div>
                                         </div>
                                        
-                                    <div class="form-group col">
+                                    <div class="form-group col-12 col-sm-12 col-md-6">
                                         <label for="inputPassword" class="col-sm-2 ">Telephone</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="phone" name="phone" placeholder="Entrer Telephone"">
@@ -148,13 +148,13 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="form-group col">
+                                    <div class="form-group col-12 col-sm-12 col-md-6">
                                         <label for="inputPassword" class="col-sm-2 ">Profession</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="profession" name="profession" placeholder="Entrer Profession">
                                         </div>
                                     </div>
-                                    <div class="form-group col">
+                                    <div class="form-group col-12 col-sm-12 col-md-6">
                                         <label for="sexe" class="col-sm-4 ">Sexe</label>
                                         <div class="col-sm-10">
                                             <select name="genre" id="genre" class="form-control">
