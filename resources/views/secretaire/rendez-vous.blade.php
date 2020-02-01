@@ -10,13 +10,13 @@
                 <div class="card shadow" >
                     <div class="card-header py-3 ">
                           
-                            <div class="d-flex justify-content-end">
+                            <div class="d-flex justify-content-end mb-2">
                                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalrv">
                                     <i class="far fa-calendar-plus"></i>
                                     New rendez-vous</a>    
                             </div>
                         
-                        <div id="titre"><h3>Liste de tous les rendez-vous</h3></div>
+                        <div id="titre"><h3>Liste des rendez-vous</h3></div>
                     </div>
                     <div class="card-body"> 
                         <div class="table-responsive">
@@ -28,7 +28,7 @@
                                         <th>Telephone</th>
                                         <th>Description</th>
                                         <th>Medecin</th>
-                                        <th>Date Appel</th>
+                                        <th>Dat Rv</th>
                                         <th>Editer</th>
                                         <th>Delete</th>
                                     </tr>
