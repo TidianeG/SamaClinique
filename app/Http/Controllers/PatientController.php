@@ -135,6 +135,16 @@ class PatientController extends Controller
             $consults= Consultation::all();
             return view('secretaire.rendez-vous', compact('medecin','rv','consults'));
         }
+        public function rv_avenir(){
+            $date=date("yy-m-d");   
+            $rv= Appointment::where("daterendez_appointment",">=","$date")->get();
+            return view('secretaire.rv_avenir', compact('rv'));
+        }
+        public function rv_passe(){
+            $date=date("yy-m-d");   
+            $rv= Appointment::where("daterendez_appointment","<","$date")->get();
+            return view('secretaire.rv_passe', compact('rv'));
+        }
         public function create_rv(Request $request){      
             $rv=new Appointment();
             $id=$request->input('numero');

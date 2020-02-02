@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
   
     
@@ -198,9 +199,9 @@
                                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
                                     <h6 class="collapse-header">Gestion rendez-vous</h6>
-                                    <a class="collapse-item" href="utilities-color.html">Nouveau</a>
-                                    <a class="collapse-item" href="utilities-border.html">RV a venir</a>
-                                    <a class="collapse-item" href="utilities-animation.html">RV passee</a>
+                                    
+                                    <a class="collapse-item" href="{{route('rv_avenir')}}">RV a venir</a>
+                                    <a class="collapse-item" href="{{route('rv_passe')}}">RV passee</a>
                                     
                                     </div>
                                 </div>
@@ -238,7 +239,7 @@
                                         <div class="bg-white py-2 collapse-inner rounded">
                                             <h6 class="collapse-header">Gestion medocs</h6>
                                             <a class="collapse-item" href="login.html">Liste des Medocs</a>
-                                            <a class="collapse-item" href="register.html">Nouveau Medoc</a>
+                                           
                                             <a class="collapse-item" href="register.html">Medocs a retourner</a>
                                         </div>
                                     </div>
@@ -440,7 +441,7 @@
                             </nav>
                     
                 <!-- End of Topbar --> 
-                            <div class=" content-yield " style="height:100%;" >
+                            <div class=" content-yield " style="height:100%;background:rgba(255,255,255,0.2);" >
                                 @yield('content')
                             </div>
                         </div>
@@ -582,6 +583,7 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
   integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
   crossorigin="anonymous"></script>
+  
     <script src="{{asset('js/app.js')}}"></script>  
     <script src="{{asset('js/jquery-2.2.4.min.js')}}"></script>
     <!-- Popper js -->
@@ -600,6 +602,8 @@
     <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
     <script src="{{asset('js/dataTables.bootstrap4.min.js')}}"></script>
     <script src="{{asset('js/datatables-demo.js')}}"></script>
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
     <script>
         $(document).ready( function () {
         $('#myTable').DataTable();

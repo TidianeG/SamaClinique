@@ -1,69 +1,6 @@
 @extends('layouts.appmedecin')
     @section('content') 
-        <div class="row ml-3" style="height:100%;overflow-x:scroll;">
-            <div class="col-xl-2 col-md-2 ml-0 mb-0 mt-3" style="height:100%; background-color:#081f3e;">
-            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-                
-                <hr class="sidebar-divider my-0">
-
-                <!-- Nav Item - Dashboard -->
-                <li class="nav-item active">
-                <a class="nav-link" href="index.html">
-                    
-                    <span style="color:white;font-size:18px;">Dossier Medical</span></a>
-                </li>
-
-                    <!-- Divider -->
-                    <hr class="sidebar-divider">
-                    <!-- Nav Item - Pages Collapse Menu -->
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                            <i class="fas fa-fw fa-cog"></i>
-                            <span style="color:white;font-size:18px;">Consultation</span>
-                        </a>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                            
-                            <a class="collapse-item" href="">liste</a><br>
-                            <a class="collapse-item" href="">ajouter</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo2" aria-expanded="true" aria-controls="collapseTwo">
-                            <i class="fas fa-fw fa-cog"></i>
-                            <span style="color:white;font-size:18px;">Antecedant</span>
-                        </a>
-                        <div id="collapseTwo2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                            <div class="bg-white py-2 collapse-inner rounded">
-                            
-                            <a class="collapse-item" href="">liste</a><br>
-                            <a class="collapse-item" href="">ajouter</a>
-                            </div>
-                        </div>
-                    </li>
-
-                    <!-- Nav Item - Utilities Collapse Menu -->
-                    <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                        <i class="fas fa-fw fa-wrench"></i>
-                        <span style="color:white;font-size:20px;">Examens</span>
-                    </a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                        
-                        <a class="collapse-item" href="utilities-color.html">Liste</a><br>
-                        <a class="collapse-item" href="utilities-border.html">Nouveau</a>
-                        
-                        </div>
-                    </div>
-                    </li>
-                    <div class="text-center d-none d-md-inline">
-                        <button class="rounded-circle border-2" id="sidebarToggle">reduire</button>
-                    </div>
-                </ul>
-            </div>
-            <div class="col-xl-10 col-sm-12 col-md-10 mt-3 mb-0 afficherv" id="folder" style="height:100%;background-color:white;overflow-x:scroll;">                                  
+            <div class="" id="folder" style="">                                  
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" style="height:auto;">
                         <li class="nav-item">
@@ -80,8 +17,7 @@
                         </li>
                     </ul>
                 <!-- Tab panes -->
-                    <div class=" tab-content border mb-0 p-2" style="background:rgba(0, 80, 255, 0.5); height:auto;">
-                        
+                    <div class=" tab-content border mb-0 p-2" style="height:auto;">
                         <div id="home" class="container tab-pane active" >
                             <div class="row justify-content-around mb-5 ">
                                 <div class="col-5 border-doc">
@@ -173,6 +109,5 @@
                             <h3>Lettre</h3>
                         </div>
                     </div>
-            </div>
-        </div>                                                  
+            </div>                                                 
     @endsection

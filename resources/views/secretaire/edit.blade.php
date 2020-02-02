@@ -1,13 +1,13 @@
 @extends('layouts.appsecretaire')
     @section('content')
     
-        <div class="" style="border-radius:5px; background-color:#081f3e; height:auto;" >
+        <div class="" style="border-radius:5px; background-color:#081f3e; height:100%;" >
             <div class="row">
                 <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
             </div>
             <hr style="background-color:white;">
 
-                <form action="{{route('update_patient',['id'=>$patients->id])}}" method="post" style="margin-bottom:7px;">
+                <form action="{{route('update_patient',['id'=>$patients->id])}}" method="post" style="height:100%;">
                             @csrf
                             @method('patch')
                                 <div class="row">
@@ -52,9 +52,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group" style="margin-bottom:10px;">
-                                    <button type="submit" class="btn btn-success">Modifier</button>
-                                    <a href="{{route('liste_patient')}}" class="btn btn-danger">Close</a>
+                                <div class="form-group d-flex justify-content-around" style="">
+                                    <button type="submit" class="btn btn-success w-25">Modifier</button>
+                                   
                                 </div>
                         </form>
                     </div>  

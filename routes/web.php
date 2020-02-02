@@ -72,6 +72,10 @@ Route::middleware(['can:secretaire'])->prefix('secretaire')->group(function(){
 
         Route::get('/rv', 'PatientController@newrv')->name('rendezvous');
 
+        Route::get('/rvavenir', 'PatientController@rv_avenir')->name('rv_avenir');
+
+        Route::get('/rvpasse', 'PatientController@rv_passe')->name('rv_passe');
+
         Route::post('/rv', 'PatientController@create_rv')->name('createrv');
 
         Route::post('/consult', 'PatientController@save_consult_payment')->name('createconsultation');

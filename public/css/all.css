@@ -6850,8 +6850,9 @@ textarea {
         background-image:url("../images/medecinacceuil.jpg"); 
         
         background-repeat: no-repeat;
-     
-        width: 100vw;
+        
+        background-size: 100%;
+        background-position: center;
       }
       .content-div::before{
         background-color: rgba(54,84,99,0.7);
@@ -6862,8 +6863,19 @@ textarea {
         margin: 0;
         padding:0;
         width: 100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
       }
-
+      .image-secretaire{
+        height:50%;
+        margin: 0;
+        padding:0;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        
+      }
       footer{
         background-color: #081f3e;
 
