@@ -11,7 +11,7 @@
                     <div class="card-header py-3 ">     
                         <div id="titre"><h3>Liste des rendez-vous  à venir</h3></div>
                     </div>
-                    <div class="card-body"> 
+                    <div class="card-body" style="background-color:#081f3e ;"> 
                         <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                                 <thead>

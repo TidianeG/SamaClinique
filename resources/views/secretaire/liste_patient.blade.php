@@ -13,7 +13,7 @@
               <div class="card-header">
                 <a class="navbar-brand ml-25" href="#"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
               </div>
-              <div class="card-body">
+              <div class="card-body" style="background-color:#081f3e ;">
                 <div class="table-responsive">
                   <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                   <thead>
