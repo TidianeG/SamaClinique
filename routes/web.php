@@ -39,6 +39,8 @@ Route::middleware(['can:secretaire'])->prefix('secretaire')->group(function(){
 
         Route::get('/pharmacie', 'OrderController@pharmacie')->name('pharmacie');
 
+        Route::get('/medicament_a_retourner', 'OrderController@medoc_retour')->name('medoc_retour');
+
         Route::post('/pharmacie', 'OrderController@ajout_medoc')->name('ajout_medoc');
 
         Route::patch('/pharmacie/{id}/edit_medoc','OrderController@update_medoc')->name("update_medoc");

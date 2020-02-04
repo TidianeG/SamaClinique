@@ -1,82 +1,58 @@
 @extends('layouts.appsecretaire')
     @section('content')
-        <div class="container">
-            
-                <a href="{{route('liste_patient')}}" class="btn btn-primary mb-2"><i class="fas fa-long-arrow-alt-left"></i>retour à la liste des patients</a>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h2>Iformations personnelles</h2>
-                </div>
-                <div class="card-body ">
-                    <div class="d-flex  justify-content-center">
+        <div class="container">  
+                <a href="{{route('liste_patient')}}" class="btn btn-primary m-2"><i class="fas fa-long-arrow-alt-left"></i></a>
+                <div class="row">
+                    <div class=" col-12 col-sm-12 col-md-2 ">
                         <div class="card " style="border:none;">
-                            <div class="card-body fadein  container" >
+                            <div class="card-body" >
                                 <?php
                                     if($patients->sexe_patient=="masculin"){
                                 ?>
-                                    <img class="card-img-top" style="width:150px;height:150px;" src="{{asset('images/avatar-mal.png')}}" alt="Card image mascul">                                                     
+                                    <img class="img-profile rounded-circle img-patient" style="width:100px;height:100px;" src="{{asset('images/avatar-mal.png')}}" alt="Card image mascul">                                                     
                                 <?php    
                                 }
                                     elseif($patients->sexe_patient=="feminin"){
                                 ?>
-                                    <img class="card-img-top" style="width:150px;height:150px;" src="{{asset('images/avatar-fem.png')}}" alt="Card image femel">                                                     
+                                    <img class="img-profile rounded-circle img-patient" style="width:100px;height:100px;" src="{{asset('images/avatar-fem.png')}}" alt="Card image femel">                                                     
                                 <?php   
                                     }
-                                ?>
-                                <hr>
-                                <h3>{{$patients->prenom_patient}} {{$patients->nom_patient}}</h3>
+                                ?>   
                             </div>
                         </div>
-                    </div><hr>
-                    <div class="container " style="margin-top:25px; ">
-                        <div class="d-flex justify-content-around m-0 p-5" >
-                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87);  width:auto;">
-                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Date de naissance: </div>
-                                <div class="card-body" style="color:#081f3e; text-align:center;font-size:16px;">
-                                    {{$patients->datenaisse_patient}}
-                                </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-8  " style="">
+                            <div class="container" >
+                                <div class="" style="">
+                                    <span style="font-weight:bold;">Nom complet:</span>   {{$patients->prenom_patient}} {{$patients->nom_patient}}
+                                </div><hr>
+                                <div class="" style="">
+                                    <span style="font-weight:bold;">Date de naissance:</span>   {{$patients->datenaisse_patient}}
+                                </div><hr>
+                                <div class="" style="">
+                                    <span style="font-weight:bold;">Lieu de naissance:</span>   {{$patients->lieu_patient}}
+                                </div><hr>
+                                <div class="" style="">
+                                    <span style="font-weight:bold;">Sexe du patient:</span>   {{$patients->sexe_patient}}
+                                </div><hr>
+                                <div class="" style="">
+                                    <span style="font-weight:bold;">Adresse du Patient:</span>   {{$patients->adresse_patient}}
+                                </div><hr>
+                                <div class="" style="">
+                                    <span style="font-weight:bold;">Telephone du patient:</span>   {{$patients->telephone_patient}}
+                                </div><hr>
+                                <div class="" style="">
+                                    <span style="font-weight:bold;">Profession du patient:</span>   {{$patients->profession_patient}}
+                                </div><hr>
                             </div>
-                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
-                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Lieu de naissance: </div>
-                                <div class="card-body" style="color:#081f3e;text-align:center;font-size:16px;">
-                                    {{$patients->lieu_patient}}
-                                </div>
-                            </div>
-                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
-                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Sexe du patient: </div>
-                                <div class="card-body"  style="color:#081f3e;text-align:center;font-size:16px;">
-                                    {{$patients->sexe_patient}}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-around m-0 p-5">
-                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
-                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87); color:white; font-size:18px; font-weight:bold;">Adresse du patient: </div>
-                                <div class="card-body"  style="color:#081f3e;text-align:center;font-size:16px;">
-                                    {{$patients->adresse_patient}}
-                                </div>
-                            </div>
-                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
-                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Numéro de telephone: </div>
-                                <div class="card-body"  style="color:#081f3e;text-align:center;font-size:16px;">
-                                    {{$patients->telephone_patient}}
-                                </div>
-                            </div>
-                            <div class="card" style="border-bottom:4px solid rgba(23, 111, 226, 0.87); width:auto;">
-                                <div class="card-header" style="background-color:rgba(23, 111, 226, 0.87);text-align:center; color:white; font-size:18px; font-weight:bold;">Profession du patient: </div>
-                                <div class="card-body"  style="color:#081f3e;text-align:center;font-size:16px;">
-                                    {{$patients->profession_patient}}
-                                </div>
-                            </div>
-                        </div>
-                    </div><hr>
-                    <div class="row container">
-                        <div class="card col-xl-6 col-sm-12 col-md-12">
+                    </div>
+                </div>
+                    <div class="row ">
+                        <div class="card col-12 col-xl-12 col-sm-12 col-md-12 mb-3">
                             <div class="card-header">
                                 <h3>Rendez-vous</h3>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body table-responsive">
                                 <table class="table " id="myTable"> 
                                     <thead class="table-dark">
                                         <tr>
@@ -99,12 +75,12 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="card col-xl-6 col-sm-12 col-md-12">
+                        <div class="card col-12 col-xl-12 col-sm-12 col-md-12">
                             <div class="card-header">
                                 <h3>Consultation</h3>
                             </div>
-                            <div class="card-body">
-                                <table class="table " id="myTable1"> 
+                            <div class="card-body table-responsive">
+                                <table class="table" id="myTable"> 
                                     <thead class="table-dark">
                                         <tr>
                                             <th>Date</th>
@@ -129,7 +105,4 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
     @endsection
