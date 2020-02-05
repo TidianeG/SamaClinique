@@ -2,7 +2,7 @@
     @section('content')
         <div class="container">  
                 <a href="{{route('liste_patient')}}" class="btn btn-primary m-2"><i class="fas fa-long-arrow-alt-left"></i></a>
-                <div class="row">
+                <div class="row mb-3 border ">
                     <div class=" col-12 col-sm-12 col-md-2 ">
                         <div class="card " style="border:none;">
                             <div class="card-body" >
@@ -21,28 +21,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-8  " style="">
+                    <div class="col-12 col-sm-12 col-md-10 border " style="">
                             <div class="container" >
-                                <div class="" style="">
-                                    <span style="font-weight:bold;">Nom complet:</span>   {{$patients->prenom_patient}} {{$patients->nom_patient}}
+                                <div class="d-flex justify-content-around" style="">
+                                    <span style="font-weight:bold;">Nom complet :</span>   {{$patients->prenom_patient}} {{$patients->nom_patient}}
                                 </div><hr>
-                                <div class="" style="">
-                                    <span style="font-weight:bold;">Date de naissance:</span>   {{$patients->datenaisse_patient}}
+                                <div class="d-flex justify-content-around" style="">
+                                    <span style="font-weight:bold;">Date de naissance : </span>   {{$patients->datenaisse_patient}}
                                 </div><hr>
-                                <div class="" style="">
-                                    <span style="font-weight:bold;">Lieu de naissance:</span>   {{$patients->lieu_patient}}
+                                <div class="d-flex justify-content-around" style="">
+                                    <span style="font-weight:bold;">Lieu de naissance : </span>   {{$patients->lieu_patient}}
                                 </div><hr>
-                                <div class="" style="">
-                                    <span style="font-weight:bold;">Sexe du patient:</span>   {{$patients->sexe_patient}}
+                                <div class="d-flex justify-content-around" style="">
+                                    <span style="font-weight:bold;">Sexe du patient : </span>   {{$patients->sexe_patient}}
                                 </div><hr>
-                                <div class="" style="">
-                                    <span style="font-weight:bold;">Adresse du Patient:</span>   {{$patients->adresse_patient}}
+                                <div class="d-flex justify-content-around" style="">
+                                    <span style="font-weight:bold;">Adresse du Patient : </span>   {{$patients->adresse_patient}}
                                 </div><hr>
-                                <div class="" style="">
-                                    <span style="font-weight:bold;">Telephone du patient:</span>   {{$patients->telephone_patient}}
+                                <div class="d-flex justify-content-around" style="">
+                                    <span style="font-weight:bold;">Telephone du patient : </span>   {{$patients->telephone_patient}}
                                 </div><hr>
-                                <div class="" style="">
-                                    <span style="font-weight:bold;">Profession du patient:</span>   {{$patients->profession_patient}}
+                                <div class="d-flex justify-content-around" style="">
+                                    <span style="font-weight:bold;">Profession du patient : </span>   {{$patients->profession_patient}}
                                 </div><hr>
                             </div>
                     </div>
