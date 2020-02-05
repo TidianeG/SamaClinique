@@ -24,6 +24,10 @@ class OrderController extends Controller
         $medocs=Drug::all();
         return view('secretaire.pharmacie',compact('medocs'));
     }
+    public function medoc_retour(){
+        $medocs=Drug::where("date_peremtion-date('yy-m-d')", '<=', 'date_retour');
+        return view('secretaire.medicament_retour',compact('medocs'));
+    }
     public function ajout_medoc(Request $request){
         $data = $request->validate([
             'nom' => 'required',
