@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-10 border " style="">
-                            <div class="container" >
+                            <div class="" >
                                 <div class="d-flex justify-content-around" style="">
                                     <span style="font-weight:bold;">Nom complet :</span>   {{$patients->prenom_patient}} {{$patients->nom_patient}}
                                 </div><hr>
