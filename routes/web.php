@@ -92,7 +92,7 @@ Route::middleware(['can:secretaire'])->prefix('secretaire')->group(function(){
 Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
         Route::get('/', 'cliniqueController@medecin')->name('medecin');
 
-        Route::get('/patients/dossier','PatientController@afficher_dossier')->name("afficher_dossier");
+        Route::get('/patients/dossier/{id}','PatientController@afficher_dossier')->name("afficher_dossier");
 
         Route::post('/patients/{id}/dossier','PatientController@create_folder')->name("create_folder");
         Route::post('/patients/{id}/dossierP','PatientController@create_analyse')->name("create_analyse");

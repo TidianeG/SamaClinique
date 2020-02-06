@@ -3390,7 +3390,9 @@ textarea {
       border-radius: 50%; }
     @media only screen and (max-width: 767px) {
       .single_comment_area .comment-wrapper .comment-author {
-        margin-right: 10px; } }
+        margin-right: 10px; } 
+      
+      }
   .single_comment_area .comment-wrapper .comment-content .comment-meta a {
     display: inline-block;
     color: #081f3e;
@@ -3682,3 +3684,19 @@ textarea {
       background-color:#081f3e;
       border: 1px groove white;
      }
+     .info-perso{
+       justify-content: center;
+       
+       justify-items: center;
+       
+     }
+     @media only screen and (max-width: 767px) {
+        .section_dossier{
+          height: auto;
+        } 
+      }
+      @media only screen and (min-width: 768px) and (max-width: 1200px) {
+        .section_dossier{
+          height: 50vh;
+        } 
+      }

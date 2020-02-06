@@ -57,14 +57,28 @@
                                                 Acceuil <span class="sr-only">(current)</span>
                                             </a>
                                         </li>
-                                        
                                         <div class="topbar-divider d-none d-sm-block"></div>
+                                        <li class="nav-item">
+                                            <a class="nav-link style-bar" href="{{route('mes_rv')}}">
+                                                <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
+                                               Clinique
+                                            </a>
+                                        </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
+                                        
                                         <li class="nav-item dropdown">
                                             <a class="nav-link style-bar" href="{{route('patients')}}">
                                                 <i class="fas fa-wheelchair fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
                                                 Patient
                                             </a>
                                             
+                                        </li>
+                                        <div class="topbar-divider d-none d-sm-block"></div>
+                                        <li class="nav-item">
+                                            <a class="nav-link style-bar" href="{{route('mes_rv')}}">
+                                                <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
+                                                Confrères
+                                            </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
@@ -366,6 +380,7 @@
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    
     <script>
         $(document).ready( function () {
             $('#myTable').DataTable();

@@ -4,8 +4,7 @@
                 <a href="{{route('liste_patient')}}" class="btn btn-primary m-2"><i class="fas fa-long-arrow-alt-left"></i></a>
                 <div class="row mb-3 border ">
                     <div class=" col-12 col-sm-12 col-md-2 ">
-                        <div class="card " style="border:none;">
-                            <div class="card-body" >
+                        
                                 <?php
                                     if($patients->sexe_patient=="masculin"){
                                 ?>
@@ -18,8 +17,7 @@
                                 <?php   
                                     }
                                 ?>   
-                            </div>
-                        </div>
+                           
                     </div>
                     <div class="col-12 col-sm-12 col-md-10 border " style="">
                             <div class="" >
