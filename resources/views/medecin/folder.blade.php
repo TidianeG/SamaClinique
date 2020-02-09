@@ -98,12 +98,35 @@
                                             </div>
                                         
                                             <div class="card-body">
-                                                <a href="#demo" class="btn btn-primary" data-toggle="collapse">Antécédant Medicaux</a>
-                                                <div id="demo" class="collapse">
-                                                    Lorem ipsum dolor text....
-                                                    dslkfjewrofiewr
-                                                    wlekfjewirof
-                                                </div>   
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Categorie</th>
+                                                            <th>Description</th>
+                                                            
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table table-editable">
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>   
                                             </div>
                                         </div>
                                     </div>
@@ -129,8 +152,34 @@
                                         </div>
                                     
                                         <div class="card-body">
-                                            <span class="blue">Mosieur Cheikh Gaye, nee le 03/09/1996, 23ans</span>
-                                            
+                                        <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date</th>
+                                                            <th>Titre</th>
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table table-editable">
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -141,8 +190,46 @@
                                             <i class="fas fa-bars"></i>
                                         </div>
                                         <div class="card-body">
-                                            <span class="blue">Mosieur Cheikh Gaye, nee le 03/09/1996, 23ans</span>
-                                            
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date_debut</th>
+                                                            <th>Substance</th>
+                                                            <th>Type</th>
+                                                            <th>Statut</th>
+                                                            <th>Manifestation</th>
+                                                            <th>Sévérité</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="table table-editable">
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

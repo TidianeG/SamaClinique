@@ -12,13 +12,4 @@ class Treatment extends Model
     public function drug(){
         return $this->belongsToMany('App\Drug');   
     }
-
-    public function staff(){
-        return $this->belongsTo('App\Staff');   
-    }
-
-    public function patient(){
-        return $this->belongsTo('App\Patient');   
-    }
-
 }
