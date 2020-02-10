@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAnalysesTable extends Migration
+class CreateFollowedsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,10 @@ class CreateAnalysesTable extends Migration
      */
     public function up()
     {
-        Schema::create('analyses', function (Blueprint $table) {
+        Schema::create('followeds', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->dateTime('date_analysis');
-            $table->string('designation_analysis');
-            $table->string('nom_analysis');
-            $table->dateTime('dateresult_analysis');
-            $table->string('descriptresult_analysis');
+            $table->string('date_suivi');
+            $table->string('titre');
             $table->unsignedInteger('folder_id');
             $table->timestamps();
         });
@@ -32,6 +29,6 @@ class CreateAnalysesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('analyses');
+        Schema::dropIfExists('followeds');
     }
 }

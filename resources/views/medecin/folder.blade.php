@@ -121,6 +121,8 @@
                                                         </tbody>
                                                     </table>
                                                 </div>   
+=======
+                                            
                                             </div>
                                         </div>
                                     </div>
@@ -188,9 +190,12 @@
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
-                                                            <th>Date debut</th>
+
+                                                            <th>Date_debut</th>
                                                             <th>Substance</th>
+                                                            <th>Type</th>
                                                             <th>Statut</th>
+                                                            <th>Manifestation</th>
                                                             <th>Sévérité</th>
                                                         </tr>
                                                     </thead>
@@ -200,14 +205,20 @@
                                                             <td></td>
                                                             <td></td>
                                                             <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
                                                             <td></td>
                                                             <td></td>
                                                         </tr>
                                                         <tr>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td></td>
+                                                            <td></td>
                                                             <td></td>
                                                             <td></td>
                                                             <td></td>
