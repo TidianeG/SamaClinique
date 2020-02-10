@@ -21,30 +21,30 @@
                         </div>
                     </form>
                 </div>
-                <table id="myTable" class="table table-hover" style="overflow:hedden; width:100%;">
-                    <thead>
-                        <tr>
-                            <th>Prenom</th>
-                            <th>Nom</th>
-                            <th>Adresse</th>
-                            <th>Telephone</th>
-                            <th>Naissance</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($patients as $patient)
-                        <tr class="clickable-row" data-href="{{route('afficher_dossier',['id'=>$patient->id])}}" style="cursor:pointer;">
-                            <td>{{$patient->prenom_patient}}</td>
-                            <td>{{$patient->nom_patient}}</td>
-                            <td>{{$patient->adresse_patient}}</td>
-                            <td>{{$patient->telephone_patient}}</td>
-                            <td>{{$patient->datenaisse_patient}}</td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-hover" style="overflow:hedden; width:100%;">
+                        <thead>
+                            <tr>
+                                <th>Prenom</th>
+                                <th>Nom</th>
+                                <th>Adresse</th>
+                                <th>Telephone</th>
+                                <th>Naissance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($patients as $patient)
+                            <tr class="clickable-row" data-href="{{route('afficher_dossier',['id'=>$patient->id])}}" style="cursor:pointer;">
+                                <td>{{$patient->prenom_patient}}</td>
+                                <td>{{$patient->nom_patient}}</td>
+                                <td>{{$patient->adresse_patient}}</td>
+                                <td>{{$patient->telephone_patient}}</td>
+                                <td>{{$patient->datenaisse_patient}}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>        
             </div>
-            <div class="row" style="height:100px;">
-
-            </div>      
+                 
     @endsection
