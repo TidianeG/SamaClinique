@@ -103,13 +103,14 @@ class PatientController extends Controller
         }
 
         public function afficher_dossier($id){
-            $folders = Folder::where('patient_id',$id)->first();
             $patients= Patient::find($id);
-            $analyse= Analysis::where('patient_id',$id)->get();
-            $traitement= Treatment::where('patient_id',$id)->get();
-            //dd($folders,$patients,$analyse);
-            //$ans=timestamp()-timestamp($patients->datenaisse_patient);
-            return view('medecin.folder',compact('folders','patients','analyse'));
+            $folders = Folder::where('patient_id',$id)->first();
+            if($folders){
+                return view('medecin.folder',compact('folders','patients'));
+            }
+            else{
+                return redirect()->route('patients')->with(['danger' => "Le patient selectionne possede pas de dossier, veuiller creer un nouveau dossier !!"]);
+            }
         }
         public function recherche_dossier(Request $request){
             $id=$request->input('numfolder');

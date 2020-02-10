@@ -52,7 +52,7 @@
                                     <td>{{$patient->adresse_patient}}</td>
                                     <td>{{$patient->telephone_patient}}</td>
                                     <td>{{$patient->profession_patient}}</td>
-                                    <td>{{$patient->datenaisse_patient}}</td>
+                                    <td>{{date('d-m-Y',strtotime($patient->datenaisse_patient))}}</td>
                                     <td>{{$patient->lieu_patient}}</td>
                                     <td>{{$patient->sexe_patient}}</td>
                                 

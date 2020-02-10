@@ -1,58 +1,47 @@
 @extends('layouts.appadmin')
 @section('content')
-    <div class="container mb-5" style="padding-top:20px;height:100%;">     
-        <div class="card p-0 mb-0" style="background-color:#081f3e;border:2px solid #ffffff;border-radius:4px;height:100%;">
-            <div class="card-header d-flex justify-content-between" style="background-color:white;">
-                <h2>La liste des Personnels de Medilife</h2>
-                <div class="" style="height:auto;">
-                    @if(session('success'))
-                        <div class="alert alert-success">{{session('success')}}</div>
-                    @endif
-                </div>
+    <div class="">
+        <h1 class="h3 mb-2 text-gray-800">La liste des personnels de medilife</h1>
+        <div class="card shadow mb-4">
+            <div class="card-header">
+            <a class="btn btn-success" style="height:auto; " data-toggle="modal" data-target="#myModal"><span>+</span> New user</a>                
             </div>
-                
-            <div class="card-body mb-0" style="background-color:#081f3e;overflow-x:scroll;">
-                <div class=" row justify-content-between">
-                    <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>     
-                </div>
-                <table id="myTable" class="table table-hover" style="overflow:hedden; margin:5px;">
-                    <thead>
-                        <tr>
-                            <th>Nom</th>
-                            <th>Specialite</th>
-                            <th>Sexe</th>
-                            <th>Poste</th>
-                            <th>Editer</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($staffs as $staff)
-                        <tr class="clickable-row" data-href="{{route('afficher_staff',['id'=>$staff->id])}}" style="cursor:pointer;">
-                            <td>{{$staff->prenom_staff}} {{$staff->nom_staff}}</td>
-                            <td>{{$staff->adresse_staff}}</td>
-                            <td>{{$staff->sexe_staff}}</td>
-                            <td>{{$staff->poste_staff}}</td>
-                            
-                            <td>
-                                <p><a href="{{route('editer_staff',['id'=>$staff->id])}}" class="btn btn-primary">Editer</a></p>
-                            </td>
-                            <td>
-                                <form action="/admin/staff/{{$staff->id}}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <input type="submit" class="btn btn-danger" name="delete" value="Delete">
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-
-                <div class="row justify-content-center">
-                    <p><a class="btn btn-success" style="height:auto; " data-toggle="modal" data-target="#myModal"><span>+</span> Nouveau Utilisateur</a></p>
-                   
-                </div>
+            <div class="card-body" style="background-color:#081f3e ;">
+                <div class="table-responsive">
+                    <table id="myTable" class="table table-hover" style="overflow:hedden; margin:5px;">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Specialite</th>
+                                <th>Sexe</th>
+                                <th>Poste</th>
+                                <th>Editer</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($staffs as $staff)
+                            <tr class="clickable-row" data-href="{{route('afficher_staff',['id'=>$staff->id])}}" style="cursor:pointer;">
+                                <td>{{$staff->prenom_staff}} {{$staff->nom_staff}}</td>
+                                <td>{{$staff->adresse_staff}}</td>
+                                <td>{{$staff->sexe_staff}}</td>
+                                <td>{{$staff->poste_staff}}</td>
+                                
+                                <td>
+                                    <p><a href="{{route('editer_staff',['id'=>$staff->id])}}" class="btn btn-primary">Editer</a></p>
+                                </td>
+                                <td>
+                                    <form action="/admin/staff/{{$staff->id}}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <input type="submit" class="btn btn-danger" name="delete" value="Delete">
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>                
             </div>
         </div>
     </div>

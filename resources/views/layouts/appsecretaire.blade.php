@@ -157,7 +157,7 @@
                 <div id="wrapper" style="height:100%;">
 
                 <!-- Sidebar -->
-                    <div class="" style="">
+                    <div class="bord" style="">
                         <ul class="navbar-nav w-100 sidebar sidebar-dark accordion nav-bord" id="accordionSidebar" >
 
                                 <!-- Sidebar - Brand -->
@@ -318,8 +318,7 @@
                                     <a class="dropdown-item" href="#">
                                         <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Parametres
-                                    </a>
-                                    
+                                    </a> 
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

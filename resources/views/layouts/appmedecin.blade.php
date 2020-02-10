@@ -144,7 +144,7 @@
             <div id="wrapper" style="height:100%;">
 
             <!-- Sidebar -->
-                <div class="" style="">
+                <div class="bord" style="">
                     <ul class="navbar-nav w-100 sidebar sidebar-dark accordion nav-bord" id="accordionSidebar" >
 
                             <!-- Sidebar - Brand -->
