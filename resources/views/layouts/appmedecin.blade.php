@@ -75,7 +75,7 @@
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
                                         <li class="nav-item">
-                                            <a class="nav-link style-bar" href="{{route('mes_rv')}}">
+                                            <a class="nav-link style-bar" href="#">
                                                 <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
                                                 Confrères
                                             </a>
