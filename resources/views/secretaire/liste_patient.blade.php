@@ -32,6 +32,7 @@
                     </thead>
                     <tfoot>
                         <tr>
+                            <th>Numero</th>
                             <th>Nom</th>
                             <th>Prenom</th>
                             <th>Adresse</th>
@@ -47,6 +48,7 @@
                     <tbody>
                         @foreach($patients as $patient)
                             <tr class="clickable-row" data-href="{{route('afficher_patient',['id'=>$patient->id])}}" style="cursor:pointer;">
+                                    <td>{{$patient->num_patient}}</td>
                                     <td>{{$patient->nom_patient}}</td>
                                     <td>{{$patient->prenom_patient}}</td>
                                     <td>{{$patient->adresse_patient}}</td>

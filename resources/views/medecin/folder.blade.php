@@ -67,10 +67,10 @@
                                                     ?>   
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-8">
-                                                    <div class="d-flex justify-content-center"><h5 class="blue">Mosieur {{$patients->prenom_patient}} {{$patients->nom_patient}}, nee le {{$patients->datenaisse_patient}}</h5></div>
+                                                    <div class="d-flex justify-content-center"><h5 class="blue">Mosieur {{$patients->prenom_patient}} {{$patients->nom_patient}}, nee le {{date('d-m-Y',strtotime($patients->datenaisse_patient))}}</h5></div>
                                                     <div class="d-flex justify-content-center"><span>{{$patients->adresse_patient}}</span></div>
                                                     <div class="d-flex justify-content-center"><span>Telephone : {{$patients->telephone_patient}} - {{$patients->profession_patient}}</span></div>
-                                                    <div class="d-flex justify-content-center"><span>Dossier n° {{$folders->id ?? ''}} créé par Dr. {{$folders->staff->prenom_staff ?? ''}}</span></div>
+                                                    <div class="d-flex justify-content-center"><span> Dossier n° <span style="color:red;font-wight:bold;">{{$folder->num_folder ?? ''}}</span> créé par Dr. {{$folder->staff->prenom_staff ?? ''}} {{$folder->staff->nom_staff ?? ''}}</span></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,8 +120,7 @@
                                                             </tr>    
                                                         </tbody>
                                                     </table>
-                                                </div>   
-=======
+                                                </div>  
                                             
                                             </div>
                                         </div>
