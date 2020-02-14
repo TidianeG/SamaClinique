@@ -20,7 +20,7 @@
                         </li>
                     </ul>
                 <!-- Tab panes -->
-                    <div class=" tab-content border mb-0 p-2" style="height:auto;">
+                    <div class="container tab-content border mb-0 p-2" style="height:auto;overflow-x:scroll;">
                         <div id="home" class=" tab-pane active" >
                             <div class="row section_dossier mb-2">
                                 <div class="col-sm-12 col-md-8  mb-3 ">
@@ -55,11 +55,13 @@
                                                 <div class="col-12 col-sm-12 col-md-3">
                                                     <?php
                                                         if($patients->sexe_patient=="masculin"){
+                                                            $civilite="Monsieur";
                                                     ?>
                                                         <img class="img-profile rounded-circle img-patient" style="width:100px;height:100px;" src="{{asset('images/avatar-mal.png')}}" alt="Card image mascul">                                                     
                                                     <?php    
                                                     }
                                                         elseif($patients->sexe_patient=="feminin"){
+                                                            $civilite="Madame";
                                                     ?>
                                                         <img class="img-profile rounded-circle img-patient" style="width:100px;height:100px;" src="{{asset('images/avatar-fem.png')}}" alt="Card image femel">                                                     
                                                     <?php   
@@ -67,8 +69,8 @@
                                                     ?>   
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-8">
-                                                    <div class="d-flex justify-content-center"><h5 class="blue">Mosieur {{$patients->prenom_patient}} {{$patients->nom_patient}}, nee le {{date('d-m-Y',strtotime($patients->datenaisse_patient))}}</h5></div>
-                                                    <div class="d-flex justify-content-center"><span>{{$patients->adresse_patient}}</span></div>
+                                                    <div class="d-flex justify-content-center"><h5 class="blue">{{$civilite}} {{$patients->prenom_patient}} {{$patients->nom_patient}}, née le {{date('d-m-Y',strtotime($patients->datenaisse_patient))}}, {{date('Y')-date('Y',strtotime($patients->datenaisse_patient))}}ans</h5></div>
+                                                    <div class="d-flex justify-content-center"><span>Adresse : {{$patients->adresse_patient}}</span></div>
                                                     <div class="d-flex justify-content-center"><span>Telephone : {{$patients->telephone_patient}} - {{$patients->profession_patient}}</span></div>
                                                     <div class="d-flex justify-content-center"><span> Dossier n° <span style="color:red;font-wight:bold;">{{$folder->num_folder ?? ''}}</span> créé par Dr. {{$folder->staff->prenom_staff ?? ''}} {{$folder->staff->nom_staff ?? ''}}</span></div>
                                                 </div>
@@ -124,7 +126,7 @@
                                         </div>
                                         <!-- debut modal antecedant +---------->
                                         <div class="modal fade" id="myModal_antecedant">
-                                            <div class="modal-dialog modal-lg">
+                                            <div class="modal-dialog modal-md">
                                                 <div class="modal-content">
                                                     <!-- Modal Header -->
                                                     <div class="modal-header">
@@ -145,14 +147,16 @@
                                                                 
                                                                 <div class="form-group ">
                                                                     <label for="inputPassword" class="">Categorie</label>
-                                                                    <div class="">
-                                                                        <select name="categorie" id="">
-                                                                            <option value="">Fammiliaux</option>
+                                                                    <div class="mb-5">
+                                                                        <select name="categorie" id="" class="form-control">
+                                                                            <option value="medicaux">Medicaux</option>
+                                                                            <option value="familiau">Familiaux</option>
+                                                                            <option value="personnel">Personnels</option>
                                                                         </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group ">
-                                                                    <label for="inputPassword" class="col-sm-2 ">Description</label>
+                                                                    <label for="inputPassword" class=" ">Description</label>
                                                                     <div class="">
                                                                         <textarea name="description" id="" cols="30" rows="10"></textarea>
                                                                     </div>
@@ -193,7 +197,7 @@
                                         <div class="card-header d-flex justify-content-between">
                                             <h5 class="blue">Suivis</h5>
                                             <div>
-                                                    <a href=""><i class="fas fa-plus-circle"></i></a>
+                                                    <a href="" data-toggle="modal" data-target="#myModal_suivi"><i class="fas fa-plus-circle"></i></a>
                                                     <a href=""><i class="fas fa-bars"></i></a>
                                             </div>
                                         </div>
@@ -214,28 +218,58 @@
                                                             <td></td>
                                                             
                                                         </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            
-                                                        </tr>
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- debut modal suivi +---------->
+                                    <div class="modal fade" id="myModal_suivi">
+                                            <div class="modal-dialog modal-md">
+                                                <div class="modal-content">
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                    <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>                        
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body container">
+                                                        <form action="{{route('ajouter_patient')}}" method="post">
+                                                        @csrf
+                                                            <div class="">
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Date</label>
+                                                                        <div class="">
+                                                                            <input type="date" class="form-control" id="dte" name="date">
+                                                                        </div>
+                                                                    </div>
+                                                                
+                                                                <div class="form-group ">
+                                                                    <label for="inputPassword" class=" ">Titre</label>
+                                                                    <div class="">
+                                                                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            
+                                                            </div>
+                                                            <div class="">         
+                                                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                                                <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>      
+                                                    <!-- Modal footer -->                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- fin modal suivi +---------->
                                 </div>
                                 <div class="col-sm-12 col-md-6  mb-3  " >
                                     <div class="card h-100">
                                         <div class="card-header d-flex justify-content-between">
                                             <h5 class="blue">Alergies</h5>
                                             <div>
-                                                    <a href=""><i class="fas fa-plus-circle"></i></a>
+                                                    <a href="" data-toggle="modal" data-target="#myModal_alergie"><i class="fas fa-plus-circle"></i></a>
                                                     <a href=""><i class="fas fa-bars"></i></a>
                                             </div>
                                         </div>
@@ -262,28 +296,100 @@
                                                             <td></td>
                                                             <td></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
+                                                        
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- debut modal alergie +---------->
+                                <div class="modal fade" id="myModal_alergie">
+                                            <div class="modal-dialog modal-md">
+                                                <div class="modal-content">
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                    <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>                        
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body container">
+                                                        <form action="{{route('ajouter_patient')}}" method="post">
+                                                        @csrf
+                                                            <div class="">
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Date debut</label>
+                                                                        <div class="">
+                                                                            <input type="date" class="form-control" id="date_debut" name="date_debut">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Date fin</label>
+                                                                        <div class="">
+                                                                            <input type="date" class="form-control" id="date_fin" name="date_fin">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Substance</label>
+                                                                        <div class="">
+                                                                            <input type="text" class="form-control" id="substance" name="substance">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Statut</label>
+                                                                        <div class="">
+                                                                            <input type="text" class="form-control" id="statut" name="statut">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Type</label>
+                                                                        <div class="">
+                                                                            <input type="text" class="form-control" id="type" name="type">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Manifestation</label>
+                                                                        <div class="">
+                                                                            <input type="date" class="form-control" id="manifestation" name="manifestation">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Sévérité</label>
+                                                                        <div class="">
+                                                                            <input type="date" class="form-control" id="severite" name="severite">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Resultat analyse</label>
+                                                                        <div class="">
+                                                                            <input type="text" class="form-control" id="result_ana" name="result_ana">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Desensibilisation</label>
+                                                                        <div class="">
+                                                                            <input type="date" class="form-control" id="desensibilisation" name="desensibilisation">
+                                                                        </div>
+                                                                    </div>
+                                                                <div class="form-group ">
+                                                                    <label for="inputPassword" class=" ">Commentaire</label>
+                                                                    <div class="">
+                                                                        <textarea name="commentaire" id="" cols="30" rows="10"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            
+                                                            </div>
+                                                            <div class="">         
+                                                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                                                <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>      
+                                                    <!-- Modal footer -->                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- fin modal suivi +---------->
                             </div> 
                             <div class="row section_dossier mb-2">
                                 <div class="col-sm-12 col-md-6  mb-3">
@@ -291,7 +397,7 @@
                                         <div class="card-header d-flex justify-content-between">
                                             <h5 class="blue">Consultations</h5>
                                             <div>
-                                                    <a href=""><i class="fas fa-plus-circle"></i></a>
+                                                    <a href="" data-toggle="modal" data-target="#myModal_consultation"><i class="fas fa-plus-circle"></i></a>
                                                     <a href=""><i class="fas fa-bars"></i></a>
                                             </div>
                                         </div>
@@ -312,33 +418,72 @@
                                                             <td></td>
                                                             <td></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
+                                                        
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
+                                    <!------------------------------------->
+                                    <div class="modal fade" id="myModal_consultation">
+                                        <div class="modal-dialog modal-md">
+                                            <div class="modal-content">
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>                        
+                                                <!-- Modal body -->
+                                                <div class="modal-body container">
+                                                    <form action="" method="post">
+                                                        @csrf
+                                                            <div class="form-group">
+                                                                <label for="inputEmail" class=" ">Date prise<span style="background-colol:red;">*</span></span></label>
+                                                                <div class="">
+                                                                    <input type="date" class="form-control" id="date" name="date_prise" >
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group ">
+                                                                <label for="inputPassword" class="">Poids</label>
+                                                                <div class="">
+                                                                    <input type="number" class="form-control" id="nom" name="poid" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group ">
+                                                                <label for="inputPassword" class="">Tension</label>
+                                                                <div class="">
+                                                                    <input type="number" class="form-control" id="tension" name="tension" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group ">
+                                                                <label for="inputPassword" class=" ">Temperature</label>
+                                                                <div class="">
+                                                                    <input type="number" class="form-control" id="litemperatureeu" name="temperature" >
+                                                                </div>
+                                                            </div>
+                                                        <div class="">         
+                                                            <button type="submit" class="btn btn-success">Enregistrer</button>
+                                                            <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>      
+                                                <!-- Modal footer -->                
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <!-------------------------------->
                                 <div class="col-sm-12 col-md-6  mb-3" >
                                     <div class="card h-100">
                                         <div class="card-header d-flex justify-content-between">
                                             <h5 class="blue">Bilans & Examens</h5>
                                             <div>
-                                                    <a href=""><i class="fas fa-plus-circle"></i></a>
+                                                    <a href="" data-toggle="modal" data-target="#myModal_exam"><i class="fas fa-plus-circle"></i></a>
                                                     <a href=""><i class="fas fa-bars"></i></a>
                                             </div>
                                         </div>
                                         <div class="card-body">
-                                        <div class="table-responsive">
+                                            <div class="table-responsive">
                                                 <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
@@ -353,21 +498,54 @@
                                                             <td></td>
                                                             <td></td>
                                                         </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
+                                                       
                                                     </tbody>
                                                 </table>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="modal fade" id="myModal_exam">
+                                        <div class="modal-dialog modal-md">
+                                            <div class="modal-content">
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>                        
+                                                <!-- Modal body -->
+                                                <div class="modal-body container">
+                                                    <form action="" method="post">
+                                                        @csrf
+                                                            <div class="form-group">
+                                                                <label for="inputEmail" class=" ">Date<span style="background-colol:red;">*</span></span></label>
+                                                                <div class="">
+                                                                    <input type="date" class="form-control" id="date" name="date" >
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group ">
+                                                                <label for="inputPassword" class="">Type</label>
+                                                                <div class="">
+                                                                    <input type="number" class="form-control" id="nom" name="type" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group ">
+                                                                <label for="inputPassword" class="">Categorie</label>
+                                                                <div class="">
+                                                                    <input type="number" class="form-control" id="categorie" name="categorie" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            
+                                                        <div class="">         
+                                                            <button type="submit" class="btn btn-success">Enregistrer</button>
+                                                            <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </form>
+                                                </div>      
+                                                <!-- Modal footer -->                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 </div>
                             </div> 
                         </div>
@@ -382,88 +560,5 @@
                         </div>
                     </div>
             </div> 
-
-             <div class="modal fade" id="myModalConsult">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                        <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        </div>                        
-                        <!-- Modal body -->
-                        <div class="modal-body container">
-                            <form action="" method="post">
-                            @csrf
-                           
-                                <div class="row">
-                                    <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputEmail" class="col-sm-2 ">Date prise<span style="background-colol:red;">*</span></span></label>
-                                        <div class="col-sm-10">
-                                            <input type="date" class="form-control" id="date" name="date_prise" >
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Poids</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer Nom">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row ">
-                                    <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Tension</label>
-                                        <div class="col-sm-10">
-                                            <input type="date" class="form-control" id="date" name="date" placeholder="">
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Temperature</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="lieu" name="lieu" placeholder="Entrer Lieu">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                        <div class="form-group col-12 col-sm-12 col-md-6">
-                                            <label for="inputPassword" class="col-sm-2 ">Pression</label>
-                                            <div class="col-sm-10">
-                                                <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Entrer Adresse">
-                                            </div>
-                                        </div>
-                                       
-                                    <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Telephone</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Entrer Telephone"">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Profession</label>
-                                        <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="profession" name="profession" placeholder="Entrer Profession">
-                                        </div>
-                                    </div>
-                                    <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="sexe" class="col-sm-4 ">Sexe</label>
-                                        <div class="col-sm-10">
-                                            <select name="genre" id="genre" class="form-control">
-                                                <option value="masculin">Masculin</option>
-                                                <option value="feminin">Feminin</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="">         
-                                    <button type="submit" class="btn btn-success">Enregistrer</button>
-                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                </div>
-                            </form>
-                        </div>      
-                        <!-- Modal footer -->                
-                    </div>
-                </div>
-            </div>                                               
+                                               
     @endsection

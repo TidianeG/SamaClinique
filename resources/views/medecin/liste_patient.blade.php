@@ -1,8 +1,8 @@
     @extends('layouts.appmedecin')
         @section('content')
 
-            <div class="mb-2" style="height:auto;">
-                <div class="mb-2">
+            <div class="mb-2" style="height:auto;width:auto;">
+                <div class="mb-2" style="height:auto;width:auto;">
                     @if(session('danger'))
                         <div class="alert alert-danger">{{session('danger')}}</div>
                     @endif
@@ -66,13 +66,13 @@
                             @csrf
                                 <div class="row mb-5">
                                     <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputEmail" class="col-sm-2 ">Numero patient<span style="background-colol:red;">*</span></span></label>
+                                        <label for="inputEmail" class=" ">Numero patient<span style="background-colol:red;">*</span></span></label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="prenom" name="num_patient" placeholder="Entrer numero patient">
                                         </div>
                                     </div>
                                     <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Groupe Sanguin</label>
+                                        <label for="inputPassword" class="">Groupe Sanguin</label>
                                         <div class="col-sm-10">
                                             <select name="groupe" id="" class="form-control">
                                                 <option value="A+">A+</option>

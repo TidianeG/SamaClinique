@@ -145,6 +145,9 @@ class PatientController extends Controller
 
         public function afficher_dossier($id){
             $patients= Patient::find($id);
+            $date_aujour=date('Y');
+            $date_naisse=date("Y",strtotime($patients->date_naisse));
+            $age=$date_aujour-$date_naisse;
             $folder = Folder::where('patient_id',$id)->first();
             if(isset($folder)){
                 return view('medecin.folder',compact('folder','patients'));
@@ -154,14 +157,12 @@ class PatientController extends Controller
             }
         }
         public function recherche_dossier(Request $request){
-            $id=$request->input('numfolder');
-            $folders = Folder::find($id);
-            if($folders){
-                $patients=Patient::where('id',$folders->patient_id)->first();
-                $analyse=Analysis::where('patient_id',$folders->patient_id)->get();
-                //on recupere le produit
-                //dd($folders,$patients,$analyse);
-                return view('medecin.dossier', compact('folders','patients','analyse'));
+            $num_folder=$request->input('numfolder');
+            $folder = Folder::where('num_folder',$num_folder)->first();
+            if(isset($folder)){
+                $patients=Patient::where('id',$folder->patient_id)->first();
+                
+                return view('medecin.folder', compact('folder','patients'));
             }
             else{
                 return redirect()->route('patients')->with(['danger' => "Le dossier demandé n'existe pas"]);

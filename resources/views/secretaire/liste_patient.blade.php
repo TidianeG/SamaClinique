@@ -37,8 +37,7 @@
                             <th>Prenom</th>
                             <th>Adresse</th>
                             <th>Telephone</th>
-                            <th>Profession</th>
-                            
+                            <th>Profession</th> 
                             <th>Sexe</th>
                             <th>Editer</th>
                             <th>Delete</th>

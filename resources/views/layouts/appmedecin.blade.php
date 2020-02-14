@@ -234,7 +234,7 @@
         
                 <div id="content-wrapper" class="d-flex flex-column h-100 w-100 m-0 p-0">
                     <!-- Main Content -->
-                    <div id="content" class="h-100" style="overflow-x:scroll;">
+                    <div id="content" class="h-100" >
 
                     <!-- Topbar -->
                         <nav class="navbar navbar-expand navbar-light bg-white topbar  static-top shadow">

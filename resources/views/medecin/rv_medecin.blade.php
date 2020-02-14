@@ -1,14 +1,14 @@
 @extends('layouts.appmedecin')
     @section('content')
-        <div class="" style="background-color:rgba(255,255,255, 0.3); height:100%; margin-bottom:10px;">
-            <div class=" row"  style="margin-top:50px; height:100%;">
+        <div class="" style="background-color:rgba(255,255,255, 0.3); height:100%;">
+            <div class=" row"  style=" height:100%;">
                 <div class="card col-xl-7 col-md-12  " >
                     <div class="card-header">                       
                         <div id="titre"><h3>Liste de mes rendez-vous</h3></div>
                     </div>
-                    <div class="card-body" style="border:2px solid #081f3e;background-color:white;"> 
-                        <div id="myTable1"class="afficherv">
-                            <table id="" class="table" style="height:auto; margin-left:5px;">
+                    <div class="card-body" style="background-color:white;"> 
+                        <div class="table-responsive">
+                            <table id="myTable" class="table" style="height:auto;">
                                 <thead class="table-dark">
                                     <tr>
                                         <th>prenom et Nom</th>
