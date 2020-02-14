@@ -89,7 +89,10 @@ class PatientController extends Controller
             $num_patient=$request->input('num_patient');
             $user=Auth::user();
             $patients=Patient::where('num_patient',$num_patient)->first();
-            $folder_existe=Folder::where("patient_id",$patients->id)->get();
+            if(isset($patients)){
+                $folder_existe=Folder::where("patient_id",$patients->id)->get();
+            }
+            
             if(empty($patients)){
                 return redirect()->route('patients')->with(['danger' => "Le patient selectionne n'existe pas !!"]);
             }
