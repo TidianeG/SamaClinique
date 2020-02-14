@@ -45,9 +45,18 @@ class PatientController extends Controller
            $patient->lieu_patient = $request->input('lieu');           
            $patient->profession_patient = $request->input('profession');
            $patient->telephone_patient = $request->input('phone');
-           $patient->adresse_patient = $request->input('adresse');
-           $patient->num_patient=date('Y',strtotime($request->input('date')))."00".$patient->id."/P";
-           //dd($patient->num_patient);
+
+           $patient->adresse_patient = $request->input('adresse'); 
+           $num= date('m',strtotime($request->input('date')))."".rand(0,9999)."/P";
+            do{
+                $patient_numero=Patient::where('num_patient',$num)->get();
+                if(isset($patient_numero->id)){
+                    
+                    $num= date('m',strtotime($request->input('date')))."".rand(0,9999)."/P";
+                }
+            }
+            while(isset($patient_numero->id));
+           $patient->num_patient=$num;
            $patient->save();
            return redirect('/secretaire/liste')->with(['success' => "Patient Enregistré"]);
         }
@@ -72,12 +81,41 @@ class PatientController extends Controller
             $patient = Patient::find($id);
             if($patient){
                 $patient->delete();
-              return redirect('/secretaire/liste')->with(['success' => "Patient Supprimé"]);
-            }
-            
+                return redirect('/secretaire/liste')->with(['success' => "Patient Supprimé"]);
+            }    
         }
 
-
+        public function creer_folder(Request $request){
+            $num_patient=$request->input('num_patient');
+            $user=Auth::user();
+            $patients=Patient::where('num_patient',$num_patient)->first();
+            $folder_existe=Folder::where("patient_id",$patients->id)->get();
+            if(empty($patients)){
+                return redirect()->route('patients')->with(['danger' => "Le patient selectionne n'existe pas !!"]);
+            }
+            
+            else if(empty($folder_existe)){
+                return redirect()->route('patients')->with(['danger' => "Ce dossier existe deja!!"]); 
+            }
+            else{
+                $folder= new Folder();
+                
+                $num= date('m',strtotime($request->input('date')))."".rand(0,9999)."/F";
+                do{
+                    $folder_numero=Folder::where('num_folder',$num)->get();
+                    if(isset($folder_numero->id)){
+                        $num= date('m',strtotime($request->input('date')))."".rand()."/F";
+                    }
+                }
+                while(isset($folder_numero->id));  
+                $folder->num_folder=$num;
+                $folder->groupesang_folder=$request->input('groupe');
+                $folder->patient_id=$patients->id;
+                $folder->staff_id=$user->staff_id;
+                $folder->save();
+                return view('medecin.folder',compact('folder','patients'));
+            }
+        }
 
         public function edit_patient($id){
             $patients = Patient::find($id);//on recupere le produit
@@ -104,9 +142,9 @@ class PatientController extends Controller
 
         public function afficher_dossier($id){
             $patients= Patient::find($id);
-            $folders = Folder::where('patient_id',$id)->first();
-            if($folders){
-                return view('medecin.folder',compact('folders','patients'));
+            $folder = Folder::where('patient_id',$id)->first();
+            if(isset($folder)){
+                return view('medecin.folder',compact('folder','patients'));
             }
             else{
                 return redirect()->route('patients')->with(['danger' => "Le patient selectionne possede pas de dossier, veuiller creer un nouveau dossier !!"]);
@@ -213,27 +251,7 @@ class PatientController extends Controller
            }
         }
 
-        public function creer_folder(Request $request){
-            $user=Auth::user();
-            $num_patient=$request->input('num_patient');
-            $patient=Patient::where('num_patient',$num_patient)->get();
-            $foldder_existe=Folder::where('patient_id',$patient->id)->get();
-            if(!($patient)){
-                return redirect()->route('patients')->with(['danger' => "Le patient selectionner n'xiste pas"]);
-            }
-            if(empty($foldder_existe)){
-                return redirect()->route('patients')->with(['danger' => "Le patient possede dèjà un dossier"]);
-            }
-            else{
-                $folder =new Folder();
-                $folder->groupesang_folder=$request->input('groupe');
-                $folder->staff_id=$user->id;
-                $folder->patient_id=$num_patient;
-                $folder->save();
-                return redirect()->route('afficher_dossier', [$num_patient]);
-            } 
-           
-        }
+        
 
         public function create_analyse(Request $request,$id){
             $patient=Patient::find($id);

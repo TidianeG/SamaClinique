@@ -1,10 +1,13 @@
     @extends('layouts.appmedecin')
         @section('content')
-            <div class=" m-2" style="height:auto;">
-                @if(session('danger'))
-                    <div class="alert alert-danger m-2">{{session('danger')}}</div>
-                @endif
-                <div>
+
+            <div class="mb-2" style="height:auto;">
+                <div class="mb-2">
+                    @if(session('danger'))
+                        <div class="alert alert-danger">{{session('danger')}}</div>
+                    @endif
+                </div>
+                <div class="mb-2">
                     <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModal_folder">new folder</a>
                 </div>
             </div>
@@ -49,8 +52,7 @@
                 </div>        
             </div>
 
-
-    <div class="modal fade" id="myModal_folder">
+            <div class="modal fade" id="myModal_folder">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <!-- Modal Header -->
@@ -62,32 +64,33 @@
                         <div class="modal-body container">
                             <form action="{{route('creer_folder')}}" method="post">
                             @csrf
-                                <div class="mb-5">
-                                    <div class="form-group">
-                                        <label for="inputEmail" style="color:red;" class=" ">Numero Patient<span style="background-colol:red;">*</span></span></label>
-                                        <div class="">
-                                            <input type="text" class="form-control" id="prenom" name="num_patient" placeholder="Entrer numero du patient">
+                                <div class="row mb-5">
+                                    <div class="form-group col-12 col-sm-12 col-md-6">
+                                        <label for="inputEmail" class="col-sm-2 ">Numero patient<span style="background-colol:red;">*</span></span></label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="prenom" name="num_patient" placeholder="Entrer numero patient">
                                         </div>
                                     </div>
-                                    <div class="form-group ">
-                                        <label for="inputPassword" style="color:red;" class="">Groupe Sanguin</label>
-                                        <div >
+                                    <div class="form-group col-12 col-sm-12 col-md-6">
+                                        <label for="inputPassword" class="col-sm-2 ">Groupe Sanguin</label>
+                                        <div class="col-sm-10">
                                             <select name="groupe" id="" class="form-control">
-                                                <option value="AB+">AB+</option>
-                                                <option value="AB-">AB-</option>
                                                 <option value="A+">A+</option>
                                                 <option value="A-">A-</option>
+                                                <option value="AB+">AB+</option>
+                                                <option value="AB-">AB-</option>
                                                 <option value="B+">B+</option>
                                                 <option value="B-">B-</option>
                                                 <option value="O+">O+</option>
                                                 <option value="O-">O-</option>
                                             </select>
-                                        </div>     
+                                        </div>
                                     </div>
-                                </div> 
+                                </div>
+                                
                                 <div class="">         
                                     <button type="submit" class="btn btn-success">Enregistrer</button>
-                                
+                                    <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
                                 </div>
                             </form>
                         </div>      

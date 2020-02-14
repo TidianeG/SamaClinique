@@ -140,15 +140,11 @@
     </div>
     </header>
     <main class="content-div" style="">
-        
-            <div id="page-top" style="height:100%;">
-                <div id="wrapper" style="height:100%;">
-
+        <div id="page-top" style="height:100%;">
+            <div id="wrapper" style="height:100%;">
                 <!-- Sidebar -->
                 <div class="bord" style="">
-                  
                         <ul class="navbar-nav w-100 sidebar sidebar-dark accordion nav-bord" id="accordionSidebar" >
-
                                 <!-- Sidebar - Brand -->
                                 <a class="navbar-brand align-items-center justify-content-center" href="index.html"></a>
                                 <!-- Divider -->
