@@ -1,6 +1,6 @@
 @extends('layouts.appadmin')
 @section('content')
-<section class="hero-area">
+            <section class="hero-area">
                 <div class="hero-slides owl-carousel">
                     <!-- Single Hero Slide -->
                     <div class="single-hero-slide bg-img bg-overlay-white" style="background-image: url(../images/medecinacceuil.jpg);">

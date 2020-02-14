@@ -35,7 +35,6 @@ class PatientController extends Controller
             $patients = Patient::all();
             return view('medecin.liste_patient', compact('patients'));
         }
-
         public function store(Request $request)
         {   
            $patient = new Patient();
@@ -46,6 +45,7 @@ class PatientController extends Controller
            $patient->lieu_patient = $request->input('lieu');           
            $patient->profession_patient = $request->input('profession');
            $patient->telephone_patient = $request->input('phone');
+
            $patient->adresse_patient = $request->input('adresse'); 
            $num= date('m',strtotime($request->input('date')))."".rand(0,9999)."/P";
             do{
@@ -56,13 +56,10 @@ class PatientController extends Controller
                 }
             }
             while(isset($patient_numero->id));
-            
-            
            $patient->num_patient=$num;
            $patient->save();
            return redirect('/secretaire/liste')->with(['success' => "Patient Enregistré"]);
         }
-
         public function update(Request $request, $id)
         {
             $patient = \App\Patient::find($id);
@@ -92,7 +89,10 @@ class PatientController extends Controller
             $num_patient=$request->input('num_patient');
             $user=Auth::user();
             $patients=Patient::where('num_patient',$num_patient)->first();
-            $folder_existe=Folder::where("patient_id",$patients->id)->get();
+            if(isset($patients)){
+                $folder_existe=Folder::where("patient_id",$patients->id)->get();
+            }
+            
             if(empty($patients)){
                 return redirect()->route('patients')->with(['danger' => "Le patient selectionne n'existe pas !!"]);
             }
@@ -253,6 +253,8 @@ class PatientController extends Controller
             return redirect()->route('afficher_dossier', [$id])->with(['success' => "Vous ne pouvez pas creer de dossier"]);
            }
         }
+
+        
 
         public function create_analyse(Request $request,$id){
             $patient=Patient::find($id);

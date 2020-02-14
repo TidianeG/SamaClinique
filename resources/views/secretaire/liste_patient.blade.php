@@ -10,21 +10,21 @@
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-              <div class="card-header">
+              <div class="card-header ">
                 <a class="navbar-brand ml-25" href="#"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
               </div>
-              <div class="card-body" style="background-color:#081f3e ;">
+              <div class="card-body">
                 <div class="table-responsive">
                   <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                         <tr>
+                            <th>Numero</th>
                             <th>Nom</th>
                             <th>Prenom</th>
                             <th>Adresse</th>
                             <th>Telephone</th>
                             <th>Profession</th>
-                            <th>Naissance</th>
-                            <th>Lieu</th>
+                            
                             <th>Sexe</th>
                             <th>Editer</th>
                             <th>Delete</th>
@@ -38,8 +38,7 @@
                             <th>Adresse</th>
                             <th>Telephone</th>
                             <th>Profession</th>
-                            <th>Naissance</th>
-                            <th>Lieu</th>
+                            
                             <th>Sexe</th>
                             <th>Editer</th>
                             <th>Delete</th>
@@ -54,8 +53,7 @@
                                     <td>{{$patient->adresse_patient}}</td>
                                     <td>{{$patient->telephone_patient}}</td>
                                     <td>{{$patient->profession_patient}}</td>
-                                    <td>{{date('d-m-Y',strtotime($patient->datenaisse_patient))}}</td>
-                                    <td>{{$patient->lieu_patient}}</td>
+                                   
                                     <td>{{$patient->sexe_patient}}</td>
                                 
                                 <td>

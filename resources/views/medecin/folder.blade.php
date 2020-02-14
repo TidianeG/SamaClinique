@@ -95,7 +95,7 @@
                                             <div class="card-header d-flex justify-content-between">
                                                 <h5 class="blue">Antécédant</h5>
                                                 <div>
-                                                    <a href=""><i class="fas fa-plus-circle"></i></a>
+                                                    <a href="" data-toggle="modal" data-target="#myModal_antecedant"><i class="fas fa-plus-circle"></i></a>
                                                     <a href=""><i class="fas fa-bars"></i></a>
                                                 </div>
                                             </div>
@@ -115,18 +115,61 @@
                                                                 <td></td>
                                                                 <td></td>
                                                                 <td></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                            </tr>    
+                                                            </tr>  
                                                         </tbody>
                                                     </table>
                                                 </div>  
-                                            
+                                                
                                             </div>
                                         </div>
+                                        <!-- debut modal antecedant +---------->
+                                        <div class="modal fade" id="myModal_antecedant">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+                                                    <!-- Modal Header -->
+                                                    <div class="modal-header">
+                                                    <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    </div>                        
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body container">
+                                                        <form action="{{route('ajouter_patient')}}" method="post">
+                                                        @csrf
+                                                            <div class="">
+                                                                    <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Date</label>
+                                                                        <div class="">
+                                                                            <input type="date" class="form-control" id="dte" name="date">
+                                                                        </div>
+                                                                    </div>
+                                                                
+                                                                <div class="form-group ">
+                                                                    <label for="inputPassword" class="">Categorie</label>
+                                                                    <div class="">
+                                                                        <select name="categorie" id="">
+                                                                            <option value="">Fammiliaux</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group ">
+                                                                    <label for="inputPassword" class="col-sm-2 ">Description</label>
+                                                                    <div class="">
+                                                                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                            
+                                                            </div>
+                                                            <div class="">         
+                                                                <button type="submit" class="btn btn-success">Enregistrer</button>
+                                                                <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>      
+                                                    <!-- Modal footer -->                
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- fin modal antecedant +---------->
                                     </div>
                                     <div class="col-sm-12 col-md-6 mb-3" >
                                         <div class="card h-100">

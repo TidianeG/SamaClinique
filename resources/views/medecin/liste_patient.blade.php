@@ -1,5 +1,6 @@
     @extends('layouts.appmedecin')
         @section('content')
+
             <div class="mb-2" style="height:auto;">
                 <div class="mb-2">
                     @if(session('danger'))
@@ -50,6 +51,7 @@
                     </table>
                 </div>        
             </div>
+
             <div class="modal fade" id="myModal_folder">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -62,7 +64,6 @@
                         <div class="modal-body container">
                             <form action="{{route('creer_folder')}}" method="post">
                             @csrf
-                           
                                 <div class="row mb-5">
                                     <div class="form-group col-12 col-sm-12 col-md-6">
                                         <label for="inputEmail" class="col-sm-2 ">Numero patient<span style="background-colol:red;">*</span></span></label>

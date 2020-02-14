@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
-    <!--link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"-->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     
 
 </head>
@@ -61,7 +61,7 @@
                                         <li class="nav-item ">
                                             <a class="nav-link style-bar" href="{{route('admin')}}">
                                                 <i class="fas fa-home fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
-                                                Acceuil <span class="sr-only">(current)</span>
+                                                Accueuil <span class="sr-only">(current)</span>
                                             </a>
                                         </li>
                                         <div class="topbar-divider d-none d-sm-block"></div>
@@ -157,18 +157,18 @@
 
                                 <!-- Heading -->
                                 <div class="sidebar-heading">
-                                Patient et Rv
+                                Detail
                                 </div>
 
                                 <!-- Nav Item - Pages Collapse Menu -->
                                 <li class="nav-item">
                                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                                 <i class="fab fa-accessible-icon fa-md fa-fw mr-2 text-gray-400" aria-hidden="true"></i>
-                                    <span>Patients</span>
+                                    <span>Clinique</span>
                                 </a>
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
-                                    <h6 class="collapse-header">Gestion patients</h6>
+                                    <h6 class="collapse-header">A propos</h6>
                                     <a class="collapse-item" href="" data-toggle="modal" data-target="#myModal">Nouveau</a>
                                     <a class="collapse-item" href="{{route('liste_patient')}}">Liste</a>
                                     </div>
@@ -179,14 +179,14 @@
                                 <li class="nav-item">
                                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                                 <i class="fas fa-calendar fa-md fa-fw mr-2 text-gray-400"></i>
-                                    <span>Rendez-Vous</span>
+                                    <span>Services</span>
                                 </a>
                                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
-                                    <h6 class="collapse-header">Gestion rendez-vous</h6>
+                                    <h6 class="collapse-header"><hr></h6>
                                     
-                                    <a class="collapse-item" href="{{route('rv_avenir')}}">RV a venir</a>
-                                    <a class="collapse-item" href="{{route('rv_passe')}}">RV passee</a>
+                                    <a class="collapse-item" href="#">Services dispo</a>
+                                    <a class="collapse-item" href="#">Gestion Service</a>
                                     
                                     </div>
                                 </div>
@@ -197,20 +197,20 @@
 
                                 <!-- Heading -->
                                 <div class="sidebar-heading">
-                                caisse et medocs
+                                Ressources humaines
                                 </div>
 
                                 <!-- Nav Item - Pages Collapse Menu -->
                                 <li class="nav-item">
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                                         <i class="fas fa-money-check"></i>
-                                        <span>Caisse</span>
+                                        <span>Personnels</span>
                                     </a>
                                     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                                         <div class="bg-white py-2 collapse-inner rounded">
-                                            <h6 class="collapse-header">Gestion Caisse</h6>
-                                            <a class="collapse-item" href="#">Recette</a>
-                                            <a class="collapse-item" href="#">Depense</a>
+                                            <h6 class="collapse-header">Gestion </h6>
+                                            <a class="collapse-item" href="#">Liste</a><hr>
+                                            <a class="collapse-item" href="#">Nouveau</a>
                                             
                                         </div>
                                     </div>
@@ -218,14 +218,14 @@
                                 <li class="nav-item">
                                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMedoc" aria-expanded="true" aria-controls="collapsePages">
                                         <i class="fas fa-tablets"></i>
-                                        <span>Medicaments</span>
+                                        <span>Patients</span>
                                     </a>
                                     <div id="collapseMedoc" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                                         <div class="bg-white py-2 collapse-inner rounded">
-                                            <h6 class="collapse-header">Gestion medocs</h6>
-                                            <a class="collapse-item" href="{{route('pharmacie')}}">Liste des Medocs</a>
+                                            <h6 class="collapse-header">Gestion</h6>
+                                            <a class="collapse-item" href="#">Liste des patients</a>
                                            
-                                            <a class="collapse-item" href="#">Medocs a retourner</a>
+                                            <a class="collapse-item" href="#">Nouveau</a>
                                         </div>
                                     </div>
                                 </li>
@@ -317,7 +317,7 @@
                             </nav>
                     
                 <!-- End of Topbar --> 
-                            <div class=" content-yield " style="height:100%;background:rgba(255,255,255,0.2);" >
+                            <div class="content-yield " style="height:100%;background:rgba(255,255,255,0.2);" >
                                 @yield('content')
                             </div>
                         </div>
@@ -389,7 +389,7 @@
     <script src="{{asset('js/datatables.min.js')}}"></script>
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <script src="{{asset('js/bootstrap.bundle.min.js')}}"></script>
-    <!--script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script-->
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready( function () {
         $('#myTable').DataTable();
