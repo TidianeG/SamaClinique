@@ -184,7 +184,7 @@
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
                                     <h6 class="collapse-header">Gestion patients</h6>
-                                    <a class="collapse-item" href="" data-toggle="modal" data-target="#myModal">Nouveau</a>
+                                    <a class="collapse-item" href="" data-toggle="modal" data-target="#myModal">Nouveau</a><hr>
                                     <a class="collapse-item" href="{{route('liste_patient')}}">Liste</a>
                                     </div>
                                 </div>

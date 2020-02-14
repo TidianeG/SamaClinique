@@ -35,7 +35,6 @@ class PatientController extends Controller
             $patients = Patient::all();
             return view('medecin.liste_patient', compact('patients'));
         }
-
         public function store(Request $request)
         {   
            $patient = new Patient();
@@ -47,10 +46,11 @@ class PatientController extends Controller
            $patient->profession_patient = $request->input('profession');
            $patient->telephone_patient = $request->input('phone');
            $patient->adresse_patient = $request->input('adresse');
+           $patient->num_patient=date('Y',strtotime($request->input('date')))."00".$patient->id."/P";
+           //dd($patient->num_patient);
            $patient->save();
            return redirect('/secretaire/liste')->with(['success' => "Patient Enregistré"]);
         }
-
         public function update(Request $request, $id)
         {
             $patient = \App\Patient::find($id);
@@ -211,6 +211,28 @@ class PatientController extends Controller
            else{
             return redirect()->route('afficher_dossier', [$id])->with(['success' => "Vous ne pouvez pas creer de dossier"]);
            }
+        }
+
+        public function creer_folder(Request $request){
+            $user=Auth::user();
+            $num_patient=$request->input('num_patient');
+            $patient=Patient::where('num_patient',$num_patient)->get();
+            $foldder_existe=Folder::where('patient_id',$patient->id)->get();
+            if(!($patient)){
+                return redirect()->route('patients')->with(['danger' => "Le patient selectionner n'xiste pas"]);
+            }
+            if(empty($foldder_existe)){
+                return redirect()->route('patients')->with(['danger' => "Le patient possede dèjà un dossier"]);
+            }
+            else{
+                $folder =new Folder();
+                $folder->groupesang_folder=$request->input('groupe');
+                $folder->staff_id=$user->id;
+                $folder->patient_id=$num_patient;
+                $folder->save();
+                return redirect()->route('afficher_dossier', [$num_patient]);
+            } 
+           
         }
 
         public function create_analyse(Request $request,$id){

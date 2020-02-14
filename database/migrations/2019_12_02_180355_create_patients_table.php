@@ -23,6 +23,7 @@ class CreatePatientsTable extends Migration
             $table->string('profession_patient');
             $table->date('datenaisse_patient');
             $table->string('lieu_patient');
+            $table->string('num_patient');
             $table->timestamps();
         });
     }

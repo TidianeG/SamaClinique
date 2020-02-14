@@ -102,6 +102,8 @@ Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
 
         Route::get('/patients', 'PatientController@patients')->name('patients');
 
+        Route::post('/patients', 'PatientController@creer_folder')->name('creer_folder');
+
         Route::get('/appointment', 'UserController@mes_rv')->name('mes_rv');
 
         Route::get('/new_folder', 'PatientController@new_folder')->name('new_folder');

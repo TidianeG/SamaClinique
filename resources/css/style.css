@@ -3611,12 +3611,6 @@ textarea {
         margin: 0;
         padding: 0;
         height: 80vh;
-        background-image:url("../images/medecinacceuil.jpg"); 
-        
-        background-repeat: no-repeat;
-        
-        background-size: 100%;
-        background-position: center;
       }
       .content-div::before{
         background-color: rgba(54,84,99,0.7);

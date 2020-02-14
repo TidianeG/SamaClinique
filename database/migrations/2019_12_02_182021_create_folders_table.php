@@ -15,6 +15,7 @@ class CreateFoldersTable extends Migration
     {
         Schema::create('folders', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('num_patient');
             $table->string('groupesang_folder');
             $table->unsignedInteger('staff_id');
             $table->unsignedInteger('patient_id');

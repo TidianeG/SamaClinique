@@ -2,9 +2,9 @@
 @section('content')
     <div class="">
         <h1 class="h3 mb-2 text-gray-800">La liste des personnels de medilife</h1>
-        <div class="card shadow mb-4">
+        <div class="card shadow">
             <div class="card-header">
-            <a class="btn btn-success" style="height:auto; " data-toggle="modal" data-target="#myModal"><span>+</span> New user</a>                
+            <a class="btn btn-success" style="height:auto;" data-toggle="modal" data-target="#myModal"><span>+</span> New user</a>                
             </div>
             <div class="card-body" style="background-color:#081f3e ;">
                 <div class="table-responsive">
@@ -25,8 +25,7 @@
                                 <td>{{$staff->prenom_staff}} {{$staff->nom_staff}}</td>
                                 <td>{{$staff->adresse_staff}}</td>
                                 <td>{{$staff->sexe_staff}}</td>
-                                <td>{{$staff->poste_staff}}</td>
-                                
+                                <td>{{$staff->poste_staff}}</td> 
                                 <td>
                                     <p><a href="{{route('editer_staff',['id'=>$staff->id])}}" class="btn btn-primary">Editer</a></p>
                                 </td>
