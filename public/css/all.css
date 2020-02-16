@@ -5760,15 +5760,15 @@ img {
 
 /* :: 5.0 Welcome Area CSS */
 .single-hero-slide {
-  
+  position: relative;
   z-index: 1;
   width: 100%;
   height: 82vh;
-  
- }
+  background-size: 100%; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .single-hero-slide {
-      height: 82vh; } }
+      height: 700px; 
+      background-position: top;} }
   @media only screen and (max-width: 767px) {
     .single-hero-slide {
       height: 700px; } }
@@ -6850,18 +6850,13 @@ textarea {
         padding: 0;
         height: 80vh;
       }
-      .content-div::before{
-        background-color: rgba(54,84,99,0.7);
-        z-index: 1000;
-      }
+      
       .content-yield{
         height:100%;
         margin: 0;
         padding:0;
         width: 100%;
-        background-repeat: no-repeat;
-        background-size: 100%;
-        background-position: center;
+        
       }
       .image-secretaire{
         height:50%;

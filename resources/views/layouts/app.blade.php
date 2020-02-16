@@ -96,7 +96,7 @@
     </div>    
     </header>
     <main class=" content-div">
-        <div class=" content-yield " >
+        <div class=" content-yield " style="background-image: url('../images/anesthesiology.jpg');background-size:100%;background-repeat:no-repeat;">
             @yield('content')
         </div>
     </main>
