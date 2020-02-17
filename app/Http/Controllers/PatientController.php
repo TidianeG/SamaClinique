@@ -90,17 +90,17 @@ class PatientController extends Controller
             $user=Auth::user();
             $patients=Patient::where('num_patient',$num_patient)->first();
             if(isset($patients)){
-                $folder_existe=Folder::where("patient_id",$patients->id)->get();
+                $folder_existe=Folder::where("patient_id",$patients->id)->first();
             }
             
             if(empty($patients)){
                 return redirect()->route('patients')->with(['danger' => "Le patient selectionne n'existe pas !!"]);
             }
             
-            else if(empty($folder_existe)){
+            else if(isset($folder_existe)){
                 return redirect()->route('patients')->with(['danger' => "Ce dossier existe deja!!"]); 
             }
-            else{
+            else if(empty($folder_existe)){
                 $folders= new Folder();
                 
                 $num= date('m',strtotime($request->input('date')))."".rand(0,9999)."/F";
@@ -117,7 +117,8 @@ class PatientController extends Controller
                 $folders->staff_id=$user->staff_id;
                 $folders->save();
                 $folder=Folder::where('num_folder',$folders->num_folder)->first();
-                return view('medecin.folder',compact('folder','patients'));
+                unset($folders);
+                return redirect()->route('afficher_dossier',$patients->id);
             }
         }
 
