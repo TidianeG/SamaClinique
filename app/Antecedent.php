@@ -8,6 +8,6 @@ class Antecedent extends Model
 {
     protected $guarded = [];
     public function folder(){
-        return $this->belongsTo('App\Folder');   
+        return $this->belongsToMany('App\Folder');   
     }
 }

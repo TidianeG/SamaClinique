@@ -14,4 +14,7 @@ class Patient extends Model
     public function appointment(){
         return $this->hasMany('App\Appointment');
     }
+    public function personneconfiance(){
+        return $this->belongsToMany('App\PersonneConfiance');
+    }
 }

@@ -17,7 +17,6 @@ class CreateAntecedentsTable extends Migration
             $table->bigIncrements('id');
             $table->string('category');
             $table->string('description');
-            $table->unsignedInteger('folder_id');
             $table->timestamps();
         });
     }

@@ -99,6 +99,8 @@ Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
         Route::post('/patients/{id}/dossierT','OrderController@create_traitement')->name("new_traitement");
 
         Route::post('/patients/dossier','PatientController@recherche_dossier')->name("recherche_dossier");
+        
+        Route::post('/patients/dossier_newconsult','FolderController@ajout_consultation')->name("ajout_consultation");
 
         Route::get('/patients', 'PatientController@patients')->name('patients');
 

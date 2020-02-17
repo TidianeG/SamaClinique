@@ -7,18 +7,18 @@
             @if(session('danger'))
                 <div class="alert alert-danger">{{session('danger')}}</div>
             @endif
-                <div class="card shadow" >
-                    <div class="card-header py-3 ">
-                          
-                            <div class="d-flex justify-content-end mb-2">
-                                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalrv">
-                                    <i class="far fa-calendar-plus"></i>
-                                    New rendez-vous</a>    
-                            </div>
-                        
-                        <div id="titre"><h3>Liste des rendez-vous</h3></div>
+                    <div class="d-flex p-3 justify-content-end">
+                        <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalrv">
+                            <i class="far fa-calendar-plus"></i>
+                            New rendez-vous
+                        </a>    
                     </div>
-                    <div class="card-body" style="background-color:#081f3e ;"> 
+                <div class="card shadow" >
+                    <div class="card-header" style="background-color:#081f3e ;">  
+                        <a class="navbar-brand ml-25" href="#"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                        
+                    </div>
+                    <div class="card-body" > 
                         <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                                 <thead>

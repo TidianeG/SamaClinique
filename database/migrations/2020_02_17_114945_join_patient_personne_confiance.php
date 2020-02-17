@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class JoinOrderTreatment extends Migration
+class JoinPatientPersonneConfiance extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class JoinOrderTreatment extends Migration
      */
     public function up()
     {
-        Schema::create('order_treatment', function(Blueprint $table){
+        Schema::create('patient_personneconfiance', function(Blueprint $table){
             $table->bigIncrements('id');
-            $table->unsignedInteger('treatment_id');
-            $table->unsignedInteger('order_id');
+            $table->unsignedInteger('patient_id');
+            $table->unsignedInteger('personneconfiance_id');
             $table->timestamps();
         });
     }

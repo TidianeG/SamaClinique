@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.css')}}">
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 
   
@@ -381,13 +380,13 @@
                            
                                 <div class="row">
                                     <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputEmail" class="col-sm-2 ">Prenom<span style="background-colol:red;">*</span></span></label>
+                                        <label for="inputEmail" class="">Prenom<span style="background-colol:red;">*</span></span></label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Entrer Prenom">
                                         </div>
                                     </div>
                                     <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Nom</label>
+                                        <label for="inputPassword" class="">Nom</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrer Nom">
                                         </div>
@@ -395,13 +394,13 @@
                                 </div>
                                 <div class="row ">
                                     <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Date Naissance</label>
+                                        <label for="inputPassword" class=" ">Date Naissance</label>
                                         <div class="col-sm-10">
                                             <input type="date" class="form-control" id="date" name="date" placeholder="">
                                         </div>
                                     </div>
                                     <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Lieu Naissance</label>
+                                        <label for="inputPassword" class="">Lieu Naissance</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="lieu" name="lieu" placeholder="Entrer Lieu">
                                         </div>
@@ -409,14 +408,14 @@
                                 </div>
                                 <div class="row">
                                         <div class="form-group col-12 col-sm-12 col-md-6">
-                                            <label for="inputPassword" class="col-sm-2 ">Adresse</label>
+                                            <label for="inputPassword" class="">Adresse</label>
                                             <div class="col-sm-10">
                                                 <input type="text" class="form-control" id="adresse" name="adresse" placeholder="Entrer Adresse">
                                             </div>
                                         </div>
                                        
                                     <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Telephone</label>
+                                        <label for="inputPassword" class=" ">Telephone</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="phone" name="phone" placeholder="Entrer Telephone"">
                                         </div>
@@ -424,13 +423,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="inputPassword" class="col-sm-2 ">Profession</label>
+                                        <label for="inputPassword" class="">Profession</label>
                                         <div class="col-sm-10">
                                             <input type="text" class="form-control" id="profession" name="profession" placeholder="Entrer Profession">
                                         </div>
                                     </div>
                                     <div class="form-group col-12 col-sm-12 col-md-6">
-                                        <label for="sexe" class="col-sm-4 ">Sexe</label>
+                                        <label for="sexe" class=" ">Sexe</label>
                                         <div class="col-sm-10">
                                             <select name="genre" id="genre" class="form-control">
                                                 <option value="masculin">Masculin</option>
@@ -466,6 +465,7 @@
         document.documentElement.scrollTop = 0;
         }
         </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>    
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
   crossorigin="anonymous">

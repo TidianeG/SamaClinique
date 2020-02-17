@@ -18,18 +18,15 @@ class Folder extends Model
         return $this->hasMany('App\Consultation');   
     }
     public function antecedent(){
-        return $this->hasMany('App\Antecedent');   
+        return $this->belongsToMany('App\Antecedent');   
     }
     public function followed(){
         return $this->hasMany('App\Followed');   
     }
     public function allergy(){
-        return $this->hasMany('App\Allergy');   
+        return $this->belongsToMany('App\Allergy');   
     }
     public function analyse(){
         return $this->hasMany('App\Analysis');   
-    }
-    public function order(){
-        return $this->hasMany('App\Order');   
     }
 }

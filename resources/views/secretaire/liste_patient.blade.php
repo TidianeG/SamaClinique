@@ -10,7 +10,7 @@
 
             <!-- DataTales Example -->
             <div class="card shadow mb-4">
-              <div class="card-header ">
+              <div class="card-header " style="background-color:#081f3e ;">
                 <a class="navbar-brand ml-25" href="#"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
               </div>
               <div class="card-body">
@@ -30,19 +30,7 @@
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Numero</th>
-                            <th>Nom</th>
-                            <th>Prenom</th>
-                            <th>Adresse</th>
-                            <th>Telephone</th>
-                            <th>Profession</th> 
-                            <th>Sexe</th>
-                            <th>Editer</th>
-                            <th>Delete</th>
-                        </tr>
-                    </tfoot>
+                    
                     <tbody>
                         @foreach($patients as $patient)
                             <tr class="clickable-row" data-href="{{route('afficher_patient',['id'=>$patient->id])}}" style="cursor:pointer;">

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateConsultationsTable extends Migration
+class JoinFolderAntecedent extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateConsultationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('consultations', function (Blueprint $table) {
+        Schema::create('folder_antecedent', function(Blueprint $table){
             $table->bigIncrements('id');
-            $table->dateTime('date_consult');
-            $table->float('poids');
-            $table->integer('taille');
-            $table->integer('tension');
-            $table->float('temperature');
-            $table->float('imc');
             $table->unsignedInteger('folder_id');
+            $table->unsignedInteger('antecedent_id');
             $table->timestamps();
         });
     }
@@ -33,6 +28,6 @@ class CreateConsultationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('consultations');
+        //
     }
 }

@@ -98,7 +98,7 @@
                                                 <h5 class="blue">Antécédant</h5>
                                                 <div>
                                                     <a href="" data-toggle="modal" data-target="#myModal_antecedant"><i class="fas fa-plus-circle"></i></a>
-                                                    <a href=""><i class="fas fa-bars"></i></a>
+                                                    <a href="#"><i class="fas fa-bars"></i></a>
                                                 </div>
                                             </div>
                                         
@@ -413,12 +413,13 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody class="table table-editable">
+                                                        @foreach($patients as $consultation)
                                                         <tr>
-                                                            <td></td>
+                                                            <td>{{$consultation->date_consult ?? ''}}</td>
                                                             <td></td>
                                                             <td></td>
                                                         </tr>
-                                                        
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -435,8 +436,14 @@
                                                 </div>                        
                                                 <!-- Modal body -->
                                                 <div class="modal-body container">
-                                                    <form action="" method="post">
+                                                    <form action="{{route('ajout_consultation')}}" method="post">
                                                         @csrf
+                                                            <div class="form-group">
+                                                                <label for="inputEmail" class=" ">Numero dossier<span style="background-colol:red;">*</span></span></label>
+                                                                <div class="col-md-6">
+                                                                    <input type="text" class="form-control" id="num_folder" name="num_folder" >
+                                                                </div>
+                                                            </div>
                                                             <div class="form-group">
                                                                 <label for="inputEmail" class=" ">Date prise<span style="background-colol:red;">*</span></span></label>
                                                                 <div class="">
@@ -446,13 +453,19 @@
                                                             <div class="form-group ">
                                                                 <label for="inputPassword" class="">Poids</label>
                                                                 <div class="">
-                                                                    <input type="number" class="form-control" id="nom" name="poid" placeholder="">
+                                                                    <input type="double" class="form-control" id="nom" name="poid" placeholder="">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group ">
+                                                                <label for="inputPassword" class="">Taille</label>
+                                                                <div class="">
+                                                                    <input type="number" class="form-control" id="taille" name="taille" placeholder="taille en cm">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group ">
                                                                 <label for="inputPassword" class="">Tension</label>
                                                                 <div class="">
-                                                                    <input type="number" class="form-control" id="tension" name="tension" placeholder="">
+                                                                    <input type="text" class="form-control" id="tension" name="tension" placeholder="">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group ">

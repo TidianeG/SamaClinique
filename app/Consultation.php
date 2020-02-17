@@ -10,4 +10,7 @@ class Consultation extends Model
     public function folder(){
         return $this->belongsTo('App\Folder');   
     }
+    public function order(){
+        return $this->belongsTo('App\Order');
+    }
 }

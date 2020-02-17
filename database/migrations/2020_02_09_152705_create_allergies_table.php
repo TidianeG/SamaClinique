@@ -25,7 +25,6 @@ class CreateAllergiesTable extends Migration
             $table->string('commentaire');
             $table->string('resultat');
             $table->string('desensibilisation');
-            $table->unsignedInteger('folder_id');
             $table->timestamps();
         });
     }
