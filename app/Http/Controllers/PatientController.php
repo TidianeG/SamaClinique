@@ -6,6 +6,7 @@ use App\Staff;
 use App\Appointment;
 use App\Consultation;
 use App\Analysis;
+use App\Antecedent;
 use App\Folder;
 use App\Treatment;
 use Illuminate\Http\Request;
@@ -87,6 +88,7 @@ class PatientController extends Controller
 
         public function creer_folder(Request $request){
             $num_patient=$request->input('num_patient');
+
             $user=Auth::user();
             $patients=Patient::where('num_patient',$num_patient)->first();
             if(isset($patients)){
@@ -117,9 +119,18 @@ class PatientController extends Controller
                 $folders->staff_id=$user->staff_id;
                 $folders->save();
                 $folder=Folder::where('num_folder',$folders->num_folder)->first();
+                
                 unset($folders);
                 return redirect()->route('afficher_dossier',$patients->id);
             }
+        }
+
+        public function lister_folder($id){
+            $patients= Patient::find($id);
+            $folder = Folder::where('patient_id',$id)->first();
+            $consultations= Consultation::where('folder_id',$folder->id)->get();
+            
+            return view('medecin.folder', compact('patients','folder','consultations'));
         }
 
         public function edit_patient($id){
@@ -147,14 +158,9 @@ class PatientController extends Controller
 
         public function afficher_dossier($id){
             $patients= Patient::find($id);
-            $date_aujour=date('Y');
-            $date_naisse=date("Y",strtotime($patients->date_naisse));
-            $age=$date_aujour-$date_naisse;
-            $folder = Folder::where('patient_id',$id)->first();
-            
-            if(isset($folder)){
-                $consultations=Consultation::where("folder_id",$folder->id);
-                return view('medecin.folder',compact('folder','patients','consultations'));
+            $folder = Folder::where('patient_id',$id)->first();        
+            if(isset($folder)){             
+                return redirect()->route('lister_folder',$id);
             }
             else{
                 return redirect()->route('patients')->with(['danger' => "Le patient selectionne possede pas de dossier, veuiller creer un nouveau dossier !!"]);
@@ -165,9 +171,7 @@ class PatientController extends Controller
             $folder = Folder::where('num_folder',$num_folder)->first();
 
             if(isset($folder)){
-                $patients=Patient::where('id',$folder->patient_id)->first();
-                $consultations=Consultation::where("folder_id",$folder->id);
-                return view('medecin.folder', compact('folder','patients','consultations'));
+                return redirect()->route('lister_folder',$folder->patient_id);
             }
             else{
                 return redirect()->route('patients')->with(['danger' => "Le dossier demandé n'existe pas"]);

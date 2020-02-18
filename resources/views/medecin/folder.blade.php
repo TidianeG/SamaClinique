@@ -2,7 +2,7 @@
     @section('content') 
             <div class="" id="folder" style="">                                  
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" style="height:auto;">
+                    <ul class="nav nav-tabs" style="height:100%;">
                         <li class="nav-item">
                             <a class="nav-link active" href="#home">Données Généraux</a>
                         </li>
@@ -20,7 +20,7 @@
                         </li>
                     </ul>
                 <!-- Tab panes -->
-                    <div class="container tab-content border mb-0 p-2" style="height:auto;overflow-x:scroll;">
+                    <div class="container tab-content border mb-0 p-2" style="height:100%;overflow-x:scroll;background-image:url({{asset('images/anesthesiology.jpg')}})">
                         <div id="home" class=" tab-pane active" >
                             <div class="row section_dossier mb-2">
                                 <div class="col-sm-12 col-md-8  mb-3 ">
@@ -110,14 +110,18 @@
                                                                 <th>Date</th>
                                                                 <th>Catégorie</th>
                                                                 <th>Description</th>
+                                                                <th>Action</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody class="table table-editable">
-                                                            <tr>
-                                                                <td></td>
-                                                                <td></td>
-                                                                <td></td>
-                                                            </tr>  
+                                                           @foreach($folder->antecedent as $antecedent) 
+                                                                <tr>
+                                                                    <td>{{$antecedent->created_at}}</td>
+                                                                    <td>{{$antecedent->category}}</td>
+                                                                    <td>{{$antecedent->description}}</td>
+                                                                    <td class="d-flex justify-content-between"><a href=""><i class="fas fa-pen"></i></a> <a href=""><i class="fas fa-backspace"></i></a></td>
+                                                                </tr>
+                                                            @endforeach  
                                                         </tbody>
                                                     </table>
                                                 </div>  
@@ -135,22 +139,21 @@
                                                     </div>                        
                                                     <!-- Modal body -->
                                                     <div class="modal-body container">
-                                                        <form action="{{route('ajouter_patient')}}" method="post">
+                                                        <form action="{{route('ajout_antecedant')}}" method="post">
                                                         @csrf
                                                             <div class="">
-                                                                    <div class="form-group ">
-                                                                        <label for="inputPassword" class="">Date</label>
-                                                                        <div class="">
-                                                                            <input type="date" class="form-control" id="dte" name="date">
-                                                                        </div>
+                                                                <div class="form-group row col-12 col-sm-12 col-md-6 ">
+                                                                    <label for="inputPassword" class="">Numero dossier</label>
+                                                                    <div class="">
+                                                                        <input type="text" name="num_folder" style="color:red;font-weight:bold;" class="form-control" value="{{$folder->num_folder}}" disabled>
                                                                     </div>
-                                                                
+                                                                </div>
                                                                 <div class="form-group ">
                                                                     <label for="inputPassword" class="">Categorie</label>
                                                                     <div class="mb-5">
                                                                         <select name="categorie" id="" class="form-control">
                                                                             <option value="medicaux">Medicaux</option>
-                                                                            <option value="familiau">Familiaux</option>
+                                                                            <option value="familiaux">Familiaux</option>
                                                                             <option value="personnel">Personnels</option>
                                                                         </select>
                                                                     </div>
@@ -285,18 +288,21 @@
                                                             <th>Statut</th>
                                                             <th>Manifestation</th>
                                                             <th>Sévérité</th>
+                                                            <th>Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="table table-editable">
-                                                        <tr>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                        </tr>
-                                                        
+                                                        @foreach($folder->allergy as $allergy)
+                                                            <tr>
+                                                                <td>{{$allergy->date_debut}}</td>
+                                                                <td>{{$allergy->substance}}</td>
+                                                                <td>{{$allergy->type}}</td>
+                                                                <td>{{$allergy->statut}}</td>
+                                                                <td>{{$allergy->manifestation}}</td>
+                                                                <td>{{$allergy->severite}}</td>
+                                                                <td class="d-flex justify-content-between"><a href=""><i class="fas fa-pen"></i></a> <a href=""><i class="fas fa-backspace"></i></a></td>
+                                                            </tr>
+                                                        @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -314,61 +320,74 @@
                                                     </div>                        
                                                     <!-- Modal body -->
                                                     <div class="modal-body container">
-                                                        <form action="{{route('ajouter_patient')}}" method="post">
+                                                        <form action="{{route('ajout_allergy')}}" method="post">
                                                         @csrf
-                                                            <div class="">
-                                                                    <div class="form-group ">
+                                                                <div class="form-group row col-12 col-sm-12 col-md-6">
+                                                                    <label for="inputPassword" class="">Numero dossier</label>
+                                                                    <div class="">
+                                                                        <input type="text" class="form-control" id="num_folder" style="color:red;font-weight:bold;" name="num_folder" value="{{$folder->num_folder}}" >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="form-group col-12 col-sm-12 col-md-6">
                                                                         <label for="inputPassword" class="">Date debut</label>
                                                                         <div class="">
                                                                             <input type="date" class="form-control" id="date_debut" name="date_debut">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="form-group ">
+                                                                    <div class="form-group col-12 col-sm-12 col-md-6">
                                                                         <label for="inputPassword" class="">Date fin</label>
                                                                         <div class="">
                                                                             <input type="date" class="form-control" id="date_fin" name="date_fin">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="form-group ">
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="form-group col-12 col-sm-12 col-md-7">
                                                                         <label for="inputPassword" class="">Substance</label>
                                                                         <div class="">
                                                                             <input type="text" class="form-control" id="substance" name="substance">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="form-group ">
+                                                                    <div class="form-group col-12 col-sm-12 col-md-5">
                                                                         <label for="inputPassword" class="">Statut</label>
                                                                         <div class="">
                                                                             <input type="text" class="form-control" id="statut" name="statut">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="form-group ">
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="form-group col-12 col-sm-12 col-md-7">
                                                                         <label for="inputPassword" class="">Type</label>
                                                                         <div class="">
                                                                             <input type="text" class="form-control" id="type" name="type">
                                                                         </div>
                                                                     </div>
-                                                                    <div class="form-group ">
-                                                                        <label for="inputPassword" class="">Manifestation</label>
-                                                                        <div class="">
-                                                                            <input type="date" class="form-control" id="manifestation" name="manifestation">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group ">
+                                                                    <div class="form-group col-12 col-sm-12 col-md-5">
                                                                         <label for="inputPassword" class="">Sévérité</label>
                                                                         <div class="">
-                                                                            <input type="date" class="form-control" id="severite" name="severite">
+                                                                            <input type="text" class="form-control" id="severite" name="severite">
                                                                         </div>
                                                                     </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="form-group ol-12 col-sm-12 col-md-6">
+                                                                        <label for="inputPassword" class="">Manifestation</label>
+                                                                        <div class="">
+                                                                            <input type="text" class="form-control" id="manifestation" name="manifestation">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ol-12 col-sm-12 col-md-6">
+                                                                        <label for="inputPassword" class="">Desensibilisation</label>
+                                                                        <div class="">
+                                                                            <input type="text" class="form-control" id="desensibilisation" name="desensibilisation">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                                     <div class="form-group ">
                                                                         <label for="inputPassword" class="">Resultat analyse</label>
                                                                         <div class="">
                                                                             <input type="text" class="form-control" id="result_ana" name="result_ana">
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="form-group ">
-                                                                        <label for="inputPassword" class="">Desensibilisation</label>
-                                                                        <div class="">
-                                                                            <input type="date" class="form-control" id="desensibilisation" name="desensibilisation">
                                                                         </div>
                                                                     </div>
                                                                 <div class="form-group ">
@@ -378,7 +397,7 @@
                                                                     </div>
                                                                 </div>
                                                             
-                                                            </div>
+                                                            
                                                             <div class="">         
                                                                 <button type="submit" class="btn btn-success">Enregistrer</button>
                                                                 <button type="reset" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -410,14 +429,17 @@
                                                             <th>Date</th>
                                                             <th>Motif</th>
                                                             <th>Traitement</th>
+                                                            <th>action</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody class="table table-editable">
-                                                        @foreach($patients as $consultation)
-                                                        <tr>
-                                                            <td>{{$consultation->date_consult ?? ''}}</td>
+                                                    <tbody class="tqble-borderless">
+                                                        @foreach($consultations as $consultation)
+                                                        <tr style="border-collaps:none;">
+                                                            <td>{{date('d-m-Y',strtotime($consultation->date_consult)) ?? ''}} à {{date('H:i:s',strtotime($consultation->date_consult)) ?? ''}}</td>
+                                                            <td>{{$consultation->motif ?? ''}}</td>
                                                             <td></td>
-                                                            <td></td>
+                                                            <td class="d-flex justify-content-between"><a href=""><i class="fas fa-pen"></i></a> <a href=""><i class="fas fa-backspace"></i></a></td>
+                                                            
                                                         </tr>
                                                         @endforeach
                                                     </tbody>
@@ -438,40 +460,58 @@
                                                 <div class="modal-body container">
                                                     <form action="{{route('ajout_consultation')}}" method="post">
                                                         @csrf
-                                                            <div class="form-group">
+                                                            <div class="form-group ">
                                                                 <label for="inputEmail" class=" ">Numero dossier<span style="background-colol:red;">*</span></span></label>
-                                                                <div class="col-md-6">
-                                                                    <input type="text" class="form-control" id="num_folder" name="num_folder" >
+                                                                <div class="row col-md-6">
+                                                                    <input type="text" class="form-control" id="num_folder" name="num_folder"value="{{$folder->num_folder}}" disabled style="color:red;font-weight:bold;" >
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-12 col-sm-12 col-md-8">
+                                                                    <label for="inputEmail" class=" ">Date prise<span style="background-colol:red;">*</span></span></label>
+                                                                    <div class="">
+                                                                        <input type="date" class="form-control" id="date" name="date_prise" >
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-12 col-sm-12 col-md-4">
+                                                                    <label for="inputEmail" class=" ">Heure prise<span style="background-colol:red;">*</span></span></label>
+                                                                    <div class="">
+                                                                        <input type="time" class="form-control" id="heure_prise" name="heure_prise" >
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-12 col-sm-12 col-md-7">
+                                                                    <label for="inputPassword" class="">Poids</label>
+                                                                    <div class="">
+                                                                        <input type="double" class="form-control" id="nom" name="poid" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-12 col-sm-12 col-md-5">
+                                                                    <label for="inputPassword" class="">Taille</label>
+                                                                    <div class="">
+                                                                        <input type="number" class="form-control" id="taille" name="taille" placeholder="taille en cm">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="form-group col-12 col-sm-12 col-md-5">
+                                                                    <label for="inputPassword" class="">Tension</label>
+                                                                    <div class="">
+                                                                        <input type="text" class="form-control" id="tension" name="tension" placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-12 col-sm-12 col-md-7">
+                                                                    <label for="inputPassword" class=" ">Temperature</label>
+                                                                    <div class="">
+                                                                        <input type="number" class="form-control" id="litemperatureeu" name="temperature" >
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="inputEmail" class=" ">Date prise<span style="background-colol:red;">*</span></span></label>
+                                                                <label for="inputPassword" class="">Motif</label>
                                                                 <div class="">
-                                                                    <input type="date" class="form-control" id="date" name="date_prise" >
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group ">
-                                                                <label for="inputPassword" class="">Poids</label>
-                                                                <div class="">
-                                                                    <input type="double" class="form-control" id="nom" name="poid" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group ">
-                                                                <label for="inputPassword" class="">Taille</label>
-                                                                <div class="">
-                                                                    <input type="number" class="form-control" id="taille" name="taille" placeholder="taille en cm">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group ">
-                                                                <label for="inputPassword" class="">Tension</label>
-                                                                <div class="">
-                                                                    <input type="text" class="form-control" id="tension" name="tension" placeholder="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group ">
-                                                                <label for="inputPassword" class=" ">Temperature</label>
-                                                                <div class="">
-                                                                    <input type="number" class="form-control" id="litemperatureeu" name="temperature" >
+                                                                    <textarea name="motif" class="form-control" id="" cols="30" rows="8"></textarea>
                                                                 </div>
                                                             </div>
                                                         <div class="">         

@@ -16,9 +16,10 @@ class CreateConsultationsTable extends Migration
         Schema::create('consultations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTime('date_consult');
+            $table->string('motif');
             $table->float('poids');
             $table->integer('taille');
-            $table->integer('tension');
+            $table->string('tension');
             $table->float('temperature');
             $table->float('imc');
             $table->unsignedInteger('folder_id');

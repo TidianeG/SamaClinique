@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class JoinFolderAllergy extends Migration
+class JoinAllergyFolder extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class JoinFolderAllergy extends Migration
      */
     public function up()
     {
-        Schema::create('folder_allergy', function(Blueprint $table){
+        Schema::create('allergy_folder', function(Blueprint $table){
             $table->bigIncrements('id');
             $table->unsignedInteger('folder_id');
             $table->unsignedInteger('allergy_id');

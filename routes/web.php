@@ -92,6 +92,8 @@ Route::middleware(['can:secretaire'])->prefix('secretaire')->group(function(){
 Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
         Route::get('/', 'cliniqueController@medecin')->name('medecin');
 
+        Route::get('/patients/folder/{id}','PatientController@lister_folder')->name("lister_folder");
+
         Route::get('/patients/dossier/{id}','PatientController@afficher_dossier')->name("afficher_dossier");
 
         Route::post('/patients/{id}/dossier','PatientController@create_folder')->name("create_folder");
@@ -102,6 +104,10 @@ Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
         
         Route::post('/patients/dossier_newconsult','FolderController@ajout_consultation')->name("ajout_consultation");
 
+        Route::post('/patients/dossier_newantecedant','FolderController@ajout_antecedant')->name("ajout_antecedant");
+
+        Route::post('/patients/dossier_newallergy','FolderController@ajout_allergy')->name("ajout_allergy");
+        
         Route::get('/patients', 'PatientController@patients')->name('patients');
 
         Route::post('/patients', 'PatientController@creer_folder')->name('creer_folder');
