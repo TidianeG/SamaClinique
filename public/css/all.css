@@ -5763,15 +5763,16 @@ img {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 82vh;
+  height: 100%;
   background-size: 100%; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .single-hero-slide {
       height: 700px; 
-      background-position: top;} }
+      } }
   @media only screen and (max-width: 767px) {
     .single-hero-slide {
-      height: 700px; } }
+      height: 700px;
+      background-position: top; } }
 
 .hero-slides-content h2 {
   color: #081f3e;
