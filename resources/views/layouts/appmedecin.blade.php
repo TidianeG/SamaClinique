@@ -377,9 +377,7 @@
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     
     <script>
-        $(document).ready( function () {
-            $('#myTable').DataTable();
-        } );
+        
         $(document).ready(function(){
             $(".nav-tabs a").click(function(){
                 $(this).tab('show');
@@ -397,6 +395,9 @@
                     window.location = $(this).data("href");
                 });
             });
+            $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
     </script>
     <script src="{{ asset('node_modules/tinymce/tinymce.js') }}"></script>
     <script>

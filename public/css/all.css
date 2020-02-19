@@ -5763,7 +5763,7 @@ img {
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100%;
+  height: 80vh;
   background-size: 100%; }
   @media only screen and (min-width: 768px) and (max-width: 991px) {
     .single-hero-slide {
@@ -6909,7 +6909,7 @@ textarea {
        color:rgb(99, 99, 250);
      }
      .nav-bord{
-      background-color:#081f3e;
+      background-color:rgb(51, 51, 51);
       border: 1px groove white;
      }
      .info-perso{

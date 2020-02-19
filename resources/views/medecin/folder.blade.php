@@ -1,8 +1,8 @@
 @extends('layouts.appmedecin')
     @section('content') 
-            <div class="" id="folder" style="">                                  
+            <div class="h-100" id="folder" style="overflow-x:scroll;background-image:url({{asset('images/anesthesiology.jpg')}});background-size:100%;background-repeat:no-repeat;">                                  
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" style="height:100%;">
+                    <ul class="nav nav-tabs" style="background-color:rgb(51, 51, 51);">
                         <li class="nav-item">
                             <a class="nav-link active" href="#home">Données Généraux</a>
                         </li>
@@ -20,8 +20,8 @@
                         </li>
                     </ul>
                 <!-- Tab panes -->
-                    <div class="container tab-content border mb-0 p-2" style="height:100%;overflow-x:scroll;background-image:url({{asset('images/anesthesiology.jpg')}})">
-                        <div id="home" class=" tab-pane active" >
+                    <div class="container tab-content border mb-0 p-2 h-100" style="height:100%;">
+                        <div id="home" class="tab-pane active" >
                             <div class="row section_dossier mb-2">
                                 <div class="col-sm-12 col-md-8  mb-3 ">
                                     <div class="card h-100">
@@ -145,7 +145,7 @@
                                                                 <div class="form-group row col-12 col-sm-12 col-md-6 ">
                                                                     <label for="inputPassword" class="">Numero dossier</label>
                                                                     <div class="">
-                                                                        <input type="text" name="num_folder" style="color:red;font-weight:bold;" class="form-control" value="{{$folder->num_folder}}" disabled>
+                                                                        <input type="text" name="num_folder" style="color:red;font-weight:bold;" class="form-control" value="{{$folder->num_folder}}" >
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group ">
@@ -423,18 +423,18 @@
                                     
                                         <div class="card-body">
                                             <div class="table-responsive">
-                                                <table class="table table-bordered">
+                                                <table class="table table-bordered" width="100%" cellspacing="0">
                                                     <thead>
                                                         <tr>
-                                                            <th>Date</th>
-                                                            <th>Motif</th>
+                                                            <th>Date consultation</th>
+                                                            <th>Motif consultation</th>
                                                             <th>Traitement</th>
                                                             <th>action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody class="tqble-borderless">
                                                         @foreach($consultations as $consultation)
-                                                        <tr style="border-collaps:none;">
+                                                        <tr style="">
                                                             <td>{{date('d-m-Y',strtotime($consultation->date_consult)) ?? ''}} à {{date('H:i:s',strtotime($consultation->date_consult)) ?? ''}}</td>
                                                             <td>{{$consultation->motif ?? ''}}</td>
                                                             <td></td>
@@ -463,7 +463,7 @@
                                                             <div class="form-group ">
                                                                 <label for="inputEmail" class=" ">Numero dossier<span style="background-colol:red;">*</span></span></label>
                                                                 <div class="row col-md-6">
-                                                                    <input type="text" class="form-control" id="num_folder" name="num_folder"value="{{$folder->num_folder}}" disabled style="color:red;font-weight:bold;" >
+                                                                    <input type="text" class="form-control" id="num_folder" name="num_folder"value="{{$folder->num_folder}}"  style="color:red;font-weight:bold;" >
                                                                 </div>
                                                             </div>
                                                             <div class="row">
@@ -599,16 +599,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                </div>
+                                
                             </div> 
                         </div>
-                        <div id="menu1" class=" tab-pane fade " style="height:100%;">
+                        <div id="menu1" class="tab-pane fade" style="height:100%;">
                             <h3>Ordonnance</h3>                                                                       
                         </div>
-                        <div id="menu2" class=" tab-pane fade" style="height:100%;background-color:white;">
+                        <div id="menu2" class="tab-pane fade" style="height:100%;">
                                 <h3>Certificats</h3>
                         </div>  
-                        <div id="menu3" class=" tab-pane fade" style="height:100%; background:white;"><br>     
+                        <div id="menu3" class="tab-pane fade" style="height:100%;">    
+                            <h3>Lettre</h3>
+                        </div>
+                        <div id="menu4" class="tab-pane fade" style="height:100%;">    
                             <h3>Lettre</h3>
                         </div>
                     </div>
