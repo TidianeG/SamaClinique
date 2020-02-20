@@ -7,6 +7,7 @@ use App\Consultation;
 use App\Folder;
 use App\Antecedent;
 use App\Allergy;
+use App\Followed;
 class FolderController extends Controller
 {
     
@@ -68,6 +69,22 @@ class FolderController extends Controller
             $allergy->commentaire=$request->input('commentaire');
             $allergy->save();
             $allergy->folder()->attach($folder->id);
+            return redirect()->route('lister_folder',$folder->patient_id);
+        }
+        else{
+            return redirect()->route('lister_folder',$folder->patient_id);
+        }
+    }
+
+    public function ajout_suivi(Request $request){
+        $followed=new Followed();
+        $num_folder=$request->input('num_folder');
+        $folder=Folder::where('num_folder',$num_folder)->first();
+        if(isset($folder)){
+            $followed->date_suivi=$request->input('date_suivi');
+            $followed->titre=$request->input('titre');
+            $followed->folder_id=$folder->id;
+            $followed->save();
             return redirect()->route('lister_folder',$folder->patient_id);
         }
         else{

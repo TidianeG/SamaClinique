@@ -237,20 +237,26 @@
                                                     </div>                        
                                                     <!-- Modal body -->
                                                     <div class="modal-body container">
-                                                        <form action="{{route('ajouter_patient')}}" method="post">
+                                                        <form action="{{route('ajout_suivi')}}" method="post">
                                                         @csrf
                                                             <div class="">
                                                                     <div class="form-group ">
+                                                                        <label for="inputPassword" class="">Numero dossier</label>
+                                                                        <div class="">
+                                                                            <input type="text" class="form-control" id="num" name="num_folder" style="color:red;" value="{{$folder->num_folder}}">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group ">
                                                                         <label for="inputPassword" class="">Date</label>
                                                                         <div class="">
-                                                                            <input type="date" class="form-control" id="dte" name="date">
+                                                                            <input type="date" class="form-control" id="date" name="date_suivi">
                                                                         </div>
                                                                     </div>
                                                                 
                                                                 <div class="form-group ">
                                                                     <label for="inputPassword" class=" ">Titre</label>
                                                                     <div class="">
-                                                                        <textarea name="description" id="" cols="30" rows="10"></textarea>
+                                                                        <textarea name="titre" id="" cols="30" rows="10"></textarea>
                                                                     </div>
                                                                 </div>
                                                             

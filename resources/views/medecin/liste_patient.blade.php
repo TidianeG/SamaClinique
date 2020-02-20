@@ -11,19 +11,24 @@
                     <a href="" class="btn btn-primary" data-toggle="modal" data-target="#myModal_folder">new folder</a>
                 </div>
             </div>
-            <div class="container" style="width:100%;border:2px solid #081f3e;background-color:#081f3e ;border-radius:4px;">
-                <div class=" row justify-content-between">
-                    <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
-                    <form action="{{route('recherche_dossier')}}" method="post">
-                        @csrf 
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" name="numfolder"  placeholder="Recherche par numero dossier">
-                            <div class="input-group-append">
-                                <button class="btn btn-success"  type="submit">Go</button>
+            <div class="card shadow mb-4">
+                <div class="card-header" style="background-color:rgb(51, 51, 51) ;">
+                    <div class=" row justify-content-between" >
+                        <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>
+                        <form action="{{route('recherche_dossier')}}" method="post">
+                            @csrf 
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="numfolder"  placeholder="Recherche par numero dossier">
+                                <div class="input-group-append">
+                                    <button class="btn btn-success"  type="submit">Go</button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
+            </div>
+            <div class="card-body" style="width:100%;">
+                
                 <div class="table-responsive">
                     <table id="myTable" class="table table-hover" style="overflow:hedden; width:100%;">
                         <thead>

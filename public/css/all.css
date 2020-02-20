@@ -6849,7 +6849,7 @@ textarea {
       .content-div{
         margin: 0;
         padding: 0;
-        height: 80vh;
+        height: 75vh;
       }
       
       .content-yield{
@@ -6876,6 +6876,7 @@ textarea {
           display: none;
 
       }
+      
       .etatcv{
         margin: 0;
         padding: 0;

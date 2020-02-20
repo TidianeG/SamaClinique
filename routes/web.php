@@ -108,6 +108,8 @@ Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
 
         Route::post('/patients/dossier_newallergy','FolderController@ajout_allergy')->name("ajout_allergy");
         
+        Route::post('/patients/dossier_newsuivi','FolderController@ajout_suivi')->name("ajout_suivi");
+        
         Route::get('/patients', 'PatientController@patients')->name('patients');
 
         Route::post('/patients', 'PatientController@creer_folder')->name('creer_folder');

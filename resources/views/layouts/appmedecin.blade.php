@@ -23,6 +23,11 @@
 </head>
 
 <body >
+    <style>
+        .card-header{
+        background-color: #ffffff;
+      }
+    </style>
     <header>
     <div class="header-area">
         <!-- Top Header Area -->
@@ -318,7 +323,7 @@
 
         <div class="row row-no-gutters" id="bottom-footer" >
         
-          <div class="col-xs-12 col-md-5 text-center" >
+          <div class=" col-md-7 col-sm-12 text-center" >
               <ul class="vertical-links small">
                 <li><a href="#"><i class="fas fa-map-marker-alt"></i> Dakar Ngor-Almadies</a></li>
                 <li><a href="#"><i class="fas fa-phone"></i>+221 33 899 99 99</a></li>
@@ -326,9 +331,7 @@
                 <li><a href="#">site web : www.medilife.sn</a></li>
               </ul>
           </div>
-          <div class="col-xs-12 col-md-2 text-center" >
-            <p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
-          </div>
+          
           <div class="col-xs-12 col-md-5 text-center" >
             <ul>
               <li class="small">© Copyright 2019 Developpeur web/mobile<a href="#" style="color:white;font-weight:500;">Galima Academy</a>. Tous droits reserves.</li>
