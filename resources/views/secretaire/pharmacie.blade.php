@@ -7,20 +7,20 @@
             @if(session('danger'))
                 <div class="alert alert-danger">{{session('danger')}}</div>
             @endif
-                <div class="card shadow" >
-                    <div class="card-header py-3">
-                        <div class="d-flex justify-content-end mb-2">
+                <div class="card shadow mb-3" >
+                        <div class="p-3">
                                 <a href="#" class="btn btn-success" data-toggle="modal" data-target="#myModalmedoc">
                                     <i class="far fa-calendar-plus"></i>
                                     New medicaments</a>    
                         </div>
                         
                         <div id="titre"><h3>Liste des rendez-vous</h3></div>
-                    </div>
-                    <div class="card-body" style="background-color:#081f3e ;">
+                    <div class="card-header py-3" style="background-color:#081f3e ;">                    
                         <div class=" row justify-content-between">
                             <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>  
                         </div>
+                    </div>
+                    <div class="card-body" style="">
                         <div class="table-responsive">
                             <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
                                 <thead>

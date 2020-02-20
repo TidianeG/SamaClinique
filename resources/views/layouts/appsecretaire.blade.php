@@ -97,25 +97,7 @@
                                             <div class="topbar-divider d-none d-sm-block"></div>
 
                                             <!-- Nav Item - User Information -->
-                                            <li class="nav-item">
-                                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Moi
-                                                </a>
-                                        
-                                                <!-- Dropdown - User Information -->
-                                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                                    <a class="dropdown-item" href="{{route('afficher_secretaire')}}">
-                                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Profil
-                                                    </a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Deconnexion
-                                                    </a>
-                                                </div>
-                                            </li>
+                                            
                                     </ul>
                                     <!-- Appointment Button -->
                                 </div>
@@ -136,12 +118,11 @@
                     </button>
                 </div>
                 <div class="modal-body" style="background-color:white;">
-                    Selectionner Deconnecter si tu es pret à quitter la session. <br>
-                    Et Cancel pour annuler.
+                    Voulez-vous deconnecter ?
                     </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{route('deconnect')}}">Deconnecter</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Non</button>
+                    <a class="btn btn-primary" href="{{route('deconnect')}}">Oui</a>
                 </div>
             </div>
         </div>
@@ -305,8 +286,21 @@
                                 <!-- Nav Item - User Information -->
                                 <li class="nav-item dropdown no-arrow">
                                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->staff->prenom_staff}} {{Auth::user()->staff->nom_staff}}</span>
-                                    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                            <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{Auth::user()->staff->prenom_staff}} {{Auth::user()->staff->nom_staff}}</span>
+                                            <?php
+                                                if(Auth::user()->staff->sexe_staff=="masculin"){
+                                                    
+                                            ?>
+                                                    <img class="img-profile rounded-circle" src="{{asset('images/avatar-mal.png')}}">                                                     
+                                            <?php    
+                                                }
+                                                elseif(Auth::user()->staff->sexe_staff=="feminin"){
+                                                
+                                            ?>
+                                            <img class="img-profile rounded-circle" src="{{asset('images/avatar-fem.jpg')}}">                                                     
+                                            <?php   
+                                                }
+                                            ?> 
                                     </a>
                                     <!-- Dropdown - User Information -->
                                     <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -321,7 +315,7 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
+                                        Donnection
                                     </a>
                                     </div>
                                 </li>
@@ -340,11 +334,11 @@
             </div>
     </main>
     <footer>
-      <div class="">
+      <div class="container-fluid">
 
         <div class="row row-no-gutters" id="bottom-footer" >
         
-          <div class="col-xs-12 col-md-5 text-center" >
+          <div class=" col-md-7 col-sm-12 text-center" >
               <ul class="vertical-links small">
                 <li><a href="#"><i class="fas fa-map-marker-alt"></i> Dakar Ngor-Almadies</a></li>
                 <li><a href="#"><i class="fas fa-phone"></i>+221 33 899 99 99</a></li>
@@ -352,9 +346,7 @@
                 <li><a href="#">site web : www.medilife.sn</a></li>
               </ul>
           </div>
-          <div class="col-xs-12 col-md-2 text-center" >
-            <p><i class="fa fa-heart-o" aria-hidden="true"></i></p>
-          </div>
+          
           <div class="col-xs-12 col-md-5 text-center" >
             <ul>
               <li class="small">© Copyright 2019 Developpeur web/mobile<a href="#" style="color:white;font-weight:500;">Galima Academy</a>. Tous droits reserves.</li>

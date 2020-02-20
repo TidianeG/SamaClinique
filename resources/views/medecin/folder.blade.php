@@ -421,10 +421,32 @@
                                     <div class="card h-100">
                                         <div class="card-header d-flex justify-content-between">
                                             <h5 class="blue">Consultations</h5>
-                                            <div>
-                                                    <a href="" data-toggle="modal" data-target="#myModal_consultation"><i class="fas fa-plus-circle"></i></a>
-                                                    <a href=""><i class="fas fa-bars"></i></a>
-                                            </div>
+                                            <nav class="navbar navbar-expand">
+                                                <ul class="navbar-nav mr-auto">    
+                                                    <li class="nav-item dropdown no-arrow">
+                                                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="fas fa-bars"></i>
+                                                        </a>
+                                                        <!-- Dropdown - User Information -->
+                                                        
+                                                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal_consultation">
+                                                                <i class="fas fa-plus-circle fa-sm fa-fw mr-2 "></i>
+                                                                consultation
+                                                            </a>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                                traitement
+                                                            </a> 
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="{{route('customer.printpdf')}}" >
+                                                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                                afficher
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>    
+                                            </nav>
                                         </div>
                                     
                                         <div class="card-body">
@@ -537,8 +559,32 @@
                                         <div class="card-header d-flex justify-content-between">
                                             <h5 class="blue">Bilans & Examens</h5>
                                             <div>
-                                                    <a href="" data-toggle="modal" data-target="#myModal_exam"><i class="fas fa-plus-circle"></i></a>
-                                                    <a href=""><i class="fas fa-bars"></i></a>
+                                            <nav class="navbar navbar-expand">
+                                                <ul class="navbar-nav mr-auto">    
+                                                    <li class="nav-item dropdown no-arrow">
+                                                        <a class="nav-link dropdown-toggle" href="#" id="userDropdownA" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            <i class="fas fa-bars fa-md fa-fw mr-2"></i>
+                                                        </a>
+                                                        <!-- Dropdown - User Information -->
+                                                        
+                                                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdownA">
+                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#myModal_consultation">
+                                                                <i class="fas fa-plus-circle fa-sm fa-fw mr-2 "></i>
+                                                                consultation
+                                                            </a>
+                                                            <a class="dropdown-item" href="#">
+                                                                <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                                traitement
+                                                            </a> 
+                                                            <div class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                                                afficher
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>    
+                                            </nav>
                                             </div>
                                         </div>
                                         <div class="card-body">

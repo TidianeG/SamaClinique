@@ -8,6 +8,7 @@ use App\Folder;
 use App\Antecedent;
 use App\Allergy;
 use App\Followed;
+use PDF;
 class FolderController extends Controller
 {
     
@@ -90,5 +91,17 @@ class FolderController extends Controller
         else{
             return redirect()->route('lister_folder',$folder->patient_id);
         }
+    }
+
+    public function printPDF(){
+        $data = [          
+                'title' => 'First PDF for Medium', 
+                'heading' => "",
+                'content' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
+            ];
+        
+        $pdf = PDF::loadView('medecin.conver_order', $data); 
+        return $pdf->download('ordonnance.pdf');
+        return view('medecin.conver_order',$data);
     }
 }

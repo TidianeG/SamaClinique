@@ -1,9 +1,6 @@
 @extends('layouts.appmedecin')
     @section('content')
         <!--Debut Modal-->
-        <div class="row" style="height:50px;">
-    
-        </div>
                 <div class="container pb-3" style="width:50%;border-radius:5px; background-color:#081f3e; height:auto;" >
                     <div class="row">
                         <a class="navbar-brand d-none d-sm-inline-block form-inline mr-auto ml-md-3 mb-md-3 my-2 my-md-0 mw-100" href="index.html"><img src="{{asset('img/core-img/logo.png')}}" alt="Logo"></a>

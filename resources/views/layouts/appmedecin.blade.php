@@ -114,12 +114,12 @@
                     </button>
                 </div>
                 <div class="modal-body" style="background-color:white;">
-                    Selectionner Deconnecter si tu es pret à quitter la session. <br>
-                    Et Cancel pour annuler.
+                    Voulez-vous deconnecter ?
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{route('deconnect')}}">Deconnecter</a>
+                    <a class="btn btn-primary" href="{{route('deconnect')}}">Oui</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Non</button>
+                    
                 </div>
             </div>
         </div>
@@ -301,7 +301,7 @@
                                             <div class="dropdown-divider"></div>
                                             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                                 <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                Logout
+                                                Deconnection
                                             </a>
                                             </div>
                                         </li>
