@@ -104,4 +104,9 @@ class FolderController extends Controller
         return $pdf->download('ordonnance.pdf');
         return view('medecin.conver_order',$data);
     }
+
+    public function afficher_consultation($id){
+        $consultation=Consultation::find($id);
+        return view('medecin.afficher_consultation',compact('consultation'));
+    }
 }

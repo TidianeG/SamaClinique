@@ -57,13 +57,13 @@
                                                         if($patients->sexe_patient=="masculin"){
                                                             $civilite="Monsieur";
                                                     ?>
-                                                        <img class="img-profile rounded-circle img-patient" style="width:100px;height:100px;" src="{{asset('images/avatar-mal.png')}}" alt="Card image mascul">                                                     
+                                                        <img class="img-profile rounded-circle img-patient" style="width:100px;height:100px;" src="{{asset('images/patient-mal.png')}}" alt="Card image mascul">                                                     
                                                     <?php    
                                                     }
                                                         elseif($patients->sexe_patient=="feminin"){
                                                             $civilite="Madame";
                                                     ?>
-                                                        <img class="img-profile rounded-circle img-patient" style="width:100px;height:100px;" src="{{asset('images/avatar-fem.png')}}" alt="Card image femel">                                                     
+                                                        <img class="img-profile rounded-circle img-patient" style="width:100px;height:100px;" src="{{asset('images/patient-fem.png')}}" alt="Card image femel">                                                     
                                                     <?php   
                                                         }
                                                     ?>   
@@ -434,7 +434,7 @@
                                                                 <i class="fas fa-plus-circle fa-sm fa-fw mr-2 "></i>
                                                                 consultation
                                                             </a>
-                                                            <a class="dropdown-item" href="#">
+                                                            <a class="dropdown-item" href="">
                                                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                                                 traitement
                                                             </a> 
@@ -451,7 +451,7 @@
                                     
                                         <div class="card-body">
                                             <div class="table-responsive">
-                                                <table class="table table-bordered" width="100%" cellspacing="0">
+                                                <table class="table table-bordered table-hover" width="100%" cellspacing="0">
                                                     <thead>
                                                         <tr>
                                                             <th>Date consultation</th>
@@ -460,9 +460,9 @@
                                                             <th>action</th>
                                                         </tr>
                                                     </thead>
-                                                    <tbody class="tqble-borderless">
+                                                    <tbody class="">
                                                         @foreach($consultations as $consultation)
-                                                        <tr style="">
+                                                        <tr class="table-borderless  clickable-row" data-href="{{route('afficher_consultation',['id'=>$consultation->id])}}" style="cursor:pointer;" >
                                                             <td>{{date('d-m-Y',strtotime($consultation->date_consult)) ?? ''}} à {{date('H:i:s',strtotime($consultation->date_consult)) ?? ''}}</td>
                                                             <td>{{$consultation->motif ?? ''}}</td>
                                                             <td></td>

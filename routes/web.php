@@ -104,6 +104,8 @@ Route::middleware(['can:medecin'])->prefix('medecin')->group(function(){
         
         Route::post('/patients/dossier_newconsult','FolderController@ajout_consultation')->name("ajout_consultation");
 
+        Route::get('/patients/dossier/consultation/{id}','FolderController@afficher_consultation')->name("afficher_consultation");
+
         Route::post('/patients/dossier_newantecedant','FolderController@ajout_antecedant')->name("ajout_antecedant");
 
         Route::post('/patients/dossier_newallergy','FolderController@ajout_allergy')->name("ajout_allergy");
