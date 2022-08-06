@@ -25,3 +25,9 @@ class UserTableSeeder extends Seeder
         );
     }
 }
+/*
+    madou : gaye.madou@medilife.sn
+    
+    codou : gaye.codou@medilife.sn
+    
+     */
